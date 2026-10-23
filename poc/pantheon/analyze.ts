@@ -5,7 +5,12 @@ import { resolve, dirname } from 'node:path';
 const root = resolve(process.argv[2] ?? 'poc-output');
 const folders: string[] = [];
 const selection = JSON.parse(await readFile(new URL('./representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string}[] };
-const representative = process.env.E2E_POC_SCOPE !== 'full';
+const scope = process.env.E2E_POC_SCOPE ?? 'representative';
+const representative = scope !== 'full';
+if (scope === 'oracle') {
+  selection.expectedCaptures = selection.expectedCaptures.filter(path => path.includes('/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/'));
+  selection.expectedTests = selection.expectedTests.filter(test => test.title.startsWith('Oracle draw'));
+}
 const suite = JSON.parse(await readFile(new URL('./suite.json', import.meta.url), 'utf8')) as { platforms: { linux: RequiredCase[] } };
 const imported = JSON.parse(await readFile(new URL('./baselines.json', import.meta.url), 'utf8')) as { images: Record<string, unknown> };
 const fullCaptures = Object.keys(imported.images).filter(p => p.endsWith('-linux.png'));
@@ -52,7 +57,7 @@ for (const folder of folders.sort()) {
     declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
 }
 function relativePath(path: string) { return path.slice(root.length + 1); }
-const requiredRuns = representative ? 9 : 3;
+const requiredRuns = scope === 'oracle' ? 1 : representative ? 9 : 3;
 if (sets.length !== requiredRuns) throw new Error(`Need ${requiredRuns} runs from three independent runners, found ${sets.length}`);
 const differences = [];
 for (let i = 1; i < sets.length; i++) {

@@ -4,11 +4,11 @@ on:
     inputs:
       mode:
         type: choice
-        options: [observe, verify]
+        options: [observe, verify, seed]
         default: observe
       scope:
         type: choice
-        options: [representative, full]
+        options: [representative, full, oracle]
         default: representative
 permissions:
   contents: read
@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [1, 2, 3]
+        runner: ${{ fromJSON(inputs.scope == 'oracle' && '[1]' || '[1,2,3]') }}
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
     container:
@@ -31,6 +31,11 @@ jobs:
         with:
           path: framework
           persist-credentials: false
+      - name: Check seed scope
+        env:
+          MODE: ${{ inputs.mode }}
+          SCOPE: ${{ inputs.scope }}
+        run: test "$MODE" != seed || test "$SCOPE" = oracle
       - name: Prepare exact source without baseline images
         run: python3 framework/poc/pantheon/prepare-source.py pantheon
       - run: apt-get update && apt-get install -y --no-install-recommends unzip
@@ -64,10 +69,12 @@ jobs:
         run: |
           if [[ "$POC_SCOPE" == representative ]]; then
             export E2E_STORY_FILTER='gather two players, share an invitation|enter the sanctuary, learn|Oracle draw reveals'
+          elif [[ "$POC_SCOPE" == oracle ]]; then
+            export E2E_STORY_FILTER='^Oracle draw reveals and lands in its sorted hand layer$'
           fi
           result=0
           repetitions="1 2 3"
-          if [[ "$POC_SCOPE" == full ]]; then repetitions="1"; fi
+          if [[ "$POC_SCOPE" != representative ]]; then repetitions="1"; fi
           for repetition in $repetitions; do
             export E2E_POC_OUTPUT="$GITHUB_WORKSPACE/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
             mkdir -p "$E2E_POC_OUTPUT"
