@@ -48,8 +48,8 @@ helper.write_text(text)
 fixtures = root / 'tests/e2e/helpers/fixtures.ts'
 replace(fixtures, "import { finishStory } from './test-step-helper';", "import { recordTest } from '../../../.e2e-poc/poc/pantheon/runtime';")
 replace(fixtures, 'await use();finishStory(info);', 'await use();recordTest(info);')
-replace(fixtures, "import { prepareCaptureContext } from './capture-context';", "import { prepareCaptureContext } from './capture-context';\nimport { observeBrowser } from '../../../.e2e-poc/poc/pantheon/browser-diagnostics.mjs';")
-replace(fixtures, 'context:async({context},use)=>{await prepareCaptureContext(context);await use(context);},', 'context:async({context},use,info)=>{await prepareCaptureContext(context);const diagnose=await observeBrowser(context,info);await use(context);await diagnose();},')
+replace(fixtures, "import { prepareCaptureContext } from './capture-context';", "import { prepareCaptureContext } from './capture-context';\nimport { observeBrowser } from '../../../.e2e-poc/poc/pantheon/browser-diagnostics.mjs';\nconst diagnostics=new WeakMap<object,()=>Promise<void>>();")
+replace(fixtures, 'context:async({context},use)=>{await prepareCaptureContext(context);await use(context);},', 'context:async({context},use,info)=>{await prepareCaptureContext(context);diagnostics.set(context,await observeBrowser(context,info));await use(context);},\n  page:async({page,context},use)=>{await use(page);await diagnostics.get(context)?.();},')
 print(f'Installed POC adapter in {root}; application UI and capture options unchanged')
 
 config = root / 'playwright.config.ts'
