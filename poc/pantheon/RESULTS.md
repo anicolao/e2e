@@ -55,6 +55,8 @@ The source archive is 41.7 MB, versus 16.0 GB of baseline PNGs in the original t
 
 Pantheon’s original checkout and baseline images remain available. This experiment has demonstrated the savings available from removing images; application and Git-history space recovery follow the reviewed cutover plan.
 
+The [experiment ledger](results/experiments.json) includes earlier setup failures, the cancelled stale-inventory run, and local diagnostic attempts.
+
 ## Reproduce
 
 Run framework checks with `npm run check`, `npm test`, and `npm run test:package`.

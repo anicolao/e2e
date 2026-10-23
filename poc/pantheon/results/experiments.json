@@ -1,0 +1,197 @@
+{
+  "remote": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-23T14:01:11Z",
+      "databaseId": 39966058715,
+      "headSha": "0d7de59d9c5e7dc24adc05b8bf9651056473b6bb",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39966058715",
+      "note": "Cloud seed: three tests and six captures pass."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T13:50:11Z",
+      "databaseId": 39964503883,
+      "headSha": "54ea0a5ee91d876f9d7a8c2a70310f0022e67a53",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39964503883",
+      "note": "Oracle filter matched no tests; corrected the filter before rerunning."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T13:13:19Z",
+      "databaseId": 39959408828,
+      "headSha": "0898d4f618ea5be7fc08f9e341e5ee780423351e",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39959408828",
+      "note": "Full verification: two complete passing runners; third has two UI assertion failures."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T12:23:19Z",
+      "databaseId": 39952926900,
+      "headSha": "5a7f927bde54e6edc28ec8e5f19046a658e7b9cf",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39952926900",
+      "note": "Full discovery: all captured PNGs match; two runners have UI assertion failures."
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-10-23T12:16:49Z",
+      "databaseId": 39952133728,
+      "headSha": "97f789c82b6b40e0c1d039ded082013a6668524f",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39952133728",
+      "note": "Cancelled after stale numbered PNGs produced incorrect step ordering."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-23T12:11:21Z",
+      "databaseId": 39951440547,
+      "headSha": "0848a583c734aa86f2bcd8cefc3b3046819629ed",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39951440547",
+      "note": "Representative repeatability: 540 matching captures."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T12:07:50Z",
+      "databaseId": 39951022690,
+      "headSha": "4d6ce796890a10f8155a62e6ee5362e5a56744ed",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39951022690",
+      "note": "Setup failed before usable capture evidence."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T12:06:17Z",
+      "databaseId": 39950839205,
+      "headSha": "d39ec2bc28299305605d02426293014ef1b93b32",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39950839205",
+      "note": "Setup failed before usable capture evidence."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T11:58:51Z",
+      "databaseId": 39949921622,
+      "headSha": "f7f6403dcce6bdb44f1987e05db62f58c069e117",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/39949921622",
+      "note": "Setup: requested source commit was unavailable on the remote."
+    }
+  ],
+  "local": [
+    {
+      "experiment": "macos/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T12:13:31.252Z",
+        "duration": 21501.112,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 60,
+      "matching": 60
+    },
+    {
+      "experiment": "macos/repeat-2",
+      "stats": {
+        "startTime": "2026-10-23T12:13:58.195Z",
+        "duration": 21461.790999999997,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 60,
+      "matching": 60
+    },
+    {
+      "experiment": "macos/repeat-3",
+      "stats": {
+        "startTime": "2026-10-23T12:14:25.220Z",
+        "duration": 21358.634000000002,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 60,
+      "matching": 60
+    },
+    {
+      "experiment": "macos-full",
+      "stats": {
+        "startTime": "2026-10-23T12:17:32.483Z",
+        "duration": 1096558.8730000001,
+        "expected": 362,
+        "skipped": 48,
+        "unexpected": 19,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 1344,
+      "matching": 1343
+    },
+    {
+      "experiment": "macos-inventory-repair",
+      "stats": {
+        "startTime": "2026-10-23T12:49:42.766Z",
+        "duration": 77340.16,
+        "expected": 18,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 243,
+      "matching": 243
+    },
+    {
+      "experiment": "macos-observer-discovery",
+      "stats": {
+        "startTime": "2026-10-23T12:56:06.558Z",
+        "duration": 27077.315,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 36,
+      "matching": 34
+    },
+    {
+      "experiment": "macos-original-control",
+      "stats": {
+        "startTime": "2026-10-23T12:40:34.499Z",
+        "duration": 26075.057,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "experiment": "macos-strict",
+      "stats": {
+        "startTime": "2026-10-23T13:14:25.959Z",
+        "duration": 1119638.788,
+        "expected": 380,
+        "skipped": 48,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 1441,
+      "matching": 1440
+    }
+  ]
+}
