@@ -6,3 +6,5 @@ test-results/
 poc-output/
 .e2e-poc/
 __pycache__/
+dist/
+*.tgz

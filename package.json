@@ -6,11 +6,20 @@
   "engines": {
     "node": ">=24.18.1"
   },
-  "exports": "./src/index.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./store": "./dist/store.js",
+    "./diagnose": "./dist/diagnose.js",
+    "./candidate": "./dist/candidate.js",
+    "./suite": "./dist/suite.js"
+  },
   "scripts": {
     "test": "node --test tests/*.test.ts",
     "check": "tsc --noEmit",
-    "inventory:pantheon": "node poc/pantheon/inventory.ts"
+    "inventory:pantheon": "node poc/pantheon/inventory.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "test:package": "node tests/installed-package.mjs"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
@@ -18,5 +27,17 @@
   },
   "dependencies": {
     "sharp": "0.35.5"
-  }
+  },
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anicolao/e2e.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "LICENSES.md"
+  ],
+  "types": "./dist/index.d.ts"
 }
