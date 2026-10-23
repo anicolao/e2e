@@ -38,12 +38,14 @@ for (const folder of folders.sort()) {
     seen.set(record.baseline, record.actual.blobDigest);
   }
   const expectedCaptures = representative ? selection.expectedCaptures : requiredFullCaptures;
-  for (const path of (representative || !observing ? expectedCaptures : [])) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
-  if ((representative || !observing) && seen.size !== expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
+  const required = representative || !observing ? expectedCaptures : [];
+  const missingCaptures = required.filter(path => !seen.has(path));
+  const unexpectedCaptures = required.length ? [...seen.keys()].filter(path => !required.includes(path)) : [];
+  const incompleteTests: typeof selection.expectedTests = [];
   if (representative) {
     for (const required of selection.expectedTests) {
       const found = tests.filter(t => t.title === required.title && t.project === required.project);
-      if (found.length !== 1 || found[0].status !== 'passed') throw new Error(`Required test incomplete: ${required.title} / ${required.project}`);
+      if (found.length !== 1 || found[0].status !== 'passed') incompleteTests.push(required);
     }
   }
   if (sets.length === 0) for (const row of records) {
@@ -51,7 +53,7 @@ for (const folder of folders.sort()) {
     (activeInventory[key] ??= []).push(row.baseline);
   }
   sets.push(seen);
-  results.push({ folder: relativePath(folder), captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck,
+  results.push({ folder: relativePath(folder), captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
     importedMatches: records.filter(r => r.matches).length, tests: tests.length,
     failedTests: tests.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
     declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
@@ -73,4 +75,4 @@ await writeFile(resolve(root, 'active-inventory.json'), JSON.stringify(activeInv
 await mkdir(root, { recursive: true });
 await writeFile(resolve(root, 'analysis.json'), JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify(summary, null, 2));
-if (differences.length || results.some(r => r.failedTests.length || r.importedMatches !== r.captures || r.browserStats.unexpected || r.browserStats.flaky || r.browserErrors.length || !r.suiteCheck.ok) || !sets[0].size) process.exitCode = 1;
+if (differences.length || results.some(r => r.missingCaptures.length || r.unexpectedCaptures.length || r.incompleteTests.length || r.failedTests.length || r.importedMatches !== r.captures || r.browserStats.unexpected || r.browserStats.flaky || r.browserErrors.length || !r.suiteCheck.ok) || !sets[0].size) process.exitCode = 1;
