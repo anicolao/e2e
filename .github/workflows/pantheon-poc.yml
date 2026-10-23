@@ -71,7 +71,7 @@ jobs:
           for repetition in $repetitions; do
             export E2E_POC_OUTPUT="$GITHUB_WORKSPACE/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
             mkdir -p "$E2E_POC_OUTPUT"
-            if ! bun run test:e2e > "$E2E_POC_OUTPUT/run.log" 2>&1; then
+            if ! bun run test:e2e 2>&1 | tee "$E2E_POC_OUTPUT/run.log"; then
               result=1
               tail -90 "$E2E_POC_OUTPUT/run.log"
             fi

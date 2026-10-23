@@ -31,6 +31,6 @@ GitHub loads images inside collapsed details too. Opening a README downloads the
 
 Several baseline directories contain stale numbered files alongside the current steps. Sorting filenames therefore produces an incorrect step inventory. We’re recording the current suite’s steps separately, checking each capture against its existing hash, and preparing that inventory for independent verification.
 
-The first full macOS attempt also found a motion-preference assertion failure and a real pixel difference in an observer view. These remain failures. The new diagnostic path identifies the changed pixels; the full suite has not met the adoption gate yet.
+The first full macOS attempt ran 429 cases: 362 passed, 48 were declared skips, and 19 failed. Eighteen failures came from stale-file ordering; one observer image differed by 1,027 pixels. Of the 1,344 captures recorded before failures, 1,343 match the imported bytes. The motion assertions passed within their budgets. We’re checking the image mismatch with the original verifier; the full suite has not met the adoption gate yet.
 
 Pantheon’s original checkout, verifier, and baseline PNGs remain available. History cleanup follows the POC and its separate reviewed plan.
