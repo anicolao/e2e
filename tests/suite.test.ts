@@ -23,3 +23,11 @@ test('identical leaf test names in different describe groups remain distinct', a
 test('blank IDs fail even when the plan and result agree', () => {
   assert.equal(checkSuite([{id:''}],[{id:'',status:'passed',attempts:1}]).ok,false);
 });
+
+test('moving a test in its source file preserves its required identity', async () => {
+  const { reportCases } = await import('../src/suite.ts');
+  const spec = { file: 'story.spec.ts', line: 10, column: 1, title: 'joins', tests: [{ projectName: 'phone', expectedStatus: 'passed', results: [{status:'passed'}] }] };
+  const original = reportCases({ suites: [{ title: 'story', specs: [spec] }] });
+  const moved = reportCases({ suites: [{ title: 'story', specs: [{...spec, line: 40, column: 3}] }] });
+  assert.equal(checkSuite(original.map(({id})=>({id})),moved).ok,true);
+});

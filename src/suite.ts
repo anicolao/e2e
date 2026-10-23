@@ -29,7 +29,7 @@ export function reportCases(report: { suites: unknown[] }): ReportCase[] {
   function visit(suites: any[], parents: string[] = []) {
     for (const suite of suites) {
       for (const spec of suite.specs ?? []) for (const test of spec.tests) {
-        cases.push({ id: JSON.stringify([...parents, suite.title, spec.file, spec.line, spec.column, spec.title, test.projectName]),
+        cases.push({ id: JSON.stringify([...parents, suite.title, spec.file, spec.title, test.projectName]),
           expectedStatus: test.expectedStatus, status: test.results.at(-1)?.status ?? 'missing', attempts: test.results.length });
       }
       visit(suite.suites ?? [], [...parents, suite.title]);
