@@ -1,0 +1,20 @@
+{
+  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1",
+  "stats": {
+    "startTime": "2026-10-23T12:40:34.499Z",
+    "duration": 26075.057,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "actualImages": [
+    {
+      "file": "004-observer-phone-darwin-actual.png",
+      "blobDigest": "sha256:36704dd4239e30c61f65a6fcb2195fc884e2f357800ffd8fc4ab2f651149bc02",
+      "byteLength": 445507
+    }
+  ],
+  "newVerifierActualDigest": "sha256:36704dd4239e30c61f65a6fcb2195fc884e2f357800ffd8fc4ab2f651149bc02",
+  "sameBytes": true
+}
