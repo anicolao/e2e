@@ -18,7 +18,7 @@ function inventory(file: string, title: string, project: string): StepInventory 
   let item = inventories.get(key);
   if (!item) {
     const prefix = `${dirname(relative(root, file))}/screenshots/${slug(title)}/`;
-    const expected = active?.[`${relative(root, file)}:${title}:${project}`] ?? Object.keys(manifest.images).filter(p => p.startsWith(prefix) && p.endsWith(`-${project}-${process.platform}.png`)).sort();
+    const expected = active?.[`${relative(root, file)}:${title}:${project}`]?.map(path => path.replace(/-(linux|darwin)\.png$/, `-${process.platform}.png`)) ?? Object.keys(manifest.images).filter(p => p.startsWith(prefix) && p.endsWith(`-${project}-${process.platform}.png`)).sort();
     item = new StepInventory(expected); inventories.set(key, item);
   }
   return item;
