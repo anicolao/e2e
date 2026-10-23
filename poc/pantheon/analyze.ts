@@ -7,6 +7,8 @@ const selection = JSON.parse(await readFile(new URL('./representative.json', imp
 const representative = process.env.E2E_POC_SCOPE !== 'full';
 const imported = JSON.parse(await readFile(new URL('./baselines.json', import.meta.url), 'utf8')) as { images: Record<string, unknown> };
 const fullCaptures = Object.keys(imported.images).filter(p => p.endsWith('-linux.png'));
+const observing = process.env.E2E_POC_MODE === 'observe';
+const activeInventory: Record<string, string[]> = {};
 async function scan(path: string) {
   for (const item of await readdir(path, { withFileTypes: true })) {
     if (item.isDirectory() && item.name !== 'actual') await scan(resolve(path, item.name));
@@ -25,13 +27,17 @@ for (const folder of folders.sort()) {
     seen.set(record.baseline, record.actual.blobDigest);
   }
   const expectedCaptures = representative ? selection.expectedCaptures : fullCaptures;
-  for (const path of expectedCaptures) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
-  if (seen.size !== expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
+  for (const path of (representative || !observing ? expectedCaptures : [])) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
+  if ((representative || !observing) && seen.size !== expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
   if (representative) {
     for (const required of selection.expectedTests) {
       const found = tests.filter(t => t.title === required.title && t.project === required.project);
       if (found.length !== 1 || found[0].status !== 'passed') throw new Error(`Required test incomplete: ${required.title} / ${required.project}`);
     }
+  }
+  if (sets.length === 0) for (const row of records) {
+    const key = `${row.file}:${row.title}:${row.project}`;
+    (activeInventory[key] ??= []).push(row.baseline);
   }
   sets.push(seen);
   results.push({ folder: relativePath(folder), captures: records.length,
@@ -48,8 +54,10 @@ for (let i = 1; i < sets.length; i++) {
     if (sets[0].get(key) !== sets[i].get(key)) differences.push({ run: i, baseline: key, expected: sets[0].get(key), actual: sets[i].get(key) });
   }
 }
-const summary = { runs: results, repeatable: differences.length === 0, differences };
+const unusedBaselines = representative ? [] : fullCaptures.filter(p => !sets[0].has(p));
+const summary = { runs: results, repeatable: differences.length === 0, differences, unusedBaselines };
+await writeFile(resolve(root, 'active-inventory.json'), JSON.stringify(activeInventory, null, 2) + '\n');
 await mkdir(root, { recursive: true });
 await writeFile(resolve(root, 'analysis.json'), JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify(summary, null, 2));
-if (differences.length || results.some(r => r.failedTests.length) || !sets[0].size) process.exitCode = 1;
+if (differences.length || results.some(r => r.failedTests.length || r.importedMatches !== r.captures) || !sets[0].size) process.exitCode = 1;

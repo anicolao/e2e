@@ -21,8 +21,9 @@ assert len(paths) == len(rows), (len(paths), len(rows))
 releases = json.loads(subprocess.check_output(['gh', 'api', f'repos/{repository}/releases']))
 release = next((r for r in releases if r['tag_name'] == tag), None)
 if release is None:
-    subprocess.run(['gh', 'release', 'create', tag, '--repo', repository, '--draft', '--title', 'Pantheon sanctuary walkthrough', '--notes', 'Imported original reviewed PNGs; source and hashes recorded in the catalog. Includes an original-byte backup archive.'], check=True)
-    release = next(r for r in json.loads(subprocess.check_output(['gh', 'api', f'repos/{repository}/releases'])) if r['tag_name'] == tag)
+    payload = json.dumps({'tag_name': tag, 'name': 'Pantheon sanctuary walkthrough',
+                          'body': 'Imported original reviewed PNGs, with an original-byte backup archive.', 'draft': True}).encode()
+    release = json.loads(subprocess.check_output(['gh', 'api', '--method', 'POST', f'repos/{repository}/releases', '--input', '-'], input=payload))
 existing = {a['name']: a for a in release['assets']}
 
 def upload(path):
@@ -35,6 +36,7 @@ def upload(path):
         endpoint = f"https://uploads.github.com/repos/{repository}/releases/{release['id']}/assets?name={name}"
         asset = json.loads(subprocess.check_output(['gh', 'api', '--method', 'POST', endpoint, '--header', 'Content-Type: image/png', '--input', str(local)]))
     assert asset['size'] == image['byteLength']
+    assert asset['digest'] == image['blobDigest'], 'Uploaded bytes differ from the accepted PNG'
     return image['blobDigest'], {**image, 'release': tag, 'assetId': asset['id']}
 
 # Deduplicate before uploads, including identical steps within this release.

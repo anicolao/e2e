@@ -110,9 +110,12 @@ jobs:
       - run: bun poc/pantheon/analyze.ts downloaded/evidence
         env:
           E2E_POC_SCOPE: ${{ inputs.scope }}
+          E2E_POC_MODE: ${{ inputs.mode }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: analysis
-          path: downloaded/evidence/analysis.json
+          path: |
+            downloaded/evidence/analysis.json
+            downloaded/evidence/active-inventory.json
           if-no-files-found: error

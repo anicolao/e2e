@@ -47,3 +47,10 @@ test('HTTP failure and absent catalog entries remain failures', async t => {
   await assert.rejects(store.get(image.blobDigest), /HTTP 404/);
   assert.throws(() => imageUrl(catalog, `sha256:${'0'.repeat(64)}`), /absent/);
 });
+test('concurrent readers of one image keep one verified cache object', async t => {
+  const { cache, bytes, image, catalog } = await setup(t);
+  const store = new ImageStore(catalog, { cache, maxBytes: 1024, request: async () => new Response(bytes) });
+  const copies = await Promise.all([store.get(image.blobDigest), store.get(image.blobDigest)]);
+  assert.ok(copies.every(copy => copy.equals(bytes)));
+  assert.equal((await readdir(cache)).length, 1);
+});

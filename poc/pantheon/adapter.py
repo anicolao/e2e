@@ -35,3 +35,7 @@ print(f'Installed POC adapter in {root}; application UI and capture options unch
 
 config = root / 'playwright.config.ts'
 replace(config, "reporter: [['list'], ['html', { open: 'never' }]],", "reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: process.env.E2E_POC_OUTPUT + '/playwright.json' }]],")
+
+active = framework / 'poc/pantheon/active-inventory.json'
+if active.exists():
+    shutil.copyfile(active, target / 'active-inventory.json')
