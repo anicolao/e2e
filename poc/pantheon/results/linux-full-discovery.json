@@ -1,0 +1,82 @@
+{
+  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1",
+  "run": "https://github.com/anicolao/e2e/actions/runs/39952926900",
+  "runs": [
+    {
+      "folder": "pantheon-observe-full-1/evidence/runner-1/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T12:26:56.299Z",
+        "duration": 1914284.48,
+        "expected": 379,
+        "skipped": 49,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "captures": 1444,
+      "matching": 1444,
+      "hashMs": {
+        "median": 1.3994495000115421,
+        "max": 14.417680000013206
+      },
+      "maxCapturePreparationMs": 1234.4799849999836,
+      "failures": [
+        {
+          "file": "animation-lab.spec.ts",
+          "title": "tabletop north draw reveals before opening each sorted hand slot",
+          "project": "tabletop-4k",
+          "status": "failed",
+          "message": "Error: expect(locator).toBeEnabled() failed\n\nLocator:  getByRole('button', { name: 'Trigger', exact: true })\nExpected: enabled\nReceived: disabled\nTimeout:  2000ms\n\nCall log:\n  - Expect \"toBeEnabled\" with timeout 2000ms\n  - waiting for getByRole('button', { name: 'Trigger', exact: true })\n    10 \u00d7 locator resolved to <button disabled class=\"primary svelte-ys6xf0\">Trigger</button>\n       - unexpected value \"disabled\"\n"
+        }
+      ],
+      "differences": []
+    },
+    {
+      "folder": "pantheon-observe-full-2/evidence/runner-2/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T12:27:05.345Z",
+        "duration": 1897849.609,
+        "expected": 380,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "captures": 1444,
+      "matching": 1444,
+      "hashMs": {
+        "median": 1.3953570000157924,
+        "max": 13.728124000001117
+      },
+      "maxCapturePreparationMs": 1300.6201839999994,
+      "failures": [],
+      "differences": []
+    },
+    {
+      "folder": "pantheon-observe-full-3/evidence/runner-3/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T12:27:20.125Z",
+        "duration": 1895755.436,
+        "expected": 379,
+        "skipped": 49,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "captures": 1434,
+      "matching": 1434,
+      "hashMs": {
+        "median": 1.3957760000048438,
+        "max": 17.85841599997366
+      },
+      "maxCapturePreparationMs": 1261.1790119999787,
+      "failures": [
+        {
+          "file": "008-public-table/public-table.spec.ts",
+          "title": "follow a friend from the first Temple through Worship and cleanup while reading the public table",
+          "project": "tabletop-4k",
+          "status": "failed",
+          "message": "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('.worship-overlay')\nExpected: 0\nReceived: 1\nTimeout:  2000ms\n\nCall log:\n  - Expect \"toHaveCount\" with timeout 2000ms\n  - waiting for locator('.worship-overlay')\n    4 \u00d7 locator resolved to 1 element\n      - unexpected value \"1\"\n"
+        }
+      ],
+      "differences": []
+    }
+  ]
+}

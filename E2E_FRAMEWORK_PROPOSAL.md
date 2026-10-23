@@ -95,7 +95,7 @@ GitHub’s [release limits](https://docs.github.com/en/repositories/releasing-pr
 
 A candidate records the source, starting manifest, environment, and image hashes. Before publishing, check that it is complete, reviewed, and still matches the source and baselines.
 
-Run application tests with read-only permissions. A separate publishing workflow checks candidates and uploads images using a scoped token. Deployment requires a full verification run.
+Run application tests with read-only permissions. A workflow in the baseline repository checks candidates and uploads images using its own `GITHUB_TOKEN`. It reads artifacts from the public application repository with `actions: read` and publishes with `contents: write`. Deployment requires a full verification run.
 
 ## Tools and skill
 

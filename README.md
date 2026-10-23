@@ -4,7 +4,7 @@ Byte-exact screenshot checks with baselines stored in a separate public GitHub r
 
 This is the development home for a replacement for [`@machinapractica/testing`](https://github.com/machinapractica/packages/tree/main/packages/testing). We’ll prove it with Pantheon, then bring the reusable code into [Machina Practica packages](https://github.com/machinapractica/packages) and the agent skill into [Practica](https://github.com/machinapractica/practica).
 
-Status: working prototype. Representative captures are byte-repeatable on Linux and macOS; full-suite testing is underway.
+Status: working prototype. Two independent full Linux runs pass with zero baseline downloads. [POC results](poc/pantheon/RESULTS.md) record the evidence and remaining cutover gates.
 
 - [Framework proposal](E2E_FRAMEWORK_PROPOSAL.md): architecture, verification, storage, tools, and review.
 - [Pantheon POC](E2E_POC_PANTHEON.md): experiments, acceptance checks, and storage recovery.
@@ -22,6 +22,8 @@ Requires Node 24.18.1 or later.
 npm ci --ignore-scripts
 npm run check
 npm test
+npm run build
+npm run test:package
 ```
 
 `src/index.ts` checks PNG hashes and ordered steps. `src/store.ts` fetches and verifies release images with a bounded cache. `src/diagnose.ts` builds image diffs after failed checks.

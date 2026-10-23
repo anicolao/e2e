@@ -1,36 +1,68 @@
 # Pantheon POC results
 
-The representative experiment passes: 540 Linux captures and 180 macOS captures match their original baseline PNGs byte for byte. Full-suite testing is underway; application cutover waits for its results.
+Hash verification works on Pantheon’s existing PNGs. Two independent fresh Linux runners each passed all 380 required tests and 1,444 captures, with zero baseline downloads. Other runs found UI instability that keeps the application cutover gated.
 
-## Evidence
+## Full-suite results
 
-| Check | Result |
-| --- | --- |
-| Linux repeatability | Three independent ARM64 runners × three repetitions × 60 captures; every hash matches |
-| macOS repeatability | Three repetitions × 60 captures; every hash matches |
-| Capture deadline | Representative tests pass with the existing shared 2,000 ms limit |
-| Passing verification | Manifests loaded; baseline PNGs absent from the runner checkout |
-| README review | All 24 sanctuary image references load at original dimensions, including expandable 4K |
-| Image storage | Public immutable release assets, `image/png`, hash-checked downloads |
-| Backup | Downloaded the sanctuary archive and verified all 24 references against 18 unique PNGs |
-| Failure diagnosis | Re-encoding is labeled encoding-only; a one-pixel change produces a one-pixel diff; store outages retain the actual image |
+Each Linux run collected 429 cases, including 49 declared platform skips. macOS has 48 declared skips. Capture checks keep the original shared 2,000 ms deadline, with one browser worker and zero retries.
 
-[Linux run](https://github.com/anicolao/e2e/actions/runs/39951440547) · [Linux summary](results/representative-linux.json) · [macOS hashes](results/representative-macos.json) · [diagnostic examples](results/diagnostic-examples.json) · [walkthrough](stories/enter-the-sanctuary-learn-create-and-continue-a-real-table/README.md)
+| Run | Passed / failed tests | Matching / recorded captures |
+| --- | --- | --- |
+| Linux verification, runner 1 | 380 / 0 | 1,444 / 1,444 |
+| Linux verification, runner 2 | 380 / 0 | 1,444 / 1,444 |
+| Linux verification, runner 3 | 378 / 2 | 1,437 / 1,437 |
+| macOS verification | 380 / 1 | 1,440 / 1,441 |
 
-The source is Pantheon commit `dfc7f6307b61a8885be870e841d83895811257d1`. That local commit is unavailable from its GitHub remote, so runners use a [hash-checked source archive](source.json). It includes build/test inputs and runtime bot policies. Each runner creates a fresh source checkout, installs pinned dependencies, and runs the existing UI scenarios with the experimental comparison adapter.
+[Linux run](https://github.com/anicolao/e2e/actions/runs/39959408828) · [Linux results](results/linux-full-strict.json) · [macOS results](results/macos-full-strict.json)
 
-## Storage
+Runner 3 failed while waiting for a connection and checking a rules heading’s position. Seven captures were therefore missing; the coverage check rejects that run. Its captured images have no hash differences. The earlier [Linux discovery run](results/linux-full-discovery.json) also captured only matching PNGs: 4,322 across three runners, with two UI assertion failures and one complete passing suite.
+
+The macOS failure changes 62,613 pixels in the 4K observer view’s activity log. An earlier phone observer mismatch changed 1,027 pixels; the [original pixel verifier](results/original-verifier-control.json) reproduced that failure and captured exactly the same PNG hash. These failures require investigation before macOS cutover.
+
+The source is Pantheon commit `dfc7f6307b61a8885be870e841d83895811257d1`. Runners use its [hash-checked source archive](source.json), which includes build/test inputs and runtime bot policies. Each runner installs pinned dependencies and runs the existing UI scenarios with the [comparison adapter](adapter.py).
+
+## Repeatability and diagnosis
+
+The [representative experiment](https://github.com/anicolao/e2e/actions/runs/39951440547) repeated three stories across phone, desktop, and 4K. All 540 Linux captures across three runners and all 180 macOS captures match their original PNGs byte for byte.
+
+[Linux summary](results/representative-linux.json) · [macOS hashes](results/representative-macos.json) · [diagnostic examples](results/diagnostic-examples.json)
+
+Failure tests distinguish encoding-only changes from changed pixels, detect a one-pixel edit, and retain the actual image when storage is unavailable. Framework tests also reject omitted or reordered steps, missing tests, unplanned skips, retries, stale candidate reviews, and corrupt downloads. Cache tests cover eviction and concurrent reads; package checks install the compiled package in a separate consumer.
+
+## Storage and review
 
 The original inventory has 3,056 PNGs totaling 15,974,706,904 bytes. Its 2,690 unique images total 13,939,114,896 bytes. All 1,556 local story image references resolve.
 
-The sanctuary story has 24 references to 18 unique images: 82,773,045 bytes. Its verified original-byte backup is 82,696,551 bytes. The [public catalog](https://github.com/anicolao/e2e-baselines/blob/main/catalog.json) is pinned by [storage.lock.json](storage.lock.json).
+Each platform has 1,444 current captures and 84 stale numbered PNGs. We recorded the live step order separately and verified every retained step against its existing hash. The macOS stale files total 368,230,557 bytes. [Inventory](inventory-summary.json) · [Live steps](active-inventory.json)
 
-GitHub loads images inside collapsed details too. Opening a README downloads the story’s images; passing test runs still need only hashes.
+The [sanctuary README](stories/enter-the-sanctuary-learn-create-and-continue-a-real-table/README.md) has 24 image references to 18 unique PNGs, totaling 82,773,045 bytes. Every image loads from the separate public store at its original dimensions. We downloaded its 82,696,551-byte backup and verified all references. [Catalog](https://github.com/anicolao/e2e-baselines/blob/main/catalog.json) · [Storage lock](storage.lock.json)
 
-## What the full run found
+The [cloud capture run](https://github.com/anicolao/e2e/actions/runs/39966058715) generated six Oracle PNGs totaling 34,964,389 bytes. A [workflow in the store repository](https://github.com/anicolao/e2e-baselines/actions/runs/39966439384) fetched that artifact, checked every hash, published an immutable release and backup, downloaded both for verification, and committed the catalog. Its own `GITHUB_TOKEN` supplied the permissions. Only metadata came back to this machine.
 
-Several baseline directories contain stale numbered files alongside the current steps. Sorting filenames therefore produces an incorrect step inventory. We’re recording the current suite’s steps separately, checking each capture against its existing hash, and preparing that inventory for independent verification.
+[Publication receipt](results/cloud-publication.json) · [Oracle walkthrough](stories/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/README.md)
 
-The first full macOS attempt ran 429 cases: 362 passed, 48 were declared skips, and 19 failed. Eighteen failures came from stale-file ordering; one observer image differed by 1,027 pixels. Of the 1,344 captures recorded before failures, 1,343 match the imported bytes. The motion assertions passed within their budgets. The [original-verifier control](results/original-verifier-control.json) fails on the same phone view and captures the exact same PNG hash. Both other screen sizes pass. The mismatch is independent of the new framework; the full suite has not met the adoption gate yet.
+[Publishing the same run again](https://github.com/anicolao/e2e-baselines/actions/runs/39966554865) reused all six images and uploaded none. [Reuse receipt](results/cloud-publication-reuse.json)
 
-Pantheon’s original checkout, verifier, and baseline PNGs remain available. History cleanup follows the POC and its separate reviewed plan.
+These imports retain already accepted hashes. Reviewing and publishing a changed baseline remains a rollout gate.
+
+GitHub loads images inside collapsed details too. Opening a README downloads the story’s images; passing tests still need only hashes.
+
+## Next gates
+
+The Linux capture and comparison path meets the full-suite check on two independent runners. Pantheon adoption still needs stable full-suite results, the reviewed baseline-change workflow, a complete stored corpus and backup, and application integration. The initializer and agent skill follow those checks.
+
+The source archive is 41.7 MB, versus 16.0 GB of baseline PNGs in the original tree. Full Linux runner logs show about 43 GB total filesystem use, including the runner image and build tools, with over 100 GB free. Hashing took about 1.4 ms per capture at the median and at most 18.5 ms across the strict Linux runs. A complete timing and peak-disk benchmark remains part of rollout.
+
+Pantheon’s original checkout and baseline images remain available. This experiment has demonstrated the savings available from removing images; application and Git-history space recovery follow the reviewed cutover plan.
+
+## Reproduce
+
+Run framework checks with `npm run check`, `npm test`, and `npm run test:package`.
+
+```sh
+gh workflow run pantheon-poc.yml --repo anicolao/e2e -f mode=verify -f scope=full
+gh workflow run pantheon-poc.yml --repo anicolao/e2e -f mode=seed -f scope=oracle
+gh workflow run publish-seed.yml --repo anicolao/e2e-baselines -f source_run_id=SUCCESSFUL_SEED_RUN
+```
+
+Download evidence with `gh run download RUN --repo anicolao/e2e -D poc-output/RUN`. Analyze a full run with `E2E_POC_SCOPE=full E2E_POC_MODE=verify bun poc/pantheon/analyze.ts poc-output/RUN`; failed runs retain their coverage and comparison results.

@@ -1,0 +1,68 @@
+{
+  "captures": 1444,
+  "matching": 1442,
+  "unusedBaselines": 84,
+  "unusedBytes": 368230557,
+  "differences": [
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/004-observer-phone-darwin.png",
+      "file": "tests/e2e/008-public-table/motion.integration.spec.ts",
+      "story": "follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog",
+      "title": "follow Worship and a purchase once while reconnecting without an animation backlog",
+      "stepId": "observer",
+      "caption": "Theseus sees the public gift without an extra leader blessing",
+      "assertions": [
+        "Theseus sees the public gift without an extra leader blessing"
+      ],
+      "player": "Theseus",
+      "project": "phone",
+      "elapsedMs": 38.25170799999978,
+      "actual": {
+        "blobDigest": "sha256:36704dd4239e30c61f65a6fcb2195fc884e2f357800ffd8fc4ab2f651149bc02",
+        "byteLength": 445507,
+        "width": 393,
+        "height": 852
+      },
+      "expected": {
+        "blobDigest": "sha256:8cd33a609a1c5a86642d633360a3ca379e332dd2648686ee8872270a8595a3ca",
+        "byteLength": 445564,
+        "width": 393,
+        "height": 852
+      },
+      "matches": false,
+      "mode": "observe",
+      "comparisonMs": 0.1636659999994663,
+      "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1"
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/005-interrupted-phone-darwin.png",
+      "file": "tests/e2e/008-public-table/motion.integration.spec.ts",
+      "story": "follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog",
+      "title": "follow Worship and a purchase once while reconnecting without an animation backlog",
+      "stepId": "interrupted",
+      "caption": "Theseus keeps his table when the connection is interrupted",
+      "assertions": [
+        "Theseus keeps his table when the connection is interrupted"
+      ],
+      "player": "Theseus",
+      "project": "phone",
+      "elapsedMs": 28.61504199999945,
+      "actual": {
+        "blobDigest": "sha256:7a1283a8576e4b864038c1548f0b910384fddb54e1b1de5a0406a76e98e93418",
+        "byteLength": 431970,
+        "width": 393,
+        "height": 852
+      },
+      "expected": {
+        "blobDigest": "sha256:a1ca0dbbc99775ff3323ff3dde5dd12a57cc370de93dcbf207ef194f4bdba833",
+        "byteLength": 432049,
+        "width": 393,
+        "height": 852
+      },
+      "matches": false,
+      "mode": "observe",
+      "comparisonMs": 0.1645829999997659,
+      "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1"
+    }
+  ]
+}

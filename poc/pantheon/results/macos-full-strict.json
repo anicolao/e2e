@@ -1,0 +1,64 @@
+{
+  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1",
+  "run": null,
+  "runs": [
+    {
+      "folder": ".",
+      "stats": {
+        "startTime": "2026-10-23T13:14:25.959Z",
+        "duration": 1119638.788,
+        "expected": 380,
+        "skipped": 48,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "captures": 1441,
+      "matching": 1440,
+      "hashMs": {
+        "median": 0.9554170000046724,
+        "max": 6.75641600000381
+      },
+      "maxCapturePreparationMs": 965.3166250000004,
+      "failures": [
+        {
+          "file": "008-public-table/observer-interactions.spec.ts",
+          "title": "share market browsing and the complete worship scene with an observer",
+          "project": "tabletop-4k",
+          "status": "failed",
+          "message": "Error: PNG bytes differ: tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-tabletop-4k-darwin.png; expected sha256:51465c72bc752bfc871411d4497b286e1a3b27f18dc1f3113e048772c7d1367c, actual sha256:a55565326e1b28d2e2388cb14d4fd93b0d5ae20184a136ceef32f790325135b1"
+        }
+      ],
+      "differences": [
+        {
+          "baseline": "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-tabletop-4k-darwin.png",
+          "expected": {
+            "blobDigest": "sha256:51465c72bc752bfc871411d4497b286e1a3b27f18dc1f3113e048772c7d1367c",
+            "byteLength": 13749478,
+            "width": 3840,
+            "height": 2160
+          },
+          "actual": {
+            "blobDigest": "sha256:a55565326e1b28d2e2388cb14d4fd93b0d5ae20184a136ceef32f790325135b1",
+            "byteLength": 13744487,
+            "width": 3840,
+            "height": 2160
+          }
+        }
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-tabletop-4k-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:51465c72bc752bfc871411d4497b286e1a3b27f18dc1f3113e048772c7d1367c",
+      "actual": {
+        "blobDigest": "sha256:a55565326e1b28d2e2388cb14d4fd93b0d5ae20184a136ceef32f790325135b1",
+        "byteLength": 13744487,
+        "width": 3840,
+        "height": 2160
+      },
+      "changedPixels": 62613
+    }
+  ]
+}

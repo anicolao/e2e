@@ -1,0 +1,159 @@
+{
+  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1",
+  "run": "https://github.com/anicolao/e2e/actions/runs/39959408828",
+  "runs": [
+    {
+      "folder": "pantheon-verify-full-1/evidence/runner-1/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T13:14:33.322Z",
+        "duration": 1875956.148,
+        "expected": 380,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "captures": 1444,
+      "matching": 1444,
+      "hashMs": {
+        "median": 1.3950079999995069,
+        "max": 17.265964999969583
+      },
+      "maxCapturePreparationMs": 1369.955328000011,
+      "failures": [],
+      "differences": []
+    },
+    {
+      "folder": "pantheon-verify-full-2/evidence/runner-2/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T13:14:39.831Z",
+        "duration": 2021355.318,
+        "expected": 380,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "captures": 1444,
+      "matching": 1444,
+      "hashMs": {
+        "median": 1.4140035000164062,
+        "max": 18.47622800001409
+      },
+      "maxCapturePreparationMs": 1313.4289320000098,
+      "failures": [],
+      "differences": []
+    },
+    {
+      "folder": "pantheon-verify-full-3/evidence/runner-3/repeat-1",
+      "stats": {
+        "startTime": "2026-10-23T13:14:33.165Z",
+        "duration": 1916311.404,
+        "expected": 378,
+        "skipped": 49,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "captures": 1437,
+      "matching": 1437,
+      "hashMs": {
+        "median": 1.4009990000049584,
+        "max": 15.506846999982372
+      },
+      "maxCapturePreparationMs": 1253.0358799999813,
+      "failures": [
+        {
+          "file": "006-worship/worship.integration.spec.ts",
+          "title": "four shared gods and three Devotion remain readable in the vertical coverflow",
+          "project": "desktop",
+          "status": "failed",
+          "message": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-status]')\nExpected: \"synced\"\nReceived: \"connecting\"\nTimeout:  2000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" with timeout 2000ms\n  - waiting for locator('[data-status]')\n    3 \u00d7 locator resolved to <main data-status=\"connecting\" class=\"gathering svelte-hy9bcf\">\u2026</main>\n      - unexpected value \"connecting\"\n"
+        },
+        {
+          "file": "rules-and-navigation.spec.ts",
+          "title": "rules navigation remains visible and anchors expose each section, including the last",
+          "project": "tabletop-4k",
+          "status": "failed",
+          "message": "Error: expect(received).toBeGreaterThanOrEqual(expected)\n\nExpected: >= 48.671875\nReceived:    0.453125"
+        }
+      ],
+      "differences": []
+    }
+  ],
+  "hashDifferences": [],
+  "coverageDifferences": [
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-desktop-linux.png",
+      "expected": "sha256:d4c29ca85cdb1220ffe30d745d1677e8258b3f04eeb116707aa7acbc88515c18"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/001-temple-of-poseidon-desktop-linux.png",
+      "expected": "sha256:886fe59efc26e815bc451bcd04ec0b7e2652ee720210ffceea715f7caaa290d4"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/002-harbor-pilot-desktop-linux.png",
+      "expected": "sha256:ac13a240cf21c63b0dd33625cf7d3e671c3a895f4f4243333d21c48df007df72"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/003-sea-trade-desktop-linux.png",
+      "expected": "sha256:c46a6d30d3d45efa8497ea17de9ec4d9ccbdb51ed4a2aad157e23fd1f16ec0d4"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/004-three-devotion-desktop-linux.png",
+      "expected": "sha256:b42e6981c72ac4fd73182ecaf7ef913a5bee0f3ea4b8f7c2e22a361d5b1e7d81"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/005-return-desktop-linux.png",
+      "expected": "sha256:266fe51afb844eaf7caa9efc203d62d800d76c4b97656543efeaadf7be78b97c"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/006-another-god-desktop-linux.png",
+      "expected": "sha256:5f5a04cf13eb23f9dfe644c1b0630c44d7f5102e60a6f8562b2e0f7561b748c2"
+    }
+  ],
+  "coverage": [
+    {
+      "folder": "pantheon-verify-full-1/evidence/runner-1/repeat-1",
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      }
+    },
+    {
+      "folder": "pantheon-verify-full-2/evidence/runner-2/repeat-1",
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      }
+    },
+    {
+      "folder": "pantheon-verify-full-3/evidence/runner-3/repeat-1",
+      "missingCaptures": [
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-desktop-linux.png",
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/001-temple-of-poseidon-desktop-linux.png",
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/002-harbor-pilot-desktop-linux.png",
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/003-sea-trade-desktop-linux.png",
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/004-three-devotion-desktop-linux.png",
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/005-return-desktop-linux.png",
+        "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/006-another-god-desktop-linux.png"
+      ],
+      "unexpectedCaptures": [],
+      "suiteCheck": {
+        "ok": false,
+        "errors": [
+          "failed: [\"006-worship/worship.integration.spec.ts\",\"006-worship/worship.integration.spec.ts\",159,1,\"four shared gods and three Devotion remain readable in the vertical coverflow\",\"desktop\"]",
+          "failed: [\"rules-and-navigation.spec.ts\",\"rules-and-navigation.spec.ts\",23,1,\"rules navigation remains visible and anchors expose each section, including the last\",\"tabletop-4k\"]"
+        ]
+      }
+    }
+  ]
+}
