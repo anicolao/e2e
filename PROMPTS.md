@@ -67,3 +67,19 @@ OK let's proceed with the PoC and prove out the framework.
 Prompt 9 produced the framework and POC work beginning at [`f7f6403`](https://github.com/anicolao/e2e/commit/f7f6403), including [the independent representative run](https://github.com/anicolao/e2e/actions/runs/39951440547) and [the public image store](https://github.com/anicolao/e2e-baselines). Later commits and experiment results continue under that prompt.
 
 The full-suite results and cloud publication proof are recorded in [`394204c`](https://github.com/anicolao/e2e/commit/394204c).
+
+## 10
+
+Recorded 2026-10-23 from Andrew Nicolao. Result: next-step recommendation; implementation continues under prompt 11.
+
+```text
+OK with this framework seeming to work what do you propose is the next step?
+```
+
+## 11
+
+Recorded 2026-10-23 from Andrew Nicolao. Result: diagnosing and fixing Pantheon E2E failures; commit references follow.
+
+```text
+OK do it
+```

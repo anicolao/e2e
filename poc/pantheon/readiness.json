@@ -1,0 +1,123 @@
+{
+  "expectedCaptures": [
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/001-temple-of-poseidon-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/002-harbor-pilot-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/003-sea-trade-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/004-three-devotion-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/005-return-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/006-another-god-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/000-table-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/001-wealth-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/002-altar-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/003-gift-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/004-observer-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/005-interrupted-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/006-treasures-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/007-played-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/008-reconnected-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/009-purchase-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/010-live-again-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/011-reduced-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/001-focus-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/002-choice-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/003-returned-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/001-temple-of-poseidon-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/002-harbor-pilot-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/003-sea-trade-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/004-three-devotion-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/005-return-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/006-another-god-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/000-table-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/001-wealth-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/002-altar-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/003-gift-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/004-observer-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/005-interrupted-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/006-treasures-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/007-played-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/008-reconnected-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/009-purchase-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/010-live-again-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/011-reduced-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/001-focus-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/002-choice-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/003-returned-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/001-temple-of-poseidon-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/002-harbor-pilot-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/003-sea-trade-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/004-three-devotion-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/005-return-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/006-another-god-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/000-table-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/001-wealth-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/002-altar-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/003-gift-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/004-observer-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/005-interrupted-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/006-treasures-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/007-played-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/008-reconnected-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/009-purchase-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/010-live-again-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/011-reduced-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/001-focus-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/002-choice-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/003-returned-tabletop-4k-linux.png"
+  ],
+  "expectedTests": [
+    {
+      "title": "four shared gods and three Devotion remain readable in the vertical coverflow",
+      "project": "phone"
+    },
+    {
+      "title": "share market browsing and the complete worship scene with an observer",
+      "project": "phone"
+    },
+    {
+      "title": "follow Worship and a purchase once while reconnecting without an animation backlog",
+      "project": "phone"
+    },
+    {
+      "title": "rules navigation remains visible and anchors expose each section, including the last",
+      "project": "phone"
+    },
+    {
+      "title": "four shared gods and three Devotion remain readable in the vertical coverflow",
+      "project": "desktop"
+    },
+    {
+      "title": "share market browsing and the complete worship scene with an observer",
+      "project": "desktop"
+    },
+    {
+      "title": "follow Worship and a purchase once while reconnecting without an animation backlog",
+      "project": "desktop"
+    },
+    {
+      "title": "rules navigation remains visible and anchors expose each section, including the last",
+      "project": "desktop"
+    },
+    {
+      "title": "four shared gods and three Devotion remain readable in the vertical coverflow",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "share market browsing and the complete worship scene with an observer",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "follow Worship and a purchase once while reconnecting without an animation backlog",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "rules navigation remains visible and anchors expose each section, including the last",
+      "project": "tabletop-4k"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ target = root / '.e2e-poc'
 shutil.copytree(framework / 'src', target / 'src', dirs_exist_ok=True)
 (target / 'poc/pantheon').mkdir(parents=True, exist_ok=True)
 shutil.copyfile(framework / 'poc/pantheon/runtime.ts', target / 'poc/pantheon/runtime.ts')
+shutil.copyfile(framework / 'poc/pantheon/browser-diagnostics.mjs', target / 'poc/pantheon/browser-diagnostics.mjs')
 shutil.copyfile(framework / 'poc/pantheon/baselines.json', target / 'baselines.json')
 
 def replace(path, old, new):
@@ -31,6 +32,8 @@ helper.write_text(text)
 fixtures = root / 'tests/e2e/helpers/fixtures.ts'
 replace(fixtures, "import { finishStory } from './test-step-helper';", "import { recordTest } from '../../../.e2e-poc/poc/pantheon/runtime';")
 replace(fixtures, 'await use();finishStory(info);', 'await use();recordTest(info);')
+replace(fixtures, "import { prepareCaptureContext } from './capture-context';", "import { prepareCaptureContext } from './capture-context';\nimport { observeBrowser } from '../../../.e2e-poc/poc/pantheon/browser-diagnostics.mjs';")
+replace(fixtures, 'context:async({context},use)=>{await prepareCaptureContext(context);await use(context);},', 'context:async({context},use,info)=>{await prepareCaptureContext(context);const diagnose=await observeBrowser(context,info);await use(context);await diagnose();},')
 print(f'Installed POC adapter in {root}; application UI and capture options unchanged')
 
 config = root / 'playwright.config.ts'

@@ -4,8 +4,8 @@ import { resolve, dirname } from 'node:path';
 
 const root = resolve(process.argv[2] ?? 'poc-output');
 const folders: string[] = [];
-const selection = JSON.parse(await readFile(new URL('./representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string}[] };
 const scope = process.env.E2E_POC_SCOPE ?? 'representative';
+const selection = JSON.parse(await readFile(new URL(scope === 'readiness' ? './readiness.json' : './representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string}[] };
 const representative = scope !== 'full';
 if (scope === 'oracle') {
   selection.expectedCaptures = selection.expectedCaptures.filter(path => path.includes('/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/'));
@@ -44,7 +44,7 @@ for (const folder of folders.sort()) {
   const incompleteTests: typeof selection.expectedTests = [];
   if (representative) {
     for (const required of selection.expectedTests) {
-      const found = tests.filter(t => t.title === required.title && t.project === required.project);
+      const found = reportCases(browserReport).filter(t => { const id = JSON.parse(t.id); return id.at(-2) === required.title && id.at(-1) === required.project; });
       if (found.length !== 1 || found[0].status !== 'passed') incompleteTests.push(required);
     }
   }
