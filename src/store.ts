@@ -78,3 +78,20 @@ export class ImageStore {
   }
   async audit(digests: readonly Digest[]): Promise<void> { for (const digest of digests) await this.get(digest); }
 }
+
+export type StorageLock = { repository: string; revision: string; catalogDigest: Digest };
+/** Fetch a specific public catalog revision and check its recorded bytes. */
+export async function loadCatalog(lock: StorageLock, request: typeof fetch = fetch): Promise<Catalog> {
+  if (!/^[\w.-]+\/[\w.-]+$/.test(lock.repository) || !/^[a-f0-9]{40}$/.test(lock.revision) || !/^sha256:[a-f0-9]{64}$/.test(lock.catalogDigest)) {
+    throw new Error('Invalid storage lock');
+  }
+  const response = await request(`https://raw.githubusercontent.com/${lock.repository}/${lock.revision}/catalog.json`, { signal: AbortSignal.timeout(30_000) });
+  if (!response.ok) throw new Error(`Catalog download failed: HTTP ${response.status}`);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  const { createHash } = await import('node:crypto');
+  if (`sha256:${createHash('sha256').update(bytes).digest('hex')}` !== lock.catalogDigest) throw new Error('Catalog integrity failed');
+  const catalog = JSON.parse(bytes.toString('utf8')) as Catalog;
+  if (catalog.repository !== lock.repository || catalog.schemaVersion !== 1) throw new Error('Catalog identity differs from storage lock');
+  for (const digest of Object.keys(catalog.images) as Digest[]) imageUrl(catalog, digest);
+  return catalog;
+}

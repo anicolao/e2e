@@ -54,3 +54,13 @@ test('concurrent readers of one image keep one verified cache object', async t =
   assert.ok(copies.every(copy => copy.equals(bytes)));
   assert.equal((await readdir(cache)).length, 1);
 });
+test('catalog lookup pins both its commit and original bytes', async t => {
+  const { catalog } = await setup(t);
+  const { createHash } = await import('node:crypto');
+  const { loadCatalog } = await import('../src/store.ts');
+  const body = JSON.stringify(catalog);
+  const lock = { repository: catalog.repository, revision: 'a'.repeat(40), catalogDigest: `sha256:${createHash('sha256').update(body).digest('hex')}` as const };
+  assert.deepEqual(await loadCatalog(lock, async url => { assert.ok(String(url).includes(lock.revision)); return new Response(body); }), catalog);
+  await assert.rejects(loadCatalog(lock, async () => new Response('{}')), /integrity/);
+  await assert.rejects(loadCatalog({ ...lock, revision: 'main' }), /Invalid storage lock/);
+});

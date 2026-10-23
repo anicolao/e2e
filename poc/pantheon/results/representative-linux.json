@@ -1,0 +1,78 @@
+{
+  "runs": [
+    {
+      "folder": "runner-1/repeat-1",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 921.4735019999989
+    },
+    {
+      "folder": "runner-1/repeat-2",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 927.512510999999
+    },
+    {
+      "folder": "runner-1/repeat-3",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 979.2047570000013
+    },
+    {
+      "folder": "runner-2/repeat-1",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 877.1956360000004
+    },
+    {
+      "folder": "runner-2/repeat-2",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 922.1652259999992
+    },
+    {
+      "folder": "runner-2/repeat-3",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 956.7657889999991
+    },
+    {
+      "folder": "runner-3/repeat-1",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 915.0447450000011
+    },
+    {
+      "folder": "runner-3/repeat-2",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 910.1915250000002
+    },
+    {
+      "folder": "runner-3/repeat-3",
+      "captures": 60,
+      "importedMatches": 60,
+      "tests": 9,
+      "failedTests": [],
+      "maxCapturePreparationMs": 882.2732099999994
+    }
+  ],
+  "repeatable": true,
+  "differences": []
+}

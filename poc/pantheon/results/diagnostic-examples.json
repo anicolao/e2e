@@ -1,0 +1,42 @@
+{
+  "expected": {
+    "blobDigest": "sha256:944c46547bb181180761b0bf70c3740a79f15cb5e8b790abc512dc48d6ebe090",
+    "byteLength": 92615,
+    "width": 393,
+    "height": 852
+  },
+  "downloadedBytes": 0,
+  "encodingReport": {
+    "classification": "encoding-only",
+    "expectedDigest": "sha256:944c46547bb181180761b0bf70c3740a79f15cb5e8b790abc512dc48d6ebe090",
+    "actual": {
+      "blobDigest": "sha256:d5b4300fd3fc08428f20c6706dba1079fbc9922ed6687dc2d302b105d88b4813",
+      "byteLength": 48739,
+      "width": 393,
+      "height": 852
+    },
+    "changedPixels": 0
+  },
+  "visibleReport": {
+    "classification": "pixels-changed",
+    "expectedDigest": "sha256:944c46547bb181180761b0bf70c3740a79f15cb5e8b790abc512dc48d6ebe090",
+    "actual": {
+      "blobDigest": "sha256:3bf89c9da686da7193988867818466c440ece48a80becb65a6dbd1eb145772c6",
+      "byteLength": 66188,
+      "width": 393,
+      "height": 852
+    },
+    "changedPixels": 1
+  },
+  "offlineReport": {
+    "classification": "diagnostic-error",
+    "expectedDigest": "sha256:944c46547bb181180761b0bf70c3740a79f15cb5e8b790abc512dc48d6ebe090",
+    "actual": {
+      "blobDigest": "sha256:3bf89c9da686da7193988867818466c440ece48a80becb65a6dbd1eb145772c6",
+      "byteLength": 66188,
+      "width": 393,
+      "height": 852
+    },
+    "error": "Error: Simulated store outage"
+  }
+}

@@ -1,0 +1,26 @@
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import sharp from 'sharp';
+import { identifyPng, comparePng } from '../../src/index.ts';
+import { ImageStore, type Catalog } from '../../src/store.ts';
+import { diagnose } from '../../src/diagnose.ts';
+
+const output = resolve('poc-output/diagnostics');
+await mkdir(output, { recursive: true });
+const catalog = JSON.parse(await readFile(new URL('./catalog.json', import.meta.url), 'utf8')) as Catalog;
+const entry = Object.values(catalog.images).find(i => i.width === 393 && i.height === 852 && i.byteLength === 92615)!;
+const store = new ImageStore(catalog, { cache: resolve('.e2e-cache'), maxBytes: 4 * 1024 * 1024 });
+const original = await store.get(entry.blobDigest);
+const encoding = await sharp(original).png({ compressionLevel: 9 }).toBuffer();
+if (comparePng(encoding, entry).ok) throw new Error('Encoding fault did not change PNG bytes');
+const encodingReport = await diagnose(encoding, entry.blobDigest, store, resolve(output, 'encoding'));
+const raw = await sharp(original).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+raw.data[0] ^= 255;
+const visible = await sharp(raw.data, { raw: { width: raw.info.width, height: raw.info.height, channels: 4 } }).png().toBuffer();
+const visibleReport = await diagnose(visible, entry.blobDigest, store, resolve(output, 'one-pixel'));
+const offline = new ImageStore(catalog, { cache: resolve(output, 'empty-cache'), maxBytes: 0, request: async () => { throw new Error('Simulated store outage'); } });
+const offlineReport = await diagnose(visible, entry.blobDigest, offline, resolve(output, 'offline'));
+const result = { expected: identifyPng(original), downloadedBytes: store.downloadedBytes, encodingReport, visibleReport, offlineReport };
+if (encodingReport.classification !== 'encoding-only' || visibleReport.changedPixels !== 1 || offlineReport.classification !== 'diagnostic-error') throw new Error('Unexpected diagnostic result');
+await writeFile(resolve(output, 'summary.json'), JSON.stringify(result, null, 2) + '\n');
+console.log(JSON.stringify(result, null, 2));

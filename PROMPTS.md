@@ -61,3 +61,7 @@ Recorded 2026-10-23 from Andrew Nicolao. Result: framework implementation and Pa
 ```text
 OK let's proceed with the PoC and prove out the framework.
 ```
+
+## Implementation references
+
+Prompt 9 produced the framework and POC work beginning at [`f7f6403`](https://github.com/anicolao/e2e/commit/f7f6403), including [the independent representative run](https://github.com/anicolao/e2e/actions/runs/39951440547) and [the public image store](https://github.com/anicolao/e2e-baselines). Later commits and experiment results continue under that prompt.
