@@ -32,3 +32,6 @@ fixtures = root / 'tests/e2e/helpers/fixtures.ts'
 replace(fixtures, "import { finishStory } from './test-step-helper';", "import { recordTest } from '../../../.e2e-poc/poc/pantheon/runtime';")
 replace(fixtures, 'await use();finishStory(info);', 'await use();recordTest(info);')
 print(f'Installed POC adapter in {root}; application UI and capture options unchanged')
+
+config = root / 'playwright.config.ts'
+replace(config, "reporter: [['list'], ['html', { open: 'never' }]],", "reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: process.env.E2E_POC_OUTPUT + '/playwright.json' }]],")

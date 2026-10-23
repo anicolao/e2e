@@ -26,7 +26,7 @@ for (const folder of folders.sort()) {
     failedTests: tests.filter(t => t.status !== 'passed'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
 }
 function relativePath(path: string) { return path.slice(root.length + 1); }
-if (sets.length < 3) throw new Error(`Need at least three runs, found ${sets.length}`);
+if (sets.length !== 9) throw new Error(`Need all nine repetitions (three independent runners), found ${sets.length}`);
 const differences = [];
 for (let i = 1; i < sets.length; i++) {
   for (const key of new Set([...sets[0].keys(), ...sets[i].keys()])) {
