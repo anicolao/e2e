@@ -118,6 +118,18 @@
     {
       "title": "rules navigation remains visible and anchors expose each section, including the last",
       "project": "tabletop-4k"
+    },
+    {
+      "title": "wait for the public market update even when the observer already centers that pile",
+      "project": "phone"
+    },
+    {
+      "title": "wait for the public market update even when the observer already centers that pile",
+      "project": "desktop"
+    },
+    {
+      "title": "wait for the public market update even when the observer already centers that pile",
+      "project": "tabletop-4k"
     }
   ]
 }

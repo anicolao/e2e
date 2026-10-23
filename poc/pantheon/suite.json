@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1",
+  "sourceCommit": "43149996094324e2c46b765eab91a66847297fab",
   "platforms": {
     "linux": [
       {
@@ -1338,6 +1338,15 @@
       },
       {
         "id": "[\"tabletop.spec.ts\",\"tabletop.spec.ts\",\"tabletop east harvest-feast stages cards centrally before confirmation\",\"tabletop-4k\"]"
+      },
+      {
+        "id": "[\"008-public-table/observer-interactions.spec.ts\",\"008-public-table/observer-interactions.spec.ts\",\"wait for the public market update even when the observer already centers that pile\",\"phone\"]"
+      },
+      {
+        "id": "[\"008-public-table/observer-interactions.spec.ts\",\"008-public-table/observer-interactions.spec.ts\",\"wait for the public market update even when the observer already centers that pile\",\"desktop\"]"
+      },
+      {
+        "id": "[\"008-public-table/observer-interactions.spec.ts\",\"008-public-table/observer-interactions.spec.ts\",\"wait for the public market update even when the observer already centers that pile\",\"tabletop-4k\"]"
       }
     ],
     "darwin": [
@@ -2675,6 +2684,15 @@
       },
       {
         "id": "[\"tabletop.spec.ts\",\"tabletop.spec.ts\",\"tabletop east harvest-feast stages cards centrally before confirmation\",\"tabletop-4k\"]"
+      },
+      {
+        "id": "[\"008-public-table/observer-interactions.spec.ts\",\"008-public-table/observer-interactions.spec.ts\",\"wait for the public market update even when the observer already centers that pile\",\"phone\"]"
+      },
+      {
+        "id": "[\"008-public-table/observer-interactions.spec.ts\",\"008-public-table/observer-interactions.spec.ts\",\"wait for the public market update even when the observer already centers that pile\",\"desktop\"]"
+      },
+      {
+        "id": "[\"008-public-table/observer-interactions.spec.ts\",\"008-public-table/observer-interactions.spec.ts\",\"wait for the public market update even when the observer already centers that pile\",\"tabletop-4k\"]"
       }
     ]
   }

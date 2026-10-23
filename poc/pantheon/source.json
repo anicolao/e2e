@@ -1,9 +1,9 @@
 {
   "repository": "anicolao/pantheon",
-  "commit": "dfc7f6307b61a8885be870e841d83895811257d1",
-  "archiveSha256": "b34b7d08bb6c8b7cf89779b270995bfd805c65c24aefe79b38927ecee5dc0e7d",
-  "archiveBytes": 41687178,
-  "url": "https://github.com/anicolao/e2e-baselines/releases/download/poc-source-003/pantheon-runtime-source.tar.gz",
+  "commit": "43149996094324e2c46b765eab91a66847297fab",
+  "archiveSha256": "e5044938dc844ab35b42cdf936f3e43c76d2243c4cc751c14eb7498c02325e5b",
+  "archiveBytes": 41687389,
+  "url": "https://github.com/anicolao/e2e-baselines/releases/download/poc-source-004/pantheon-runtime-source.tar.gz",
   "excludedDirectories": [
     "balance-results",
     "docs",
