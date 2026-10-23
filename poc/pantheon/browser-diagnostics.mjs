@@ -6,7 +6,8 @@ export async function observeBrowser(context, info) {
   const pending = new Map();
   const cleanUrl = value => { const url = new URL(value); return url.origin + url.pathname; };
   context.on('request', request => {
-    const row = { url: cleanUrl(request.url()), type: request.resourceType(), startedMs: performance.now() };
+    const row = { url: cleanUrl(request.url()), type: request.resourceType(), startedMs: performance.now(), startedUtc: new Date().toISOString() };
+    if (row.url.endsWith('/documents:batchGet')) { try { row.documentCount = request.postDataJSON()?.documents?.length; } catch {} }
     if (requests.length === 2000) requests.shift();
     requests.push(row); pending.set(request, row);
   });

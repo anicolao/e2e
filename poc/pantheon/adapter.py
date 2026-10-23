@@ -50,7 +50,6 @@ replace(fixtures, "import { finishStory } from './test-step-helper';", "import {
 replace(fixtures, 'await use();finishStory(info);', 'await use();recordTest(info);')
 replace(fixtures, "import { prepareCaptureContext } from './capture-context';", "import { prepareCaptureContext } from './capture-context';\nimport { observeBrowser } from '../../../.e2e-poc/poc/pantheon/browser-diagnostics.mjs';\nconst diagnostics=new WeakMap<object,()=>Promise<void>>();")
 replace(fixtures, 'context:async({context},use)=>{await prepareCaptureContext(context);await use(context);},', 'context:async({context},use,info)=>{await prepareCaptureContext(context);diagnostics.set(context,await observeBrowser(context,info));await use(context);},\n  page:async({page,context},use)=>{await use(page);await diagnostics.get(context)?.();},')
-print(f'Installed POC adapter in {root}; application UI and capture options unchanged')
 
 config = root / 'playwright.config.ts'
 replace(config, "reporter: [['list'], ['html', { open: 'never' }]],", "reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: process.env.E2E_POC_OUTPUT + '/playwright.json' }]],")
@@ -65,3 +64,4 @@ replace(page, 'const connected = await connectFirebase();', "performance.mark('c
 replace(page, 'const room = await inspectRoom(connected.db, roomId);', "performance.mark('connect:room:start');const room = await inspectRoom(connected.db, roomId);performance.mark('connect:room:ready');")
 repository = root / 'src/lib/backend/setup-repository.ts'
 replace(repository, 'const state = replaySetup(events);\n      if (!snapshot.metadata.fromCache)', "performance.mark('connect:replay:start');const state = replaySetup(events);performance.mark('connect:replay:ready');\n      if (!snapshot.metadata.fromCache)")
+print(f'Installed POC adapter in {root}; application UI and capture options unchanged')

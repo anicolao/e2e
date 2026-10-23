@@ -8,8 +8,12 @@ on:
         default: observe
       scope:
         type: choice
-        options: [representative, full, oracle, readiness]
+        options: [representative, full, oracle, readiness, regressions]
         default: representative
+      firestore_version:
+        type: choice
+        options: ['1.22.0', '1.21.0']
+        default: '1.22.0'
 permissions:
   contents: read
 jobs:
@@ -46,6 +50,10 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
+      - name: Pin the selected Firestore emulator
+        env:
+          VERSION: ${{ inputs.firestore_version || '1.22.0' }}
+        run: python3 framework/poc/pantheon/prepare-emulator.py "$VERSION" "$GITHUB_WORKSPACE/emulators"
       - name: Install and check original policy
         working-directory: pantheon
         run: |
@@ -66,9 +74,13 @@ jobs:
           PUBLIC_BASE_PATH: /pantheon/prtest
           E2E_POC_MODE: ${{ inputs.mode }}
           POC_SCOPE: ${{ inputs.scope }}
+          FIRESTORE_EMULATOR_VERSION: ${{ inputs.firestore_version || '1.22.0' }}
+          FIREBASE_EMULATORS_PATH: ${{ github.workspace }}/emulators
         run: |
           if [[ "$POC_SCOPE" == representative ]]; then
             export E2E_STORY_FILTER='gather two players, share an invitation|enter the sanctuary, learn|Oracle draw reveals'
+          elif [[ "$POC_SCOPE" == regressions ]]; then
+            export E2E_STORY_FILTER='Demeter combines the costs of two offerings|tabletop (south|west|north|east) (seed-keeper|harvest-feast) stages'
           elif [[ "$POC_SCOPE" == readiness ]]; then
             export E2E_STORY_FILTER='share market browsing and the complete worship scene|follow Worship and a purchase once|four shared gods and three Devotion|rules navigation remains|wait for the public market update'
           elif [[ "$POC_SCOPE" == oracle ]]; then
@@ -80,11 +92,13 @@ jobs:
           for repetition in $repetitions; do
             export E2E_POC_OUTPUT="$GITHUB_WORKSPACE/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
             mkdir -p "$E2E_POC_OUTPUT"
+            export JAVA_TOOL_OPTIONS="-Xlog:gc*:file=$E2E_POC_OUTPUT/java-gc.log:time,uptime,tags:filecount=2,filesize=1M"
             bunx playwright test --list --reporter=json > "$E2E_POC_OUTPUT/collected.json"
             if ! bun run test:e2e 2>&1 | tee "$E2E_POC_OUTPUT/run.log"; then
               result=1
               tail -90 "$E2E_POC_OUTPUT/run.log"
             fi
+            if [[ -f firestore-debug.log ]]; then cp firestore-debug.log "$E2E_POC_OUTPUT/firestore-debug.log"; fi
             du -sh "$GITHUB_WORKSPACE/evidence" .git tests/e2e
             df -h .
           done

@@ -5,7 +5,7 @@ import { resolve, dirname } from 'node:path';
 const root = resolve(process.argv[2] ?? 'poc-output');
 const folders: string[] = [];
 const scope = process.env.E2E_POC_SCOPE ?? 'representative';
-const selection = JSON.parse(await readFile(new URL(scope === 'readiness' ? './readiness.json' : './representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string}[] };
+const selection = JSON.parse(await readFile(new URL(scope === 'readiness' ? './readiness.json' : scope === 'regressions' ? './regressions.json' : './representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string;excluded?:boolean}[] };
 const representative = scope !== 'full';
 if (scope === 'oracle') {
   selection.expectedCaptures = selection.expectedCaptures.filter(path => path.includes('/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/'));
@@ -45,7 +45,7 @@ for (const folder of folders.sort()) {
   if (representative) {
     for (const required of selection.expectedTests) {
       const found = reportCases(browserReport).filter(t => { const id = JSON.parse(t.id); return id.at(-2) === required.title && id.at(-1) === required.project; });
-      if (found.length !== 1 || found[0].status !== 'passed') incompleteTests.push(required);
+      if (found.length !== 1 || !(found[0].status === 'passed' || required.excluded && found[0].status === 'skipped')) incompleteTests.push(required);
     }
   }
   if (sets.length === 0) for (const row of records) {
@@ -53,7 +53,7 @@ for (const folder of folders.sort()) {
     (activeInventory[key] ??= []).push(row.baseline);
   }
   sets.push(seen);
-  results.push({ folder: relativePath(folder), captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
+  results.push({ folder: relativePath(folder), firestoreVersion: records[0]?.firestoreVersion, captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
     importedMatches: records.filter(r => r.matches).length, tests: tests.length,
     failedTests: tests.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
     declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });

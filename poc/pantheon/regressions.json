@@ -1,0 +1,168 @@
+{
+  "expectedTests": [
+    {
+      "title": "Demeter combines the costs of two offerings to gain a Territory",
+      "project": "phone"
+    },
+    {
+      "title": "Demeter combines the costs of two offerings to gain a Territory",
+      "project": "desktop"
+    },
+    {
+      "title": "Demeter combines the costs of two offerings to gain a Territory",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+      "project": "phone",
+      "excluded": true
+    },
+    {
+      "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+      "project": "desktop"
+    },
+    {
+      "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+      "project": "tabletop-4k"
+    }
+  ],
+  "expectedCaptures": [
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/000-opening-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/001-temple-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/002-grove-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/003-grove-selected-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/004-treasures-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/005-drachma-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/006-funded-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/007-favored-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/008-offerings-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/009-selected-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/010-combined-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/011-territory-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/012-polis-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/013-gift-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/000-opening-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/001-temple-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/002-grove-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/003-grove-selected-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/004-treasures-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/005-drachma-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/006-funded-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/007-favored-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/008-offerings-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/009-selected-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/010-combined-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/011-territory-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/012-polis-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/013-gift-desktop-linux.png",
+    "tests/e2e/screenshots/tabletop-south-seed-keeper-stages-cards-centrally-before-confirmation/000-staged-desktop-linux.png",
+    "tests/e2e/screenshots/tabletop-south-harvest-feast-stages-cards-centrally-before-confirmation/000-staged-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/000-opening-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/001-temple-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/002-grove-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/003-grove-selected-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/004-treasures-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/005-drachma-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/006-funded-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/007-favored-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/008-offerings-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/009-selected-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/010-combined-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/011-territory-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/012-polis-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/013-gift-tabletop-4k-linux.png",
+    "tests/e2e/screenshots/tabletop-south-seed-keeper-stages-cards-centrally-before-confirmation/000-staged-tabletop-4k-linux.png",
+    "tests/e2e/screenshots/tabletop-south-harvest-feast-stages-cards-centrally-before-confirmation/000-staged-tabletop-4k-linux.png"
+  ]
+}
