@@ -4,7 +4,7 @@ Byte-exact screenshot checks with baselines stored in a separate public GitHub r
 
 This is the development home for a replacement for [`@machinapractica/testing`](https://github.com/machinapractica/packages/tree/main/packages/testing). We’ll prove it with Pantheon, then bring the reusable code into [Machina Practica packages](https://github.com/machinapractica/packages) and the agent skill into [Practica](https://github.com/machinapractica/practica).
 
-Status: agreed design; implementation starts with the Pantheon proof of concept.
+Status: working prototype. Representative captures are byte-repeatable on Linux and macOS; full-suite testing is underway.
 
 - [Framework proposal](E2E_FRAMEWORK_PROPOSAL.md): architecture, verification, storage, tools, and review.
 - [Pantheon POC](E2E_POC_PANTHEON.md): experiments, acceptance checks, and storage recovery.
@@ -13,3 +13,17 @@ Status: agreed design; implementation starts with the Pantheon proof of concept.
 Follow [AGENTS.md](AGENTS.md) and record development prompts in [PROMPTS.md](PROMPTS.md).
 
 Licensed under [GPL-3.0-only](LICENSE). See [LICENSES.md](LICENSES.md).
+
+## Try the prototype
+
+Requires Node 24.18.1 or later.
+
+```sh
+npm ci --ignore-scripts
+npm run check
+npm test
+```
+
+`src/index.ts` checks PNG hashes and ordered steps. `src/store.ts` fetches and verifies release images with a bounded cache. `src/diagnose.ts` builds image diffs after failed checks.
+
+[Representative runner results](https://github.com/anicolao/e2e/actions/runs/39951440547) cover 540 Linux captures across three runners. [Read a complete story](poc/pantheon/stories/enter-the-sanctuary-learn-create-and-continue-a-real-table/README.md) with images served by [the public baseline store](https://github.com/anicolao/e2e-baselines).

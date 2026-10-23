@@ -7,6 +7,8 @@ const selection = JSON.parse(await readFile(new URL('./representative.json', imp
 const representative = process.env.E2E_POC_SCOPE !== 'full';
 const imported = JSON.parse(await readFile(new URL('./baselines.json', import.meta.url), 'utf8')) as { images: Record<string, unknown> };
 const fullCaptures = Object.keys(imported.images).filter(p => p.endsWith('-linux.png'));
+const acceptedInventory = await readFile(new URL('./active-inventory.json', import.meta.url), 'utf8').then(text => JSON.parse(text) as Record<string, string[]>, error => { if (error.code === 'ENOENT') return undefined; throw error; });
+const requiredFullCaptures = acceptedInventory ? Object.values(acceptedInventory).flat() : fullCaptures;
 const observing = process.env.E2E_POC_MODE === 'observe';
 const activeInventory: Record<string, string[]> = {};
 async function scan(path: string) {
@@ -20,13 +22,14 @@ const sets: Map<string, string>[] = [];
 const results = [];
 for (const folder of folders.sort()) {
   const records = (await readFile(resolve(folder, 'captures.jsonl'), 'utf8')).trim().split('\n').map(l => JSON.parse(l));
+  const browserReport = JSON.parse(await readFile(resolve(folder, 'playwright.json'), 'utf8'));
   const tests = (await readFile(resolve(folder, 'tests.jsonl'), 'utf8')).trim().split('\n').map(l => JSON.parse(l));
   const seen = new Map<string, string>();
   for (const record of records) {
     if (seen.has(record.baseline)) throw new Error(`Duplicate capture ${record.baseline} in ${folder}`);
     seen.set(record.baseline, record.actual.blobDigest);
   }
-  const expectedCaptures = representative ? selection.expectedCaptures : fullCaptures;
+  const expectedCaptures = representative ? selection.expectedCaptures : requiredFullCaptures;
   for (const path of (representative || !observing ? expectedCaptures : [])) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
   if ((representative || !observing) && seen.size !== expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
   if (representative) {
@@ -40,7 +43,7 @@ for (const folder of folders.sort()) {
     (activeInventory[key] ??= []).push(row.baseline);
   }
   sets.push(seen);
-  results.push({ folder: relativePath(folder), captures: records.length,
+  results.push({ folder: relativePath(folder), captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors,
     importedMatches: records.filter(r => r.matches).length, tests: tests.length,
     failedTests: tests.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
     declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
@@ -60,4 +63,4 @@ await writeFile(resolve(root, 'active-inventory.json'), JSON.stringify(activeInv
 await mkdir(root, { recursive: true });
 await writeFile(resolve(root, 'analysis.json'), JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify(summary, null, 2));
-if (differences.length || results.some(r => r.failedTests.length || r.importedMatches !== r.captures) || !sets[0].size) process.exitCode = 1;
+if (differences.length || results.some(r => r.failedTests.length || r.importedMatches !== r.captures || r.browserStats.unexpected || r.browserStats.flaky || r.browserErrors.length) || !sets[0].size) process.exitCode = 1;
