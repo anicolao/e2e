@@ -3,3 +3,5 @@ node_modules/
 .e2e-cache/
 playwright-report/
 test-results/
+poc-output/
+.e2e-poc/

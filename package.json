@@ -1,0 +1,17 @@
+{
+  "name": "@anicolao/e2e",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.18.1" },
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "inventory:pantheon": "node poc/pantheon/inventory.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
+  }
+}

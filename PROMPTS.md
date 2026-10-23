@@ -53,3 +53,11 @@ I think what we're doing replaces @machinapractica/testing
 ```text
 ok
 ```
+
+## 9
+
+Recorded 2026-10-23 from Andrew Nicolao. Result: framework implementation and Pantheon POC commits on `main`; run evidence is linked from the POC report.
+
+```text
+OK let's proceed with the PoC and prove out the framework.
+```

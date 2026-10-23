@@ -1,0 +1,18 @@
+{
+  "source": {
+    "repository": "anicolao/pantheon",
+    "commit": "dfc7f6307b61a8885be870e841d83895811257d1"
+  },
+  "summary": {
+    "images": 3056,
+    "totalBytes": 15974706904,
+    "uniqueImages": 2690,
+    "uniqueBytes": 13939114896,
+    "platformCounts": {
+      "darwin": 1528,
+      "linux": 1528
+    },
+    "references": 1556,
+    "missingReferences": 0
+  }
+}

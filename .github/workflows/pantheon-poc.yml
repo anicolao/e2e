@@ -1,0 +1,98 @@
+name: Pantheon byte repeatability
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [observe, verify]
+        default: observe
+      scope:
+        type: choice
+        options: [representative, full]
+        default: representative
+permissions:
+  contents: read
+jobs:
+  capture:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [1, 2, 3]
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble@sha256:824f1a789072e648c62541c2cfa4479c4061a290d5c27766d67dc1dcbc19b321
+      options: --ipc=host
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: framework
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: anicolao/pantheon
+          ref: dfc7f6307b61a8885be870e841d83895811257d1
+          path: pantheon
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/tests/e2e/**/*.png
+      - run: apt-get update && apt-get install -y --no-install-recommends unzip
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.3.10
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install and check original policy
+        working-directory: pantheon
+        run: |
+          git config --global --add safe.directory "$PWD"
+          bun install --frozen-lockfile
+          bun run test:policy
+          uname -m
+          bunx playwright --version
+          df -h .
+          test "$(find tests/e2e -name '*.png' | wc -l)" -eq 0
+      - name: Install experimental comparison adapter
+        run: python3 framework/poc/pantheon/adapter.py pantheon
+      - name: Run three fresh-browser repetitions
+        working-directory: pantheon
+        env:
+          CI: 'true'
+          PUBLIC_BASE_PATH: /pantheon/prtest
+          E2E_POC_MODE: ${{ inputs.mode }}
+          POC_SCOPE: ${{ inputs.scope }}
+        run: |
+          if [[ "$POC_SCOPE" == representative ]]; then
+            export E2E_STORY_FILTER='gather two players, share an invitation|enter the sanctuary, learn|Oracle draw reveals'
+          fi
+          result=0
+          for repetition in 1 2 3; do
+            export E2E_POC_OUTPUT="$GITHUB_WORKSPACE/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
+            mkdir -p "$E2E_POC_OUTPUT"
+            if ! bun run test:e2e > "$E2E_POC_OUTPUT/run.log" 2>&1; then
+              result=1
+              tail -90 "$E2E_POC_OUTPUT/run.log"
+            fi
+            du -sh "$GITHUB_WORKSPACE/evidence" .git tests/e2e
+            df -h .
+          done
+          exit "$result"
+      - name: Upload all experiment results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pantheon-${{ inputs.mode }}-${{ inputs.scope }}-${{ matrix.runner }}
+          path: |
+            evidence/
+            pantheon/playwright-report/
+            pantheon/test-results/
+          compression-level: 0
+          retention-days: 14
+          if-no-files-found: error
