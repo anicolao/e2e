@@ -64,3 +64,15 @@ test('catalog lookup pins both its commit and original bytes', async t => {
   await assert.rejects(loadCatalog(lock, async () => new Response('{}')), /integrity/);
   await assert.rejects(loadCatalog({ ...lock, revision: 'main' }), /Invalid storage lock/);
 });
+test('concurrent publications reuse existing locations and reject conflicting metadata', async t => {
+  const { catalog, image } = await setup(t);
+  const { mergeCatalog } = await import('../src/store.ts');
+  const incoming = structuredClone(catalog);
+  incoming.images[image.blobDigest].release = 'another-batch';
+  incoming.images[image.blobDigest].assetId = 10;
+  const merged = mergeCatalog(catalog, incoming);
+  assert.equal(Object.keys(merged.images).length, 1);
+  assert.equal(merged.images[image.blobDigest].release, 'batch-001');
+  incoming.images[image.blobDigest].width++;
+  assert.throws(() => mergeCatalog(catalog, incoming), /Conflicting/);
+});

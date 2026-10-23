@@ -95,3 +95,20 @@ export async function loadCatalog(lock: StorageLock, request: typeof fetch = fet
   for (const digest of Object.keys(catalog.images) as Digest[]) imageUrl(catalog, digest);
   return catalog;
 }
+
+/** Reuse existing objects when concurrent publications contain the same PNG. */
+export function mergeCatalog(existing: Catalog, incoming: Catalog): Catalog {
+  if (existing.schemaVersion !== 1 || incoming.schemaVersion !== 1 || existing.repository !== incoming.repository) {
+    throw new Error('Catalogs belong to different stores');
+  }
+  const images = { ...existing.images };
+  for (const [digest, entry] of Object.entries(incoming.images) as [Digest, Catalog['images'][Digest]][]) {
+    imageUrl(incoming, digest);
+    const previous = images[digest];
+    if (previous && (previous.byteLength !== entry.byteLength || previous.width !== entry.width || previous.height !== entry.height)) {
+      throw new Error(`Conflicting image metadata: ${digest}`);
+    }
+    images[digest] ??= entry;
+  }
+  return { schemaVersion: 1, repository: existing.repository, images };
+}

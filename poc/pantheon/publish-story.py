@@ -25,11 +25,15 @@ if release is None:
                           'body': 'Imported original reviewed PNGs, with an original-byte backup archive.', 'draft': True}).encode()
     release = json.loads(subprocess.check_output(['gh', 'api', '--method', 'POST', f'repos/{repository}/releases', '--input', '-'], input=payload))
 existing = {a['name']: a for a in release['assets']}
+catalog_path = framework / 'poc/pantheon/catalog.json'
+known = json.loads(catalog_path.read_text())['images']
 
 def upload(path):
     image = manifest['images'][path]
     local = source / path
     assert hashlib.sha256(local.read_bytes()).hexdigest() == image['blobDigest'][7:]
+    if image['blobDigest'] in known:
+        return image['blobDigest'], known[image['blobDigest']]
     name = image['blobDigest'][7:] + '.png'
     asset = existing.get(name)
     if asset is None:
@@ -54,7 +58,8 @@ if backup.name not in existing:
 if release['draft']:
     subprocess.run(['gh', 'release', 'edit', tag, '--repo', repository, '--draft=false', '--latest=false'], check=True)
 catalog_path = framework / 'poc/pantheon/catalog.json'
-catalog = json.loads(catalog_path.read_text()); catalog['images'].update(published)
+catalog = json.loads(catalog_path.read_text())
+for digest, image in published.items(): catalog['images'].setdefault(digest, image)
 catalog_path.write_text(json.dumps(catalog, indent=2) + '\n')
 
 def url(path):
