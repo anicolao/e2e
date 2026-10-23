@@ -46,7 +46,8 @@ jobs:
         run: |
           git config --global --add safe.directory "$PWD"
           bun install --frozen-lockfile
-          bun run test:policy
+          bun run check:e2e-policy
+          bun test tests/tooling/e2e-policy.test.ts
           uname -m
           bunx playwright --version
           df -h .
@@ -105,6 +106,8 @@ jobs:
           merge-multiple: true
           path: downloaded
       - run: bun poc/pantheon/analyze.ts downloaded/evidence
+        env:
+          E2E_POC_SCOPE: ${{ inputs.scope }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

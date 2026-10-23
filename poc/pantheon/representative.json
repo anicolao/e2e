@@ -1,0 +1,112 @@
+{
+  "stories": [
+    "gather two players, share an invitation and return to the same seats",
+    "enter the sanctuary, learn, create and continue a real table",
+    "Oracle draw reveals and lands in its sorted hand layer"
+  ],
+  "projects": [
+    "phone",
+    "desktop",
+    "tabletop-4k"
+  ],
+  "expectedCaptures": [
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/000-choose-gathering-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/000-choose-gathering-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/000-choose-gathering-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/001-name-required-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/001-name-required-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/001-name-required-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/002-created-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/002-created-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/002-created-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/003-details-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/003-details-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/003-details-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/004-invitation-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/004-invitation-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/004-invitation-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/005-invitation-copied-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/005-invitation-copied-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/005-invitation-copied-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/006-guest-invitation-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/006-guest-invitation-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/006-guest-invitation-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/007-guest-joined-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/007-guest-joined-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/007-guest-joined-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/008-joined-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/008-joined-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/008-joined-tabletop-4k-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/009-guest-restored-desktop-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/009-guest-restored-phone-linux.png",
+    "tests/e2e/001-game-setup/screenshots/gather-two-players-share-an-invitation-and-return-to-the-same-seats/009-guest-restored-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/000-sanctuary-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/000-sanctuary-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/000-sanctuary-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/001-keyboard-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/001-keyboard-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/001-keyboard-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/002-learn-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/002-learn-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/002-learn-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/003-back-to-sanctuary-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/003-back-to-sanctuary-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/003-back-to-sanctuary-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/004-gathering-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/004-gathering-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/004-gathering-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/005-created-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/005-created-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/005-created-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/006-returning-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/006-returning-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/006-returning-tabletop-4k-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/007-continued-desktop-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/007-continued-phone-linux.png",
+    "tests/e2e/002-sanctuary/screenshots/enter-the-sanctuary-learn-create-and-continue-a-real-table/007-continued-tabletop-4k-linux.png",
+    "tests/e2e/screenshots/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/000-reveal-desktop-linux.png",
+    "tests/e2e/screenshots/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/000-reveal-phone-linux.png",
+    "tests/e2e/screenshots/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/000-reveal-tabletop-4k-linux.png",
+    "tests/e2e/screenshots/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/001-landing-desktop-linux.png",
+    "tests/e2e/screenshots/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/001-landing-phone-linux.png",
+    "tests/e2e/screenshots/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/001-landing-tabletop-4k-linux.png"
+  ],
+  "expectedTests": [
+    {
+      "title": "gather two players, share an invitation and return to the same seats",
+      "project": "phone"
+    },
+    {
+      "title": "gather two players, share an invitation and return to the same seats",
+      "project": "desktop"
+    },
+    {
+      "title": "gather two players, share an invitation and return to the same seats",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "enter the sanctuary, learn, create and continue a real table",
+      "project": "phone"
+    },
+    {
+      "title": "enter the sanctuary, learn, create and continue a real table",
+      "project": "desktop"
+    },
+    {
+      "title": "enter the sanctuary, learn, create and continue a real table",
+      "project": "tabletop-4k"
+    },
+    {
+      "title": "Oracle draw reveals and lands in its sorted hand layer",
+      "project": "phone"
+    },
+    {
+      "title": "Oracle draw reveals and lands in its sorted hand layer",
+      "project": "desktop"
+    },
+    {
+      "title": "Oracle draw reveals and lands in its sorted hand layer",
+      "project": "tabletop-4k"
+    }
+  ]
+}

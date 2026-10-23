@@ -3,6 +3,8 @@ import { resolve, dirname } from 'node:path';
 
 const root = resolve(process.argv[2] ?? 'poc-output');
 const folders: string[] = [];
+const selection = JSON.parse(await readFile(new URL('./representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string}[] };
+const representative = process.env.E2E_POC_SCOPE !== 'full';
 async function scan(path: string) {
   for (const item of await readdir(path, { withFileTypes: true })) {
     if (item.isDirectory() && item.name !== 'actual') await scan(resolve(path, item.name));
@@ -19,6 +21,14 @@ for (const folder of folders.sort()) {
   for (const record of records) {
     if (seen.has(record.baseline)) throw new Error(`Duplicate capture ${record.baseline} in ${folder}`);
     seen.set(record.baseline, record.actual.blobDigest);
+  }
+  if (representative) {
+    for (const path of selection.expectedCaptures) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
+    if (seen.size !== selection.expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
+    for (const required of selection.expectedTests) {
+      const found = tests.filter(t => t.title === required.title && t.project === required.project);
+      if (found.length !== 1 || found[0].status !== 'passed') throw new Error(`Required test incomplete: ${required.title} / ${required.project}`);
+    }
   }
   sets.push(seen);
   results.push({ folder: relativePath(folder), captures: records.length,
