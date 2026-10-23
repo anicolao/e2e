@@ -21,3 +21,6 @@ test('inventory detects omitted, duplicate, unexpected, and reordered steps', ()
   assert.throws(() => new StepInventory(['open', 'join']).record('join'), /Unexpected/);
   assert.throws(() => valid.record('join'), /Unexpected/);
 });
+test('blank step IDs cannot become accepted expectations', () => {
+  assert.throws(() => new StepInventory(['']), /nonempty/);
+});

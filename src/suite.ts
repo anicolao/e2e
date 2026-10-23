@@ -4,9 +4,11 @@ export type CaseResult = { id: string; status: string; attempts: number };
 /** A complete check includes nonvisual tests and treats exclusions as declared inputs. */
 export function checkSuite(expected: readonly RequiredCase[], actual: readonly CaseResult[]) {
   const errors: string[] = [], required = new Map(expected.map(item => [item.id, item]));
+  if (expected.some(item => !item || typeof item.id !== 'string' || !item.id.trim() || item.excluded !== undefined && typeof item.excluded !== 'boolean')) errors.push('Invalid required test ID or exclusion');
   if (!expected.length || required.size !== expected.length) errors.push('Required test list is empty or contains duplicates');
   const seen = new Set<string>();
   for (const result of actual) {
+    if (!result || typeof result.id !== 'string' || !result.id.trim()) { errors.push('Invalid result test ID'); continue; }
     const item = required.get(result.id);
     if (!item) errors.push(`Unexpected test: ${result.id}`);
     if (seen.has(result.id)) errors.push(`Duplicate test: ${result.id}`);

@@ -20,3 +20,6 @@ test('identical leaf test names in different describe groups remain distinct', a
   assert.notEqual(rows[0].id, rows[1].id);
   assert.equal(checkSuite(rows.map(({id})=>({id})),rows).ok,true);
 });
+test('blank IDs fail even when the plan and result agree', () => {
+  assert.equal(checkSuite([{id:''}],[{id:'',status:'passed',attempts:1}]).ok,false);
+});

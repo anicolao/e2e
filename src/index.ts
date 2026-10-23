@@ -37,6 +37,7 @@ export class StepInventory {
   private position = 0;
   private readonly expected: readonly string[];
   constructor(expected: readonly string[]) {
+    if (expected.some(id => typeof id !== 'string' || !id.trim())) throw new Error('Step IDs must be nonempty strings');
     this.expected = [...expected];
     if (new Set(expected).size !== expected.length) throw new Error('Duplicate expected step');
   }
