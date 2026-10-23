@@ -39,7 +39,7 @@ export async function observeBrowser(context, info) {
     if (info.status === info.expectedStatus) return;
     const pages = await Promise.all(context.pages().map(page => Promise.race([
       page.evaluate(() => ({ path: location.pathname, status: document.querySelector('[data-status]')?.getAttribute('data-status'),
-        tasks: window.__e2eLongTasks, navigation: performance.getEntriesByType('navigation').map(entry => entry.toJSON()) })),
+        tasks: window.__e2eLongTasks, stages: performance.getEntriesByType('mark').map(entry => ({name:entry.name,startMs:entry.startTime})), navigation: performance.getEntriesByType('navigation').map(entry => entry.toJSON()) })),
       new Promise(resolve => { const timer = setTimeout(() => resolve({ error: 'Diagnostic page read timed out' }), 2000); timer.unref(); })
     ]).catch(error => ({ error: String(error) }))));
     const path = info.outputPath('browser-diagnostics.json');

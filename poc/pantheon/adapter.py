@@ -29,6 +29,21 @@ text = text[:start] + '''        recordCapture(capture, { baseline, file:this.in
           stepId:id, caption:description, assertions:verifications.map(v=>v.spec), player:view.player,
           project:this.info.project.name, elapsedMs:performance.now()-start });
 ''' + text[end:]
+# Preserve diagnostic state after the timed failure, while observer pages still exist.
+text = text.replace("      },{timeout:OPERATION_BUDGET});\n      const views=", """      },{timeout:OPERATION_BUDGET}).catch(async error=>{
+        try {
+          const state=await page.evaluate(()=>({
+            resources:[...document.querySelectorAll('.resource-icon')].map(node=>({label:node.getAttribute('aria-label'),value:node.getAttribute('data-value'),rect:node.getBoundingClientRect().toJSON()})),
+            market:[...document.querySelectorAll('.supply-face')].map(node=>({text:node.textContent,transform:getComputedStyle(node).transform,rect:node.getBoundingClientRect().toJSON()})),
+            logs:[...document.querySelectorAll('.log-entry')].slice(0,3).map(node=>node.textContent)
+          }));
+          await this.info.attach('capture-state',{body:JSON.stringify(state),contentType:'application/json'});
+          const camera=cameras.get(page);
+          if(camera){const next=await camera.send('Page.captureScreenshot',{format:'png',fromSurface:true,captureBeyondViewport:false,optimizeForSpeed:true});await this.info.attach('diagnostic-followup',{body:Buffer.from(next.data,'base64'),contentType:'image/png'});}
+        }catch{/* The failed verification and its original PNG remain authoritative. */}
+        throw error;
+      });
+      const views=""")
 helper.write_text(text)
 fixtures = root / 'tests/e2e/helpers/fixtures.ts'
 replace(fixtures, "import { finishStory } from './test-step-helper';", "import { recordTest } from '../../../.e2e-poc/poc/pantheon/runtime';")
@@ -43,3 +58,10 @@ replace(config, "reporter: [['list'], ['html', { open: 'never' }]],", "reporter:
 active = framework / 'poc/pantheon/active-inventory.json'
 if active.exists():
     shutil.copyfile(active, target / 'active-inventory.json')
+
+# Profile connection stages without changing UI state or network behavior.
+page = root / 'src/routes/play/+page.svelte'
+replace(page, 'const connected = await connectFirebase();', "performance.mark('connect:auth:start');const connected = await connectFirebase();performance.mark('connect:auth:ready');")
+replace(page, 'const room = await inspectRoom(connected.db, roomId);', "performance.mark('connect:room:start');const room = await inspectRoom(connected.db, roomId);performance.mark('connect:room:ready');")
+repository = root / 'src/lib/backend/setup-repository.ts'
+replace(repository, 'const state = replaySetup(events);\n      if (!snapshot.metadata.fromCache)', "performance.mark('connect:replay:start');const state = replaySetup(events);performance.mark('connect:replay:ready');\n      if (!snapshot.metadata.fromCache)")
