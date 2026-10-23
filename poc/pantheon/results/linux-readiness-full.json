@@ -1,0 +1,152 @@
+{
+  "run": "https://github.com/anicolao/e2e/actions/runs/40025833881",
+  "sourceCommit": "0ea155fe5898d75ab5dfdfc3b9763dc19171768b",
+  "runs": [
+    {
+      "folder": "runner-1/repeat-1",
+      "captures": 1444,
+      "browserStats": {
+        "startTime": "2026-10-23T21:20:03.631Z",
+        "duration": 1893749.77,
+        "expected": 383,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "importedMatches": 1444,
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "failedTests": []
+    },
+    {
+      "folder": "runner-2/repeat-1",
+      "captures": 1444,
+      "browserStats": {
+        "startTime": "2026-10-23T21:20:09.921Z",
+        "duration": 1964533.786,
+        "expected": 383,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "importedMatches": 1444,
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "failedTests": []
+    },
+    {
+      "folder": "runner-3/repeat-1",
+      "captures": 1433,
+      "browserStats": {
+        "startTime": "2026-10-23T21:20:10.138Z",
+        "duration": 1975548.797,
+        "expected": 381,
+        "skipped": 49,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "importedMatches": 1433,
+      "suiteCheck": {
+        "ok": false,
+        "errors": [
+          "failed: [\"006-worship/worship.integration.spec.ts\",\"006-worship/worship.integration.spec.ts\",\"Demeter combines the costs of two offerings to gain a Territory\",\"phone\"]",
+          "failed: [\"tabletop.spec.ts\",\"tabletop.spec.ts\",\"tabletop west seed-keeper stages cards centrally before confirmation\",\"tabletop-4k\"]"
+        ]
+      },
+      "missingCaptures": [
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/003-grove-selected-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/004-treasures-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/005-drachma-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/006-funded-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/007-favored-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/008-offerings-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/009-selected-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/010-combined-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/011-territory-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/012-polis-phone-linux.png",
+        "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/013-gift-phone-linux.png"
+      ],
+      "unexpectedCaptures": [],
+      "failedTests": [
+        {
+          "title": "Demeter combines the costs of two offerings to gain a Territory",
+          "project": "phone",
+          "status": "failed",
+          "expectedStatus": "passed"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "tabletop-4k",
+          "status": "failed",
+          "expectedStatus": "passed"
+        }
+      ]
+    }
+  ],
+  "hashDifferences": [],
+  "coverageDifferences": [
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/003-grove-selected-phone-linux.png",
+      "expected": "sha256:9a41a111ecb60fa4c8d1a1aa9199a0341ca4aee7557a93a1f70a87eeff92280e"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/004-treasures-phone-linux.png",
+      "expected": "sha256:6aa7f116edd2016c8bfab449df5d5711098dd98d4d58034abb5b1e28124d4705"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/005-drachma-phone-linux.png",
+      "expected": "sha256:380ac355f1e2549830fa04720b2ee722cd067078a2135936c6f004180b71e782"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/006-funded-phone-linux.png",
+      "expected": "sha256:6d5b838026d1d94f3d78dbc1bb14f00a5e39e328e0e5d09472412236b68e3f67"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/007-favored-phone-linux.png",
+      "expected": "sha256:6f7876c4af3d86208f506074b8e7f269866f68f7ac04000b4ebf200fdd9c7947"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/008-offerings-phone-linux.png",
+      "expected": "sha256:4d59d1435d1cc8ce2c72fd87e850cdfe49f0a810a8aeacdb7be01484781255b1"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/009-selected-phone-linux.png",
+      "expected": "sha256:081497fcef2f889f4147f1b938ed8b5975dcfb181675235ba4b0bed96b8b3144"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/010-combined-phone-linux.png",
+      "expected": "sha256:f28edb71cc3d4746109c994f1635b0f328f295b33d19373fc8d392998ea0919b"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/011-territory-phone-linux.png",
+      "expected": "sha256:b2b9aebcba62b605a2ffc3e5c1772c10470f96ca9f039a67cffa415fb657ab01"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/012-polis-phone-linux.png",
+      "expected": "sha256:d06222a7f9ee2f1b804da63f93f58142444855fa6e2c642b58d63d1f17f50d2d"
+    },
+    {
+      "run": 2,
+      "baseline": "tests/e2e/006-worship/screenshots/demeter-combines-the-costs-of-two-offerings-to-gain-a-territory/013-gift-phone-linux.png",
+      "expected": "sha256:b9256c2be762f71f86a578b5934d4c98f20476f709cc08ab8e48fde3515e8f77"
+    }
+  ]
+}

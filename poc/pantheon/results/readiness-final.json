@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "0ea155fe5898d75ab5dfdfc3b9763dc19171768b",
+  "stats": {
+    "startTime": "2026-10-23T21:16:44.352Z",
+    "duration": 176538.033,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "captures": 207,
+  "matching": 207,
+  "errors": []
+}

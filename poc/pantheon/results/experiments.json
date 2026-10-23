@@ -2,6 +2,69 @@
   "remote": [
     {
       "conclusion": "success",
+      "createdAt": "2026-10-23T22:09:31Z",
+      "databaseId": 40031766438,
+      "headSha": "da114f5da8538d5766c8fb7e89da8db88f8a7c4c",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40031766438",
+      "note": "Emulator 1.21.0 focused comparison: 171 passes, 72 declared skips, 414 matching captures."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-23T22:09:29Z",
+      "databaseId": 40031763450,
+      "headSha": "da114f5da8538d5766c8fb7e89da8db88f8a7c4c",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40031763450",
+      "note": "Emulator 1.22.0 focused comparison: 171 passes, 72 declared skips, 414 matching captures."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-23T21:25:40Z",
+      "databaseId": 40026686029,
+      "headSha": "58ecd9f98a13b54e13a793b6065003fcfad3b9a5",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40026686029",
+      "note": "Updated-source cloud seed: three tests and six captures pass."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-23T21:18:47Z",
+      "databaseId": 40025833881,
+      "headSha": "916189e97edba16e0c2bce9f79c16b7b0cd54a89",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40025833881",
+      "note": "Two full Linux runners pass; third has two interaction timeouts. All 4321 recorded PNGs match."
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-10-23T21:14:26Z",
+      "databaseId": 40025293979,
+      "headSha": "9ec6050a8deea8d1ef29bc5be749f9faba505cca",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40025293979",
+      "note": "Cancelled after the local client-navigation experiment changed rendered pixels."
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-10-23T21:14:24Z",
+      "databaseId": 40025290279,
+      "headSha": "9ec6050a8deea8d1ef29bc5be749f9faba505cca",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40025290279",
+      "note": "Cancelled after the local client-navigation experiment changed rendered pixels."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-23T21:05:53Z",
+      "databaseId": 40024232849,
+      "headSha": "d5a6af408de70ba68b0f3916c73a3d6029384c2f",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40024232849",
+      "note": "Original readiness cases: 108 tests pass; all 621 captures match."
+    },
+    {
+      "conclusion": "success",
       "createdAt": "2026-10-23T14:01:11Z",
       "databaseId": 39966058715,
       "headSha": "0d7de59d9c5e7dc24adc05b8bf9651056473b6bb",
@@ -192,6 +255,90 @@
       "errors": [],
       "captures": 1441,
       "matching": 1440
+    },
+    {
+      "experiment": "readiness-before",
+      "stats": {
+        "startTime": "2026-10-23T21:02:38.805Z",
+        "duration": 163311.319,
+        "expected": 36,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 207,
+      "matching": 207
+    },
+    {
+      "experiment": "readiness-fixed",
+      "stats": {
+        "startTime": "2026-10-23T21:06:18.178Z",
+        "duration": 169716.308,
+        "expected": 36,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 207,
+      "matching": 207
+    },
+    {
+      "experiment": "readiness-connection-fixed",
+      "stats": {
+        "startTime": "2026-10-23T21:12:20.425Z",
+        "duration": 131209.57700000002,
+        "expected": 26,
+        "skipped": 0,
+        "unexpected": 10,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 140,
+      "matching": 130
+    },
+    {
+      "experiment": "readiness-final",
+      "stats": {
+        "startTime": "2026-10-23T21:16:44.352Z",
+        "duration": 176538.033,
+        "expected": 45,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 207,
+      "matching": 207
+    },
+    {
+      "experiment": "macos-readiness-full",
+      "stats": {
+        "startTime": "2026-10-23T21:21:27.897Z",
+        "duration": 1146701.5720000002,
+        "expected": 384,
+        "skipped": 48,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 1444,
+      "matching": 1444
+    },
+    {
+      "experiment": "macos-regressions",
+      "stats": {
+        "startTime": "2026-10-23T22:13:27.054Z",
+        "duration": 103967.96100000001,
+        "expected": 19,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "captures": 46,
+      "matching": 46
     }
   ]
 }

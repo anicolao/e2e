@@ -1,5 +1,7 @@
 # Pantheon POC results
 
+[Readiness follow-up](READINESS.md): investigation and fixes after these initial results.
+
 Hash verification works on Pantheon’s existing PNGs. Two independent fresh Linux runners each passed all 380 required tests and 1,444 captures, with zero baseline downloads. Other runs found UI instability that keeps the application cutover gated.
 
 ## Full-suite results
@@ -19,7 +21,7 @@ Runner 3 failed while waiting for a connection and checking a rules heading’s 
 
 The macOS failure changes 62,613 pixels in the 4K observer view’s activity log. An earlier phone observer mismatch changed 1,027 pixels; the [original pixel verifier](results/original-verifier-control.json) reproduced that failure and captured exactly the same PNG hash. These failures require investigation before macOS cutover.
 
-The source is Pantheon commit `dfc7f6307b61a8885be870e841d83895811257d1`. Runners use its [hash-checked source archive](source.json), which includes build/test inputs and runtime bot policies. Each runner installs pinned dependencies and runs the existing UI scenarios with the [comparison adapter](adapter.py).
+The initial experiment used Pantheon commit `dfc7f6307b61a8885be870e841d83895811257d1` and its [source archive](https://github.com/anicolao/e2e-baselines/releases/tag/poc-source-003). The [current fixture](source.json) includes the readiness follow-up. Archives include build/test inputs and runtime bot policies. Each runner installs pinned dependencies and runs the existing UI scenarios with the [comparison adapter](adapter.py).
 
 ## Repeatability and diagnosis
 

@@ -1,0 +1,137 @@
+{
+  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1",
+  "stats": {
+    "startTime": "2026-10-23T21:12:20.425Z",
+    "duration": 131209.57700000002,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  },
+  "captures": 140,
+  "matching": 130,
+  "errors": [],
+  "diagnostics": [
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/004-observer-phone-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:8cd33a609a1c5a86642d633360a3ca379e332dd2648686ee8872270a8595a3ca",
+      "actual": {
+        "blobDigest": "sha256:36704dd4239e30c61f65a6fcb2195fc884e2f357800ffd8fc4ab2f651149bc02",
+        "byteLength": 445507,
+        "width": 393,
+        "height": 852
+      },
+      "changedPixels": 1027
+    },
+    {
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:8c23a87c6b6c57b45e514a793c1a68d0d03f1749f6121a28794385f679226693",
+      "actual": {
+        "blobDigest": "sha256:5c278c1e4ba52257b9fbcdd713ecd8914945d732de7d755ff1c08dde6144c40b",
+        "byteLength": 2981048,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/000-table-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:7a5ac68f5f02a0c158e0067309916f1d8e668650fce18be44f5829b79bd43571",
+      "actual": {
+        "blobDigest": "sha256:de98ea36251416c1fe277eecbbcb9b7f175e2bb32858b41124b2cdf91c6e3b82",
+        "byteLength": 2900811,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:3a20da6f1630a0e88dfe50ea530a173cc86fe081df0a59f95b7315e416e0d422",
+      "actual": {
+        "blobDigest": "sha256:3442f33a2b20be43c4fec092e5d5a140533ba259993412ee563e41823e18831e",
+        "byteLength": 2892330,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:8c23a87c6b6c57b45e514a793c1a68d0d03f1749f6121a28794385f679226693",
+      "actual": {
+        "blobDigest": "sha256:5c278c1e4ba52257b9fbcdd713ecd8914945d732de7d755ff1c08dde6144c40b",
+        "byteLength": 2981048,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/000-table-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:7a5ac68f5f02a0c158e0067309916f1d8e668650fce18be44f5829b79bd43571",
+      "actual": {
+        "blobDigest": "sha256:de98ea36251416c1fe277eecbbcb9b7f175e2bb32858b41124b2cdf91c6e3b82",
+        "byteLength": 2900811,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:3a20da6f1630a0e88dfe50ea530a173cc86fe081df0a59f95b7315e416e0d422",
+      "actual": {
+        "blobDigest": "sha256:3442f33a2b20be43c4fec092e5d5a140533ba259993412ee563e41823e18831e",
+        "byteLength": 2892330,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-in-the-vertical-coverflow/000-opening-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:8c23a87c6b6c57b45e514a793c1a68d0d03f1749f6121a28794385f679226693",
+      "actual": {
+        "blobDigest": "sha256:5c278c1e4ba52257b9fbcdd713ecd8914945d732de7d755ff1c08dde6144c40b",
+        "byteLength": 2981048,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/follow-worship-and-a-purchase-once-while-reconnecting-without-an-animation-backlog/000-table-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:7a5ac68f5f02a0c158e0067309916f1d8e668650fce18be44f5829b79bd43571",
+      "actual": {
+        "blobDigest": "sha256:de98ea36251416c1fe277eecbbcb9b7f175e2bb32858b41124b2cdf91c6e3b82",
+        "byteLength": 2900811,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    },
+    {
+      "baseline": "tests/e2e/008-public-table/screenshots/share-market-browsing-and-the-complete-worship-scene-with-an-observer/000-market-desktop-darwin.png",
+      "classification": "pixels-changed",
+      "expectedDigest": "sha256:3a20da6f1630a0e88dfe50ea530a173cc86fe081df0a59f95b7315e416e0d422",
+      "actual": {
+        "blobDigest": "sha256:3442f33a2b20be43c4fec092e5d5a140533ba259993412ee563e41823e18831e",
+        "byteLength": 2892330,
+        "width": 1440,
+        "height": 1000
+      },
+      "changedPixels": 28195
+    }
+  ],
+  "sourceNote": "Uncommitted client-navigation experiment over the starting fixture; reverted in 0ea155fe. This run did not accept changed images."
+}

@@ -4,7 +4,7 @@ Byte-exact screenshot checks with baselines stored in a separate public GitHub r
 
 This is the development home for a replacement for [`@machinapractica/testing`](https://github.com/machinapractica/packages/tree/main/packages/testing). We’ll prove it with Pantheon, then bring the reusable code into [Machina Practica packages](https://github.com/machinapractica/packages) and the agent skill into [Practica](https://github.com/machinapractica/practica).
 
-Status: working prototype. Two independent full Linux runs pass with zero baseline downloads. [POC results](poc/pantheon/RESULTS.md) record the evidence and remaining cutover gates.
+Status: working prototype. Full Mac and two independent Linux runs pass with zero baseline downloads. [Readiness results](poc/pantheon/READINESS.md) record the fixes and remaining emulator latency issue. [Initial POC results](poc/pantheon/RESULTS.md) cover storage and review.
 
 - [Framework proposal](E2E_FRAMEWORK_PROPOSAL.md): architecture, verification, storage, tools, and review.
 - [Pantheon POC](E2E_POC_PANTHEON.md): experiments, acceptance checks, and storage recovery.

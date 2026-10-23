@@ -1,0 +1,25 @@
+{
+  "run": "https://github.com/anicolao/e2e/actions/runs/40025833881",
+  "sourceCommit": "0ea155fe5898d75ab5dfdfc3b9763dc19171768b",
+  "firestoreVersion": "1.22.0",
+  "gainFailure": {
+    "project": "phone",
+    "title": "Demeter combines the costs of two offerings to gain a Territory",
+    "request": {
+      "url": "http://127.0.0.1:8193/v1/projects/demo-pantheon/databases/(default)/documents:batchGet",
+      "type": "xhr",
+      "startedMs": 166962.89195,
+      "status": 200,
+      "headersMs": 3231.8779630000063,
+      "finishedMs": 3232.1644519999973
+    },
+    "gcLogsAvailable": false
+  },
+  "triggerFailure": {
+    "project": "tabletop-4k",
+    "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+    "firstEnabledObservationMs": 1956.112,
+    "inputSentMs": 1960.188,
+    "deadlineMs": 2000
+  }
+}

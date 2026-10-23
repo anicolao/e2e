@@ -1,0 +1,236 @@
+{
+  "runs": [
+    {
+      "folder": "runner-1/repeat-1",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:07:10.070Z",
+        "duration": 100835.75,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1053.2714190000006
+    },
+    {
+      "folder": "runner-1/repeat-2",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:09:00.657Z",
+        "duration": 98044.46699999999,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1054.8842839999998
+    },
+    {
+      "folder": "runner-1/repeat-3",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:10:48.591Z",
+        "duration": 100496.05200000001,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1127.389430000003
+    },
+    {
+      "folder": "runner-2/repeat-1",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:07:17.127Z",
+        "duration": 100858.613,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1052.8825130000005
+    },
+    {
+      "folder": "runner-2/repeat-2",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:09:07.952Z",
+        "duration": 99478.183,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1079.6498720000018
+    },
+    {
+      "folder": "runner-2/repeat-3",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:10:57.424Z",
+        "duration": 97941.606,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1035.692511000001
+    },
+    {
+      "folder": "runner-3/repeat-1",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:07:14.986Z",
+        "duration": 97000.69900000001,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1125.8800609999998
+    },
+    {
+      "folder": "runner-3/repeat-2",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:09:01.385Z",
+        "duration": 95997.279,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1031.6410699999979
+    },
+    {
+      "folder": "runner-3/repeat-3",
+      "captures": 69,
+      "browserStats": {
+        "startTime": "2026-10-23T21:10:46.676Z",
+        "duration": 96118.243,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 69,
+      "tests": 9,
+      "failedTests": [],
+      "declaredSkips": [],
+      "maxCapturePreparationMs": 1063.1983230000005
+    }
+  ],
+  "repeatable": true,
+  "hashDifferences": [],
+  "coverageDifferences": [],
+  "differences": [],
+  "unusedBaselines": [],
+  "run": "https://github.com/anicolao/e2e/actions/runs/40024232849",
+  "sourceCommit": "dfc7f6307b61a8885be870e841d83895811257d1"
+}

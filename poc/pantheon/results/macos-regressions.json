@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+  "firestoreVersion": "1.22.0",
+  "stats": {
+    "startTime": "2026-10-23T22:13:27.054Z",
+    "duration": 103967.96100000001,
+    "expected": 19,
+    "skipped": 8,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "captures": 46,
+  "matching": 46,
+  "errors": []
+}

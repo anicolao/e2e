@@ -1,0 +1,30 @@
+{
+  "sourceCommit": "0ea155fe5898d75ab5dfdfc3b9763dc19171768b",
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "bun": "1.3.10",
+    "node": "v24.18.1",
+    "java": "Temurin 21.0.13+9"
+  },
+  "stats": {
+    "startTime": "2026-10-23T21:21:27.897Z",
+    "duration": 1146701.5720000002,
+    "expected": 384,
+    "skipped": 48,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "suiteCheck": {
+    "ok": true,
+    "errors": []
+  },
+  "coverageErrors": [],
+  "captures": 1444,
+  "matching": 1444,
+  "maxCapturePreparationMs": 1013.0680830000201,
+  "hashMs": {
+    "median": 0.9875410000095144,
+    "max": 14.062582999991719
+  }
+}
