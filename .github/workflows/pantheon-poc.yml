@@ -31,16 +31,8 @@ jobs:
         with:
           path: framework
           persist-credentials: false
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: anicolao/pantheon
-          ref: dfc7f6307b61a8885be870e841d83895811257d1
-          path: pantheon
-          persist-credentials: false
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /*
-            !/tests/e2e/**/*.png
+      - name: Prepare exact source without baseline images
+        run: python3 framework/poc/pantheon/prepare-source.py pantheon
       - run: apt-get update && apt-get install -y --no-install-recommends unzip
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
