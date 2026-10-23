@@ -4,6 +4,7 @@ import { comparePng, identifyPng, StepInventory, type Image } from '../../src/in
 
 const root = process.cwd();
 const manifest = JSON.parse(readFileSync(resolve(root, '.e2e-poc/baselines.json'), 'utf8')) as { source: { commit: string }; images: Record<string, Image> };
+const source = JSON.parse(readFileSync(resolve(root, '.e2e-poc/source.json'), 'utf8')) as { commit: string };
 const mode = process.env.E2E_POC_MODE ?? 'observe';
 if (!['observe', 'verify', 'seed'].includes(mode)) throw new Error(`Unknown POC mode ${mode}`);
 const output = resolve(process.env.E2E_POC_OUTPUT ?? 'poc-output');
@@ -37,7 +38,7 @@ export function recordCapture(bytes: Buffer, metadata: Capture): void {
   const comparisonMs = performance.now() - started;
   appendFileSync(resolve(output, 'captures.jsonl'), JSON.stringify({ ...metadata,
     baseline: path, file: relative(root, metadata.file), actual, expected, matches, mode,
-    comparisonMs, sourceCommit: manifest.source.commit }) + '\n');
+    comparisonMs, sourceCommit: source.commit }) + '\n');
   if (!matches || mode === 'seed') {
     const folder = resolve(output, matches ? 'objects' : 'actual');
     mkdirSync(folder, { recursive: true });

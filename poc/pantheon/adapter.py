@@ -11,6 +11,7 @@ shutil.copytree(framework / 'src', target / 'src', dirs_exist_ok=True)
 shutil.copyfile(framework / 'poc/pantheon/runtime.ts', target / 'poc/pantheon/runtime.ts')
 shutil.copyfile(framework / 'poc/pantheon/browser-diagnostics.mjs', target / 'poc/pantheon/browser-diagnostics.mjs')
 shutil.copyfile(framework / 'poc/pantheon/baselines.json', target / 'baselines.json')
+shutil.copyfile(framework / 'poc/pantheon/source.json', target / 'source.json')
 
 def replace(path, old, new):
     text = path.read_text()
