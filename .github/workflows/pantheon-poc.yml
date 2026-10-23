@@ -54,7 +54,7 @@ jobs:
           test "$(find tests/e2e -name '*.png' | wc -l)" -eq 0
       - name: Install experimental comparison adapter
         run: python3 framework/poc/pantheon/adapter.py pantheon
-      - name: Run three fresh-browser repetitions
+      - name: Run fresh-browser comparisons
         working-directory: pantheon
         env:
           CI: 'true'
@@ -66,7 +66,9 @@ jobs:
             export E2E_STORY_FILTER='gather two players, share an invitation|enter the sanctuary, learn|Oracle draw reveals'
           fi
           result=0
-          for repetition in 1 2 3; do
+          repetitions="1 2 3"
+          if [[ "$POC_SCOPE" == full ]]; then repetitions="1"; fi
+          for repetition in $repetitions; do
             export E2E_POC_OUTPUT="$GITHUB_WORKSPACE/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
             mkdir -p "$E2E_POC_OUTPUT"
             if ! bun run test:e2e > "$E2E_POC_OUTPUT/run.log" 2>&1; then

@@ -5,6 +5,8 @@ const root = resolve(process.argv[2] ?? 'poc-output');
 const folders: string[] = [];
 const selection = JSON.parse(await readFile(new URL('./representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string}[] };
 const representative = process.env.E2E_POC_SCOPE !== 'full';
+const imported = JSON.parse(await readFile(new URL('./baselines.json', import.meta.url), 'utf8')) as { images: Record<string, unknown> };
+const fullCaptures = Object.keys(imported.images).filter(p => p.endsWith('-linux.png'));
 async function scan(path: string) {
   for (const item of await readdir(path, { withFileTypes: true })) {
     if (item.isDirectory() && item.name !== 'actual') await scan(resolve(path, item.name));
@@ -22,9 +24,10 @@ for (const folder of folders.sort()) {
     if (seen.has(record.baseline)) throw new Error(`Duplicate capture ${record.baseline} in ${folder}`);
     seen.set(record.baseline, record.actual.blobDigest);
   }
+  const expectedCaptures = representative ? selection.expectedCaptures : fullCaptures;
+  for (const path of expectedCaptures) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
+  if (seen.size !== expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
   if (representative) {
-    for (const path of selection.expectedCaptures) if (!seen.has(path)) throw new Error(`Missing required capture ${path} in ${folder}`);
-    if (seen.size !== selection.expectedCaptures.length) throw new Error(`Unexpected capture count in ${folder}`);
     for (const required of selection.expectedTests) {
       const found = tests.filter(t => t.title === required.title && t.project === required.project);
       if (found.length !== 1 || found[0].status !== 'passed') throw new Error(`Required test incomplete: ${required.title} / ${required.project}`);
@@ -33,10 +36,12 @@ for (const folder of folders.sort()) {
   sets.push(seen);
   results.push({ folder: relativePath(folder), captures: records.length,
     importedMatches: records.filter(r => r.matches).length, tests: tests.length,
-    failedTests: tests.filter(t => t.status !== 'passed'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
+    failedTests: tests.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
+    declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
 }
 function relativePath(path: string) { return path.slice(root.length + 1); }
-if (sets.length !== 9) throw new Error(`Need all nine repetitions (three independent runners), found ${sets.length}`);
+const requiredRuns = representative ? 9 : 3;
+if (sets.length !== requiredRuns) throw new Error(`Need ${requiredRuns} runs from three independent runners, found ${sets.length}`);
 const differences = [];
 for (let i = 1; i < sets.length; i++) {
   for (const key of new Set([...sets[0].keys(), ...sets[i].keys()])) {
