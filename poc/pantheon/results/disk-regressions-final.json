@@ -1,0 +1,693 @@
+{
+  "runs": [
+    {
+      "folder": "runner-1/repeat-1",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:04:40.130Z",
+        "duration": 165278.695,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 929.1779230000002
+    },
+    {
+      "folder": "runner-1/repeat-2",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:07:34.820Z",
+        "duration": 161608.989,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 924.5822619999999
+    },
+    {
+      "folder": "runner-1/repeat-3",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:10:25.768Z",
+        "duration": 160384.521,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 927.241203
+    },
+    {
+      "folder": "runner-2/repeat-1",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:04:34.054Z",
+        "duration": 160920.34399999998,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 886.351126
+    },
+    {
+      "folder": "runner-2/repeat-2",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:07:24.220Z",
+        "duration": 159812.753,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 900.5812940000001
+    },
+    {
+      "folder": "runner-2/repeat-3",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:10:13.358Z",
+        "duration": 158937.343,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 925.9158600000001
+    },
+    {
+      "folder": "runner-3/repeat-1",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:04:27.032Z",
+        "duration": 163693.499,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 928.2623090000002
+    },
+    {
+      "folder": "runner-3/repeat-2",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:07:20.084Z",
+        "duration": 161733.296,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 937.2139830000001
+    },
+    {
+      "folder": "runner-3/repeat-3",
+      "firestoreVersion": "1.22.0",
+      "storage": "disk",
+      "captures": 46,
+      "browserStats": {
+        "startTime": "2026-10-24T01:10:11.263Z",
+        "duration": 160928.886,
+        "expected": 22,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 46,
+      "tests": 27,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 922.6386910000001
+    }
+  ],
+  "repeatable": true,
+  "hashDifferences": [],
+  "coverageDifferences": [],
+  "differences": [],
+  "unusedBaselines": []
+}
