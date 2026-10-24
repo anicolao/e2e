@@ -90,8 +90,10 @@ The lab readiness fix is [`b6f1b59e`](https://github.com/anicolao/pantheon/commi
 
 ## 12
 
-Recorded 2026-10-23 from Andrew Nicolao. Result: continued investigation and resolution; commit references follow.
+Recorded 2026-10-23 from Andrew Nicolao. Result: four test fixes, runner I/O diagnosis, a bounded RAM workspace, and complete Linux/Mac verification.
 
 ```text
 keep working until it is all figured out.
 ```
+
+Prompt 12 produced the [final application fix](https://github.com/anicolao/pantheon/commit/b37e8cefef820dba74dfa2db202cfcd665ae5a8b), [RAM workspace and I/O evidence](https://github.com/anicolao/e2e/commit/ecbc340), and [shared Mac coverage check](https://github.com/anicolao/e2e/commit/211382d). The [full Linux verification](https://github.com/anicolao/e2e/actions/runs/40047998663) and final Mac run pass; measurements and rollout gates are in the [readiness report](poc/pantheon/READINESS.md).

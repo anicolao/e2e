@@ -155,5 +155,6 @@
   ],
   "interpretation": "The browser queued the commit while the runner stalled on disk I/O; the emulator answered promptly after transmission. The separate animation failure raced the end of the transition.",
   "maxGcPauseMs": 47.675,
-  "gcLogNote": "Recovered emulator GC log from the rotated files after jcmd inherited its log path. Future logs use process IDs, and jcmd clears JAVA_TOOL_OPTIONS."
+  "gcLogNote": "Recovered emulator GC log from the rotated files after jcmd inherited its log path. Future logs use process IDs, and jcmd clears JAVA_TOOL_OPTIONS.",
+  "diagnosticsStartedUtc": "2026-10-24T00:31:28.199744+00:00"
 }

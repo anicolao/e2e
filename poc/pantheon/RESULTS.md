@@ -51,7 +51,7 @@ GitHub loads images inside collapsed details too. Opening a README downloads the
 
 ## Next gates
 
-The Linux capture and comparison path meets the full-suite check on two independent runners. Pantheon adoption still needs stable full-suite results, the reviewed baseline-change workflow, a complete stored corpus and backup, and application integration. The initializer and agent skill follow those checks.
+The [final readiness checks](READINESS.md) pass on three fresh Linux runners and Mac. Pantheon adoption still needs the reviewed baseline-change workflow, a complete stored corpus and backup, and application integration. The initializer and agent skill follow those checks.
 
 The source archive is 41.7 MB, versus 16.0 GB of baseline PNGs in the original tree. Full Linux runner logs show about 43 GB total filesystem use, including the runner image and build tools, with over 100 GB free. Hashing took about 1.4 ms per capture at the median and at most 18.5 ms across the strict Linux runs. A complete timing and peak-disk benchmark remains part of rollout.
 

@@ -2,6 +2,15 @@
   "remote": [
     {
       "conclusion": "success",
+      "createdAt": "2026-10-24T01:03:14Z",
+      "databaseId": 40047998663,
+      "headSha": "ecbc3404882b08720914020cf37cf190bfa3c775",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40047998663",
+      "note": "Final source, emulator 1.22.0, bounded RAM workspace: three complete Linux runners pass 1149 tests with 147 declared skips and 4332 matching captures. Peak workspace 3.18 GiB; minimum available runner memory 8.06 GiB."
+    },
+    {
+      "conclusion": "success",
       "createdAt": "2026-10-24T01:11:27Z",
       "databaseId": 40048641574,
       "headSha": "51e4518d657ad5f2dc570f5a6dad609e4de3c2c1",
@@ -446,6 +455,11 @@
       "name": "animation-recorded",
       "sourceCommit": "b37e8cefef820dba74dfa2db202cfcd665ae5a8b",
       "result": "Three projects pass, recording actual worship transition frames and checking them after the transition finishes."
+    },
+    {
+      "name": "macos-readiness-complete",
+      "sourceCommit": "b37e8cefef820dba74dfa2db202cfcd665ae5a8b",
+      "result": "Final full Mac suite: 384 passes, 48 declared skips, 1444 matching captures. Shared analyzer validates all 432 cases and ordered screenshot inventory."
     }
   ]
 }
