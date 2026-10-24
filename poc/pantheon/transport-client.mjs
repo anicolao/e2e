@@ -23,7 +23,7 @@ window.probe = {
     await batch.commit();
   },
   async events() {
-    await new Promise((resolve,reject)=>onSnapshot(query(collection(db,'games',room,'events'),orderBy('sequence')),snapshot=>{
+    await new Promise((resolve,reject)=>onSnapshot(query(collection(db,'games',room,'events'),orderBy('sequence')),{includeMetadataChanges:true},snapshot=>{
       if(!snapshot.metadata.fromCache && !snapshot.metadata.hasPendingWrites && snapshot.size===1)resolve();
     },reject));
   },
