@@ -24,6 +24,9 @@ const seeded = await fetch('http://127.0.0.1:8193/v1/projects/demo-pantheon/data
 });
 if (!seeded.ok) throw new Error(`Probe seed failed: ${seeded.status}`);
 const browser = await chromium.launch({headless:true,...config.use.launchOptions});
+const mode=process.env.PROBE_MODE ?? 'rooms';
+if(!['rooms','events'].includes(mode))throw new Error('Invalid probe mode');
+const stages=mode==='events'?['authenticate','create','listen','events','transaction']:['authenticate','listen','transaction'];
 const results=[];
 try {
   for(let index=0;index<clients;index++) {
@@ -34,7 +37,7 @@ try {
     const row={client:index,stages:[]};
     try {
       await page.goto('http://127.0.0.1:4193/',{timeout:2000});
-      for(const stage of ['authenticate','listen','transaction']) {
+      for(const stage of stages) {
         const start=performance.now(), operation=page.evaluate(stage=>window.probe[stage](),stage);
         let timer;
         const result=await Promise.race([
@@ -58,7 +61,7 @@ try {
       info.status='failed';row.error=String(error);await diagnose();
     } finally { await context.close(); }
     row.status=info.status;results.push(row);
-    await writeFile(resolve(output,'results.json'),JSON.stringify({firestoreVersion:process.env.FIRESTORE_EMULATOR_VERSION,bundleDigest:'sha256:'+createHash('sha256').update(bundle).digest('hex'),clients:results},null,2)+'\n');
+    await writeFile(resolve(output,'results.json'),JSON.stringify({mode,firestoreVersion:process.env.FIRESTORE_EMULATOR_VERSION,bundleDigest:'sha256:'+createHash('sha256').update(bundle).digest('hex'),clients:results},null,2)+'\n');
     if(index%10===0 || info.status!=='passed')console.log(JSON.stringify(row));
   }
 } finally { await browser.close();await new Promise(resolve=>server.close(resolve)); }
