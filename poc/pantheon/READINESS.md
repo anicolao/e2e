@@ -1,56 +1,52 @@
 # Pantheon readiness results
 
-Three checks now wait for the state they need. Actions and readiness waits retain their two-second limits; accepted image hashes stay unchanged.
+Four test fixes preserve the checks they intended to make. Actions and assertions retain their two-second limits, and accepted image hashes stay unchanged.
 
-[Application changes](https://github.com/anicolao/pantheon/compare/dfc7f6307b61a8885be870e841d83895811257d1...b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037) · [Current source](source.json)
+[Application changes](https://github.com/anicolao/pantheon/compare/dfc7f6307b61a8885be870e841d83895811257d1...b37e8cefef820dba74dfa2db202cfcd665ae5a8b) · [Current source](source.json)
 
-## Fixes
+## Test fixes
 
 - The observer already centered Obol before receiving “Ariadne browsed Obol.” The test now checks the new log entry too. A regression disconnects the observer, proves centering passes before delivery, then reconnects and checks the update.
 - The rules test read a heading’s position once after checking a selection that could already be true. It now waits for the heading to clear the sticky navigation.
-- The lab’s Trigger click spent almost its entire deadline waiting for initialization: input was sent at 1,960 ms. The test now waits for the enabled button before clicking, as other lab tests do.
+- The lab’s Trigger click spent almost its entire deadline waiting for initialization: input was sent at 1,960 ms. The test now waits for the enabled button before clicking.
+- The worship flight could finish before the test inspected its active animations. The test now records the real keyframes when the animation starts, then checks them after the overlay lands. All three screen sizes pass locally.
 
-Required test identities now use file, describe groups, title, and project, so moving source lines keeps the identity. The observer regression adds three required cases, bringing the suite to 432.
+Required test identities use file, describe groups, title, and project, so moving source lines keeps the identity. The observer regression adds three required cases, bringing the suite to 432.
 
-## Full-suite verification
+## Runner storage stall
 
-These runs used `0ea155fe`, before the final lab fix:
+The [latest disk-based run](https://github.com/anicolao/e2e/actions/runs/40044348980) identified a storage stall. Chromium queued a purchase commit for **4,588 ms before sending it**; the emulator then responded in **53 ms**. Runner samples show **99.5% I/O wait** during the delay. A connection failure also overlaps heavy I/O wait. The separate flight failure was the animation observation race described above.
 
-| Run | Passed / skipped / failed | Matching captures |
+[Request timings and CPU samples](results/runner-io-stall.json)
+
+We’re testing a **4 GiB RAM workspace** for the application, Chromium, browser profiles, emulator files, and output. Reports move to disk after testing. The run samples workspace use, memory, CPU, and I/O pressure. Firestore stays at 1.22.0.
+
+The earlier 3,232 ms read lacked browser network timing, so its exact cause remains unproven. The new evidence shows why request duration alone cannot identify an emulator problem. [Earlier failure](results/readiness-stalls.json)
+
+## Verification before the final flight fix
+
+These full runs used `b6f1b59e`:
+
+| Environment | Passed / skipped / failed | Matching captures |
 | --- | --- | --- |
-| Linux 1 | 383 / 49 / 0 | 1,444 / 1,444 |
-| Linux 2 | 383 / 49 / 0 | 1,444 / 1,444 |
-| Linux 3 | 381 / 49 / 2 | 1,433 / 1,433 |
-| macOS | 384 / 48 / 0 | 1,444 / 1,444 |
+| Linux, emulator 1.22.0, runner 1 | 383 / 49 / 0 | 1,444 / 1,444 |
+| Linux, emulator 1.22.0, runner 2 | 383 / 49 / 0 | 1,444 / 1,444 |
+| Linux, emulator 1.22.0, runner 3 | 380 / 49 / 3 | 1,439 / 1,439 |
+| Linux, emulator 1.21.0, all three runners | 1,149 / 147 / 0 | 4,332 / 4,332 |
+| macOS, emulator 1.22.0 | 384 / 48 / 0 | 1,444 / 1,444 |
 
-[Linux run](https://github.com/anicolao/e2e/actions/runs/40025833881) · [Linux results](results/linux-readiness-full.json) · [Mac results](results/macos-readiness-full.json)
+[Linux 1.22 results](results/linux-final-disk-1.22.0.json) · [Linux 1.21 results](results/linux-final-disk-1.21.0.json) · [Mac results](results/macos-readiness-final-full.json)
 
-Linux 3 failed on a gain update and Trigger. Coverage checks reject both failures, including the nonvisual lab test. Eleven later captures were missing. Every recorded PNG matches its imported hash. The earlier connection stall and phone pixel difference did not recur.
+Every captured PNG matches. Coverage checks reject the failed run, including its nonvisual animation failure and five missing screenshots. The [ledger](results/experiments.json) retains earlier runs and the reverted navigation experiment.
 
-## Lab fix and emulator comparison
+## Transport checks
 
-The final source, `b6f1b59e`, passed the affected gain and tabletop staging stories:
+[Three probes](TRANSPORT.md) passed with 9,000 fresh browser clients and 84,000 timed operations across both emulator versions. They cover basic reads, live event listeners, and 9,000 full page reloads. Their slowest operation took 446 ms.
 
-| Environment | Passed / declared skips | Matching captures |
-| --- | --- | --- |
-| Linux, emulator 1.22.0: nine repetitions across three runners | 171 / 72 | 414 / 414 |
-| Linux, emulator 1.21.0: nine repetitions across three runners | 171 / 72 | 414 / 414 |
-| macOS, emulator 1.22.0 | 19 / 8 | 46 / 46 |
+The simple transport probes didn’t reproduce the full-suite stall. Browser network timings and runner resource samples supplied the missing evidence.
 
-[1.22.0 results](results/emulator-1.22.0.json) · [1.21.0 results](results/emulator-1.21.0.json) · [Mac results](results/macos-regressions.json)
+## Remaining rollout work
 
-## Remaining latency issue
+Complete verification of the RAM workspace and final test revision, then review the baseline-change workflow and publish the complete image set before application cutover.
 
-The failed gain update includes a Firestore `batchGet` taking **3,232 ms**. This exceeds the budget; the failure remains valid. [Diagnostic summary](results/readiness-stalls.json)
-
-A [Firebase report of similar stalls](https://github.com/firebase/firebase-tools/issues/11163) prompted the version comparison. Neither version reproduced our slow read. Their longest GC pauses were 20.3 ms and 17.3 ms; the original failure lacked GC logs. These samples do not establish its cause.
-
-We’ll keep emulator 1.22.0 and retain request timings, connection stages, long tasks, server logs, and GC logs. Screenshot failures also save browser state and a diagnostic follow-up image while retaining the failed comparison. Cutover remains gated on resolving the latency issue and completing baseline review and storage.
-
-## Other evidence
-
-[Focused Mac checks](results/readiness-final.json) passed 45 cases and 207 captures; [focused Linux checks](results/readiness-original-linux.json) passed 108 cases and 621 captures.
-
-[Cloud capture](https://github.com/anicolao/e2e/actions/runs/40026686029) and the [separate publisher](https://github.com/anicolao/e2e-baselines/actions/runs/40028903205) passed against `0ea155fe`, reusing six images. The [receipt](results/readiness-cloud-publication.json) records tested and baseline source revisions separately.
-
-The [ledger](results/experiments.json) retains the failed client-navigation experiment. Local Nix setup now evaluates just the unchanged flake and lock files; we removed the two temporary 16 GB source copies made during setup.
+[Cloud capture and publication](results/readiness-cloud-publication.json) already proved separate test and publisher workflows, reusing six accepted images and recording tested and baseline source revisions separately. [Initial POC results](RESULTS.md) cover README review and backups.

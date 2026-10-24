@@ -30,7 +30,9 @@ const results = [];
 for (const folder of folders.sort()) {
   const records = (await readFile(resolve(folder, 'captures.jsonl'), 'utf8')).trim().split('\n').map(l => JSON.parse(l));
   const browserReport = JSON.parse(await readFile(resolve(folder, 'playwright.json'), 'utf8'));
-  const suiteCheck = representative ? { ok: true, errors: [] } : checkSuite(suite.platforms.linux, reportCases(browserReport));
+  const cases = reportCases(browserReport);
+  const caseSummaries = cases.map(test => { const id=JSON.parse(test.id); return {title:id.at(-2),project:id.at(-1),status:test.status,expectedStatus:test.expectedStatus}; });
+  const suiteCheck = representative ? { ok: true, errors: [] } : checkSuite(suite.platforms.linux, cases);
   const tests = (await readFile(resolve(folder, 'tests.jsonl'), 'utf8')).trim().split('\n').map(l => JSON.parse(l));
   const seen = new Map<string, string>();
   for (const record of records) {
@@ -54,9 +56,9 @@ for (const folder of folders.sort()) {
   }
   sets.push(seen);
   results.push({ folder: relativePath(folder), firestoreVersion: records[0]?.firestoreVersion, storage: records[0]?.storage, captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
-    importedMatches: records.filter(r => r.matches).length, tests: tests.length,
-    failedTests: tests.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
-    declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
+    importedMatches: records.filter(r => r.matches).length, tests: cases.length, fixtureTests: tests.length,
+    failedTests: caseSummaries.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
+    declaredSkips: caseSummaries.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
 }
 function relativePath(path: string) { return path.slice(root.length + 1); }
 const requiredRuns = scope === 'oracle' ? 1 : representative ? 9 : 3;

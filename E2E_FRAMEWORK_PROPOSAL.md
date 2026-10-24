@@ -12,6 +12,8 @@ We’ll first prove that repeated captures produce identical bytes across fresh 
 
 A full run checks every required story, step, player view, screen size, and environment. At each step, check behavior, wait for the UI and artwork to settle, check layout, then capture and hash the PNG. Readiness, layout, capture, and comparison share a 2,000 ms deadline. Actions and assertions each get 2,000 ms. Use one browser worker per runner, explicit readiness checks, and zero retries.
 
+Run timed work in a bounded RAM workspace and copy reports to disk afterward. Record peak workspace and memory use, and split story groups to fit the runner. Keep browser request timings and runner CPU, I/O wait, and memory samples so failures show where the time went.
+
 Verifying a screenshot only requires checking its hash and length against the manifest, so we don’t need to download baselines or save matching screenshots.
 
 When a comparison fails, save the screenshot, fetch and verify the baseline, and show both images with a diff. Label differences caused only by PNG encoding. Build the report after the timed check, with a separate timeout. If the download fails, keep the screenshot and explain the failure.

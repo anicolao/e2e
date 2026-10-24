@@ -72,7 +72,7 @@ Test storage errors with fixtures; test capture, behavior, and deadlines in the 
 
 Run every required story, screen size, player view, and platform. Update `scripts/check-e2e-policy.ts` and tooling tests. Check that every expected test and step ran.
 
-Split generation into story groups, each with isolated emulators and one browser worker. Set a disk budget covering dependencies, services, candidates, and reports. Measure peak use.
+Split generation into story groups, each with isolated emulators and one browser worker. Use a 4 GiB RAM workspace for the application, browser profiles, services, and test output, then copy reports to disk after testing. Measure peak workspace, memory, and disk use.
 
 Update generated READMEs and `FIDELITY.md` links to use release images. Review a complete story on GitHub from a fresh application commit.
 
