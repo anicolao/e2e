@@ -5,17 +5,21 @@ import { resolve, dirname } from 'node:path';
 const root = resolve(process.argv[2] ?? 'poc-output');
 const folders: string[] = [];
 const scope = process.env.E2E_POC_SCOPE ?? 'representative';
+const platform = process.env.E2E_POC_PLATFORM ?? 'linux';
+if (platform !== 'linux' && platform !== 'darwin') throw new Error(`Unsupported platform: ${platform}`);
+const platformPath = (path:string) => path.replace(/-linux\.png$/, `-${platform}.png`);
 const selection = JSON.parse(await readFile(new URL(scope === 'readiness' ? './readiness.json' : scope === 'regressions' ? './regressions.json' : './representative.json', import.meta.url), 'utf8')) as { expectedCaptures: string[]; expectedTests: {title:string;project:string;excluded?:boolean}[] };
+selection.expectedCaptures = selection.expectedCaptures.map(platformPath);
 const representative = scope !== 'full';
 if (scope === 'oracle') {
   selection.expectedCaptures = selection.expectedCaptures.filter(path => path.includes('/oracle-draw-reveals-and-lands-in-its-sorted-hand-layer/'));
   selection.expectedTests = selection.expectedTests.filter(test => test.title.startsWith('Oracle draw'));
 }
-const suite = JSON.parse(await readFile(new URL('./suite.json', import.meta.url), 'utf8')) as { platforms: { linux: RequiredCase[] } };
+const suite = JSON.parse(await readFile(new URL('./suite.json', import.meta.url), 'utf8')) as { platforms: Record<'linux' | 'darwin', RequiredCase[]> };
 const imported = JSON.parse(await readFile(new URL('./baselines.json', import.meta.url), 'utf8')) as { images: Record<string, unknown> };
-const fullCaptures = Object.keys(imported.images).filter(p => p.endsWith('-linux.png'));
+const fullCaptures = Object.keys(imported.images).filter(p => p.endsWith(`-${platform}.png`));
 const acceptedInventory = await readFile(new URL('./active-inventory.json', import.meta.url), 'utf8').then(text => JSON.parse(text) as Record<string, string[]>, error => { if (error.code === 'ENOENT') return undefined; throw error; });
-const requiredFullCaptures = acceptedInventory ? Object.values(acceptedInventory).flat() : fullCaptures;
+const requiredFullCaptures = acceptedInventory ? Object.values(acceptedInventory).flat().map(platformPath) : fullCaptures;
 const observing = process.env.E2E_POC_MODE === 'observe';
 const activeInventory: Record<string, string[]> = {};
 async function scan(path: string) {
@@ -32,7 +36,7 @@ for (const folder of folders.sort()) {
   const browserReport = JSON.parse(await readFile(resolve(folder, 'playwright.json'), 'utf8'));
   const cases = reportCases(browserReport);
   const caseSummaries = cases.map(test => { const id=JSON.parse(test.id); return {title:id.at(-2),project:id.at(-1),status:test.status,expectedStatus:test.expectedStatus}; });
-  const suiteCheck = representative ? { ok: true, errors: [] } : checkSuite(suite.platforms.linux, cases);
+  const suiteCheck = representative ? { ok: true, errors: [] } : checkSuite(suite.platforms[platform], cases);
   const tests = (await readFile(resolve(folder, 'tests.jsonl'), 'utf8')).trim().split('\n').map(l => JSON.parse(l));
   const seen = new Map<string, string>();
   for (const record of records) {
@@ -50,19 +54,23 @@ for (const folder of folders.sort()) {
       if (found.length !== 1 || !(found[0].status === 'passed' || required.excluded && found[0].status === 'skipped')) incompleteTests.push(required);
     }
   }
+  const runInventory: Record<string,string[]> = {};
+  for (const row of records) (runInventory[`${row.file}:${row.title}:${row.project}`] ??= []).push(row.baseline);
+  const orderedInventoryErrors = !observing && acceptedInventory ? Object.entries(runInventory)
+    .filter(([key,paths]) => JSON.stringify(paths) !== JSON.stringify(acceptedInventory[key]?.map(platformPath))).map(([key]) => key) : [];
   if (sets.length === 0) for (const row of records) {
     const key = `${row.file}:${row.title}:${row.project}`;
     (activeInventory[key] ??= []).push(row.baseline);
   }
   sets.push(seen);
-  results.push({ folder: relativePath(folder), firestoreVersion: records[0]?.firestoreVersion, storage: records[0]?.storage, captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
+  results.push({ folder: relativePath(folder), firestoreVersion: records[0]?.firestoreVersion, storage: records[0]?.storage, captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, orderedInventoryErrors, missingCaptures, unexpectedCaptures, incompleteTests,
     importedMatches: records.filter(r => r.matches).length, tests: cases.length, fixtureTests: tests.length,
     failedTests: caseSummaries.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
     declaredSkips: caseSummaries.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });
 }
 function relativePath(path: string) { return path.slice(root.length + 1); }
-const requiredRuns = scope === 'oracle' ? 1 : representative ? 9 : 3;
-if (sets.length !== requiredRuns) throw new Error(`Need ${requiredRuns} runs from three independent runners, found ${sets.length}`);
+const requiredRuns = scope === 'oracle' ? 1 : representative ? (platform === 'linux' ? 9 : 3) : (platform === 'linux' ? 3 : 1);
+if (sets.length !== requiredRuns) throw new Error(`Need ${requiredRuns} ${platform} runs, found ${sets.length}`);
 const differences = [];
 for (let i = 1; i < sets.length; i++) {
   for (const key of new Set([...sets[0].keys(), ...sets[i].keys()])) {
@@ -77,4 +85,4 @@ await writeFile(resolve(root, 'active-inventory.json'), JSON.stringify(activeInv
 await mkdir(root, { recursive: true });
 await writeFile(resolve(root, 'analysis.json'), JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify(summary, null, 2));
-if (differences.length || results.some(r => r.missingCaptures.length || r.unexpectedCaptures.length || r.incompleteTests.length || r.failedTests.length || r.importedMatches !== r.captures || r.browserStats.unexpected || r.browserStats.flaky || r.browserErrors.length || !r.suiteCheck.ok) || !sets[0].size) process.exitCode = 1;
+if (differences.length || results.some(r => r.orderedInventoryErrors.length || r.missingCaptures.length || r.unexpectedCaptures.length || r.incompleteTests.length || r.failedTests.length || r.importedMatches !== r.captures || r.browserStats.unexpected || r.browserStats.flaky || r.browserErrors.length || !r.suiteCheck.ok) || !sets[0].size) process.exitCode = 1;

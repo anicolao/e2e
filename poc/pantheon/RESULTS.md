@@ -69,4 +69,4 @@ gh workflow run pantheon-poc.yml --repo anicolao/e2e -f mode=seed -f scope=oracl
 gh workflow run publish-seed.yml --repo anicolao/e2e-baselines -f source_run_id=SUCCESSFUL_SEED_RUN
 ```
 
-Download evidence with `gh run download RUN --repo anicolao/e2e -D poc-output/RUN`. Analyze a full run with `E2E_POC_SCOPE=full E2E_POC_MODE=verify bun poc/pantheon/analyze.ts poc-output/RUN`; failed runs retain their coverage and comparison results.
+Download evidence with `gh run download RUN --repo anicolao/e2e -D poc-output/RUN`. Analyze a full run with `E2E_POC_SCOPE=full E2E_POC_MODE=verify bun poc/pantheon/analyze.ts poc-output/RUN`; failed runs retain their coverage and comparison results. For a local Mac run, add `E2E_POC_PLATFORM=darwin`; its full-suite check expects one complete run.
