@@ -97,3 +97,11 @@ keep working until it is all figured out.
 ```
 
 Prompt 12 produced the [final application fix](https://github.com/anicolao/pantheon/commit/b37e8cefef820dba74dfa2db202cfcd665ae5a8b), [RAM workspace and I/O evidence](https://github.com/anicolao/e2e/commit/ecbc340), and [shared Mac coverage check](https://github.com/anicolao/e2e/commit/211382d). The [full Linux verification](https://github.com/anicolao/e2e/actions/runs/40047998663) and final Mac run pass; measurements and rollout gates are in the [readiness report](poc/pantheon/READINESS.md).
+
+## 13
+
+Recorded 2026-10-23 from Andrew Nicolao. Result: [migration readiness audit](https://github.com/anicolao/e2e/commit/baa56eb). Two rollout gates remain: publishing and backing up the complete active image set, and completing the reviewed baseline-change workflow. No migration PR was opened.
+
+```text
+let's put up a PR that migrates patheon to this system, if htere are no blockers.
+```
