@@ -1,0 +1,86 @@
+name: Pantheon transport diagnostic
+on:
+  workflow_dispatch:
+    inputs:
+      clients:
+        type: string
+        default: '100'
+permissions:
+  contents: read
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [1, 2, 3]
+        firestore: ['1.22.0', '1.21.0']
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble@sha256:824f1a789072e648c62541c2cfa4479c4061a290d5c27766d67dc1dcbc19b321
+      options: --ipc=host
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: framework
+          persist-credentials: false
+      - name: Prepare exact source without baseline images
+        run: python3 framework/poc/pantheon/prepare-source.py pantheon
+      - run: apt-get update && apt-get install -y --no-install-recommends unzip
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.3.10
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Pin the selected Firestore emulator
+        env:
+          VERSION: ${{ matrix.firestore }}
+        run: python3 framework/poc/pantheon/prepare-emulator.py "$VERSION" "$GITHUB_WORKSPACE/emulators"
+      - name: Install and check original policy
+        working-directory: pantheon
+        run: |
+          git config --global --add safe.directory "$PWD"
+          bun install --frozen-lockfile
+          bun run check:e2e-policy
+          bun test tests/tooling/e2e-policy.test.ts
+          uname -m
+          bunx playwright --version
+          df -h .
+          test "$(find tests/e2e -name '*.png' | wc -l)" -eq 0
+      - name: Prepare the real SDK client
+        run: |
+          mkdir -p pantheon/.e2e-poc/poc/pantheon
+          cp framework/poc/pantheon/transport-client.mjs pantheon/.e2e-poc/transport-client.mjs
+          cp framework/poc/pantheon/server-diagnostics.py pantheon/.e2e-poc/poc/pantheon/
+          cd pantheon
+          bun build .e2e-poc/transport-client.mjs --target browser --minify --outfile .e2e-poc/transport-client.js
+      - name: Exercise fresh authenticated clients
+        working-directory: pantheon
+        env:
+          CI: 'true'
+          E2E_POC_OUTPUT: ${{ github.workspace }}/evidence
+          FIRESTORE_EMULATOR_VERSION: ${{ matrix.firestore }}
+          FIREBASE_EMULATORS_PATH: ${{ github.workspace }}/emulators
+          PROBE_CLIENTS: ${{ inputs.clients }}
+        run: |
+          mkdir -p "$E2E_POC_OUTPUT"
+          export JAVA_TOOL_OPTIONS="-Xlog:gc*:file=$E2E_POC_OUTPUT/java-gc.log:time,uptime,tags:filecount=2,filesize=1M"
+          python3 ../framework/poc/pantheon/sample-runner.py "$E2E_POC_OUTPUT/runner.jsonl" &
+          sampler=$!
+          trap 'kill "$sampler" 2>/dev/null || true' EXIT
+          result=0
+          bunx firebase emulators:exec --project demo-pantheon --only auth,firestore "bun ../framework/poc/pantheon/transport-probe.mjs" 2>&1 | tee "$E2E_POC_OUTPUT/run.log" || result=1
+          if [[ -f firestore-debug.log ]]; then cp firestore-debug.log "$E2E_POC_OUTPUT/"; fi
+          exit "$result"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: transport-${{ matrix.firestore }}-${{ matrix.runner }}
+          path: evidence/
+          retention-days: 14
+          if-no-files-found: error
