@@ -153,5 +153,7 @@
       "cgroupCpu": "usage_usec 1161857654\nuser_usec 965464834\nsystem_usec 196392819\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
     }
   ],
-  "interpretation": "The browser queued the commit while the runner stalled on disk I/O; the emulator answered promptly after transmission. The separate animation failure raced the end of the transition."
+  "interpretation": "The browser queued the commit while the runner stalled on disk I/O; the emulator answered promptly after transmission. The separate animation failure raced the end of the transition.",
+  "maxGcPauseMs": 47.675,
+  "gcLogNote": "Recovered emulator GC log from the rotated files after jcmd inherited its log path. Future logs use process IDs, and jcmd clears JAVA_TOOL_OPTIONS."
 }

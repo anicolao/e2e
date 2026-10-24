@@ -10,7 +10,7 @@ Three probes passed with **9,000 fresh browser clients and 84,000 timed operatio
 
 Every operation retains its two-second limit. The reload probe completed 9,000 full page reloads. These checks use Pantheon’s Firebase SDK, security rules, browser launch flags, and pinned emulator binaries. They isolate Firebase traffic; full stories exercise it alongside gameplay and rendering.
 
-The probes did **not reproduce** the earlier 3,232 ms read. They give us no reason to change emulator versions. Full-suite diagnostics now record browser network timing, runner CPU and memory, GC logs, and JVM threads after failures.
+The probes did **not reproduce** the earlier 3,232 ms read. They give us no reason to change emulator versions. The [full-suite investigation](READINESS.md#runner-storage-stall) found a browser request queued during heavy runner I/O wait. Diagnostics record browser network timing, runner CPU and memory, GC logs, and JVM threads after failures.
 
 ## Reproduce
 

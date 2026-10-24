@@ -77,7 +77,7 @@ Review the walkthrough against the accepted designs before approving baseline ch
 
 ## Image storage
 
-Upload original PNGs as GitHub Release assets with `Content-Type: image/png`, up to 512 images per release. Publish each batch as an immutable release. The catalog maps each hash to its repository, release, asset ID, filename, and byte length.
+Upload original PNGs as GitHub Release assets with `Content-Type: image/png`, up to 512 images per release. Keep each batch within the workspace’s byte budget too. Publish each batch as an immutable release. The catalog maps each hash to its repository, release, asset ID, filename, and byte length.
 
 The storage API provides `has`, `get`, `publish`, and `audit`. Check downloaded hashes before using images. Cache writes are atomic; when the cache fills, remove the least recently used images.
 
