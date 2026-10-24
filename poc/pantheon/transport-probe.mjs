@@ -61,8 +61,9 @@ try {
       info.status='failed';row.error=String(error);await diagnose();
     } finally { await context.close(); }
     row.status=info.status;results.push(row);
-    await writeFile(resolve(output,'results.json'),JSON.stringify({mode,firestoreVersion:process.env.FIRESTORE_EMULATOR_VERSION,bundleDigest:'sha256:'+createHash('sha256').update(bundle).digest('hex'),clients:results},null,2)+'\n');
+    await writeFile(resolve(output,'results.json'),JSON.stringify({mode,requestedClients:clients,firestoreVersion:process.env.FIRESTORE_EMULATOR_VERSION,bundleDigest:'sha256:'+createHash('sha256').update(bundle).digest('hex'),clients:results},null,2)+'\n');
     if(index%10===0 || info.status!=='passed')console.log(JSON.stringify(row));
+    if(results.filter(row=>row.status!=='passed').length>=5)break;
   }
 } finally { await browser.close();await new Promise(resolve=>server.close(resolve)); }
 const failures=results.filter(row=>row.status!=='passed');
