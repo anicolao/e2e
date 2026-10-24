@@ -2,7 +2,7 @@ import { initializeApp, deleteApp } from 'firebase/app';
 import { getAuth, connectAuthEmulator, signInAnonymously } from 'firebase/auth';
 import { initializeFirestore, connectFirestoreEmulator, doc, getDocFromServer, runTransaction, writeBatch, serverTimestamp, collection, query, orderBy, onSnapshot } from 'firebase/firestore';
 
-let app, db, uid, room = 'TRANSPORT';
+let app, db, uid, room = localStorage.getItem('probe-room') ?? 'TRANSPORT';
 window.probe = {
   async authenticate() {
     performance.mark('probe:auth:start');
@@ -12,11 +12,13 @@ window.probe = {
     connectAuthEmulator(auth,'http://127.0.0.1:9293',{disableWarnings:true});
     connectFirestoreEmulator(db,'127.0.0.1',8193);
     await auth.authStateReady();
-    uid = (await signInAnonymously(auth)).user.uid;
+    if(!auth.currentUser)await signInAnonymously(auth);
+    uid = auth.currentUser.uid;
     performance.mark('probe:auth:ready');
   },
   async create() {
     room = uid;
+    localStorage.setItem('probe-room',room);
     const batch = writeBatch(db);
     batch.set(doc(db,'games',room),{owner:uid,members:[uid],playerCount:2,revision:1,phase:'gathering'});
     batch.set(doc(db,'games',room,'events','1'),{schemaVersion:1,sequence:1,actorUid:uid,type:'game/created',name:'Probe',playerCount:2,createdAt:serverTimestamp()});

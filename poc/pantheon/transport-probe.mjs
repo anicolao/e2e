@@ -25,8 +25,8 @@ const seeded = await fetch('http://127.0.0.1:8193/v1/projects/demo-pantheon/data
 if (!seeded.ok) throw new Error(`Probe seed failed: ${seeded.status}`);
 const browser = await chromium.launch({headless:true,...config.use.launchOptions});
 const mode=process.env.PROBE_MODE ?? 'rooms';
-if(!['rooms','events'].includes(mode))throw new Error('Invalid probe mode');
-const stages=mode==='events'?['authenticate','create','listen','events','transaction']:['authenticate','listen','transaction'];
+if(!['rooms','events','reloads'].includes(mode))throw new Error('Invalid probe mode');
+const stages=mode!=='rooms'?['authenticate','create','listen','events','transaction']:['authenticate','listen','transaction'];
 const results=[];
 try {
   for(let index=0;index<clients;index++) {
@@ -37,8 +37,9 @@ try {
     const row={client:index,stages:[]};
     try {
       await page.goto('http://127.0.0.1:4193/',{timeout:2000});
-      for(const stage of stages) {
-        const start=performance.now(), operation=page.evaluate(stage=>window.probe[stage](),stage);
+      const sequence=mode==='reloads'?[...stages,...Array.from({length:3},()=>['reload','authenticate','listen','events','transaction']).flat()]:stages;
+      for(const stage of sequence) {
+        const start=performance.now(), operation=stage==='reload'?page.reload({timeout:2000}):page.evaluate(stage=>window.probe[stage](),stage);
         let timer;
         const result=await Promise.race([
           operation.then(()=>({completed:true}),error=>({error:String(error)})),
