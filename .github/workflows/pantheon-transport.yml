@@ -74,7 +74,7 @@ jobs:
           PROBE_CLIENTS: ${{ inputs.clients }}
         run: |
           mkdir -p "$E2E_POC_OUTPUT"
-          export JAVA_TOOL_OPTIONS="-Xlog:gc*:file=$E2E_POC_OUTPUT/java-gc.log:time,uptime,tags:filecount=2,filesize=1M"
+          export JAVA_TOOL_OPTIONS="-Xlog:gc*:file=$E2E_POC_OUTPUT/java-gc-%p.log:time,uptime,tags:filecount=2,filesize=1M"
           python3 ../framework/poc/pantheon/sample-runner.py "$E2E_POC_OUTPUT/runner.jsonl" &
           sampler=$!
           trap 'kill "$sampler" 2>/dev/null || true' EXIT

@@ -38,7 +38,7 @@ export function recordCapture(bytes: Buffer, metadata: Capture): void {
   const comparisonMs = performance.now() - started;
   appendFileSync(resolve(output, 'captures.jsonl'), JSON.stringify({ ...metadata,
     baseline: path, file: relative(root, metadata.file), actual, expected, matches, mode,
-    comparisonMs, sourceCommit: source.commit, firestoreVersion: process.env.FIRESTORE_EMULATOR_VERSION ?? '1.22.0' }) + '\n');
+    comparisonMs, sourceCommit: source.commit, firestoreVersion: process.env.FIRESTORE_EMULATOR_VERSION ?? '1.22.0', storage: process.env.E2E_RUNTIME_STORAGE ?? 'disk' }) + '\n');
   if (!matches || mode === 'seed') {
     const folder = resolve(output, matches ? 'objects' : 'actual');
     mkdirSync(folder, { recursive: true });

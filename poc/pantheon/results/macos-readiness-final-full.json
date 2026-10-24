@@ -1,0 +1,24 @@
+{
+  "sourceCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+  "firestoreVersion": "1.22.0",
+  "stats": {
+    "startTime": "2026-10-24T00:30:25.439Z",
+    "duration": 1131253.31,
+    "expected": 384,
+    "skipped": 48,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "captures": 1444,
+  "matches": 1444,
+  "suiteCheck": {
+    "ok": true,
+    "errors": []
+  },
+  "orderedInventoryMatches": true,
+  "maxCapturePreparationMs": 994.7846249999711,
+  "medianComparisonMs": 0.9397499999904539,
+  "maxComparisonMs": 25.50250000000233,
+  "rpcRequests": 2838,
+  "maxRpcHeadersMs": 125.40700000000652
+}

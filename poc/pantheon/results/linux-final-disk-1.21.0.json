@@ -1,0 +1,751 @@
+{
+  "runs": [
+    {
+      "folder": "runner-1/repeat-1",
+      "firestoreVersion": "1.21.0",
+      "captures": 1444,
+      "browserStats": {
+        "startTime": "2026-10-24T00:20:11.707Z",
+        "duration": 1912809.399,
+        "expected": 383,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 1444,
+      "tests": 312,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "every simple Action and Temple uses real authenticated commands",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop 2 players join their edges and keep reverse join order",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop 4 players join their edges and keep reverse join order",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop randomized draft follows clockwise seats and reverses the draft",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop restored four-edge game shows one face-up hand and a rotated market",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop bot occupies an edge and plays through the real worker",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop motion hands off controls after rotating and accepts a rotated market swipe",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop exits face the tapped edge and leader names identify the log",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop bot cards visibly fly before the next command",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop corner readers face their player and stay outside the playable table",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop trash reader shows and inspects cards from legal trash events",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop wide temples enlarge for worship and share card sizing with the hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop square temples enlarge for worship and share card sizing with the hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 320 by 568 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 375 by 667 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 430 by 932 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "every simple Action and Temple uses real authenticated commands",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 320 by 568 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 375 by 667 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 430 by 932 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 1230.6210469999987
+    },
+    {
+      "folder": "runner-2/repeat-1",
+      "firestoreVersion": "1.21.0",
+      "captures": 1444,
+      "browserStats": {
+        "startTime": "2026-10-24T00:20:12.034Z",
+        "duration": 1944244.981,
+        "expected": 383,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 1444,
+      "tests": 312,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "every simple Action and Temple uses real authenticated commands",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop 2 players join their edges and keep reverse join order",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop 4 players join their edges and keep reverse join order",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop randomized draft follows clockwise seats and reverses the draft",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop restored four-edge game shows one face-up hand and a rotated market",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop bot occupies an edge and plays through the real worker",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop motion hands off controls after rotating and accepts a rotated market swipe",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop exits face the tapped edge and leader names identify the log",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop bot cards visibly fly before the next command",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop corner readers face their player and stay outside the playable table",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop trash reader shows and inspects cards from legal trash events",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop wide temples enlarge for worship and share card sizing with the hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop square temples enlarge for worship and share card sizing with the hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 320 by 568 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 375 by 667 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 430 by 932 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "every simple Action and Temple uses real authenticated commands",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 320 by 568 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 375 by 667 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 430 by 932 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 1973.8734980000008
+    },
+    {
+      "folder": "runner-3/repeat-1",
+      "firestoreVersion": "1.21.0",
+      "captures": 1444,
+      "browserStats": {
+        "startTime": "2026-10-24T00:20:10.267Z",
+        "duration": 1934562.071,
+        "expected": 383,
+        "skipped": 49,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "browserErrors": [],
+      "suiteCheck": {
+        "ok": true,
+        "errors": []
+      },
+      "missingCaptures": [],
+      "unexpectedCaptures": [],
+      "incompleteTests": [],
+      "importedMatches": 1444,
+      "tests": 312,
+      "failedTests": [],
+      "declaredSkips": [
+        {
+          "title": "every simple Action and Temple uses real authenticated commands",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop 2 players join their edges and keep reverse join order",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop 4 players join their edges and keep reverse join order",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop randomized draft follows clockwise seats and reverses the draft",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop restored four-edge game shows one face-up hand and a rotated market",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop bot occupies an edge and plays through the real worker",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop motion hands off controls after rotating and accepts a rotated market swipe",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop exits face the tapped edge and leader names identify the log",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop bot cards visibly fly before the next command",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop corner readers face their player and stay outside the playable table",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east card flights retain their facing and cleanup conceals the next hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop trash reader shows and inspects cards from legal trash events",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop wide temples enlarge for worship and share card sizing with the hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop square temples enlarge for worship and share card sizing with the hand",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop south harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop west harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop north harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east seed-keeper stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "tabletop east harvest-feast stages cards centrally before confirmation",
+          "project": "phone",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 320 by 568 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 375 by 667 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 430 by 932 phone",
+          "project": "desktop",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "every simple Action and Temple uses real authenticated commands",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 320 by 568 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 375 by 667 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        },
+        {
+          "title": "fit the public trays on a 430 by 932 phone",
+          "project": "tabletop-4k",
+          "status": "skipped",
+          "expectedStatus": "skipped"
+        }
+      ],
+      "maxCapturePreparationMs": 1327.3230310000072
+    }
+  ],
+  "repeatable": true,
+  "hashDifferences": [],
+  "coverageDifferences": [],
+  "differences": [],
+  "unusedBaselines": [
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/000-forge-trash-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/000-forge-trash-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/000-forge-trash-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/001-forge-selected-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/001-forge-selected-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/001-forge-selected-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/003-gain-selected-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/003-gain-selected-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/003-gain-selected-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/005-forge-finished-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/005-forge-finished-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/forge-gains-a-cheaper-card-before-doreios-offers-his-separate-choice/005-forge-finished-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/000-mandatory-discard-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/000-mandatory-discard-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/000-mandatory-discard-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/001-discard-selected-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/001-discard-selected-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/001-discard-selected-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/003-hand-last-card-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/003-hand-last-card-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/harvest-feast-requires-a-discard-after-drawing-and-fits-the-expanded-hand-in-a-fan/003-hand-last-card-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/001-play-action-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/001-play-action-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/001-play-action-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/003-trash-selected-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/003-trash-selected-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/003-trash-selected-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/004-trash-result-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/004-trash-result-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/004-trash-result-tabletop-4k-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/005-public-trash-desktop-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/005-public-trash-phone-linux.png",
+    "tests/e2e/004-actions/screenshots/play-choose-optional-trash-reconnect-and-show-the-public-result/005-public-trash-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/000-opening-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/000-opening-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/000-opening-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/001-temple-of-poseidon-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/001-temple-of-poseidon-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/001-temple-of-poseidon-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/002-harbor-pilot-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/002-harbor-pilot-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/002-harbor-pilot-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/003-sea-trade-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/003-sea-trade-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/003-sea-trade-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/004-three-devotion-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/004-three-devotion-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/004-three-devotion-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/005-last-contributor-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/005-last-contributor-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/005-last-contributor-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/006-first-contributors-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/006-first-contributors-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/006-first-contributors-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/007-another-god-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/007-another-god-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/four-shared-gods-and-three-devotion-remain-readable-with-paged-contributing-cards/007-another-god-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/014-topdecked-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/014-topdecked-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/014-topdecked-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/015-gain-observer-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/015-gain-observer-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/015-gain-observer-tabletop-4k-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/016-no-refund-desktop-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/016-no-refund-phone-linux.png",
+    "tests/e2e/006-worship/screenshots/raise-a-temple-worship-another-bloodline-s-god-and-keep-the-gained-action-on-top/016-no-refund-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/028-payment-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/028-payment-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/028-payment-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/029-handoff-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/029-handoff-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/029-handoff-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/030-cleanup-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/030-cleanup-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/030-cleanup-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/031-first-move-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/031-first-move-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/031-first-move-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/032-empty-trash-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/032-empty-trash-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-a-friend-from-the-first-temple-through-worship-and-cleanup-while-reading-the-public-table/032-empty-trash-tabletop-4k-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-drawing-before-discarding-and-then-receiving-melia-s-blessing-exactly-once/003-selected-desktop-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-drawing-before-discarding-and-then-receiving-melia-s-blessing-exactly-once/003-selected-phone-linux.png",
+    "tests/e2e/008-public-table/screenshots/follow-drawing-before-discarding-and-then-receiving-melia-s-blessing-exactly-once/003-selected-tabletop-4k-linux.png"
+  ]
+}

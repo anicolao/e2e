@@ -1,0 +1,166 @@
+{
+  "run": "https://github.com/anicolao/e2e/actions/runs/40045218795",
+  "frameworkCommit": "e5caf32",
+  "applicationCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+  "mode": "rooms",
+  "operationBudgetMs": 2000,
+  "totalClients": 3000,
+  "runs": [
+    {
+      "runner": "transport-1.21.0-1",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:c8b3d5c93f5f179b6ee57a44a7f00b835e189dbc1537465d3b20cc5ff2b2ea69",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 24.49,
+          "p99Ms": 32.89,
+          "maxMs": 132.44
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 27.78,
+          "p99Ms": 39.88,
+          "maxMs": 210.01
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 18.94,
+          "p99Ms": 36.48,
+          "maxMs": 122.14
+        }
+      }
+    },
+    {
+      "runner": "transport-1.21.0-2",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:c8b3d5c93f5f179b6ee57a44a7f00b835e189dbc1537465d3b20cc5ff2b2ea69",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 23.49,
+          "p99Ms": 30.05,
+          "maxMs": 83.76
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 27.67,
+          "p99Ms": 44.41,
+          "maxMs": 220.24
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 18.71,
+          "p99Ms": 36.32,
+          "maxMs": 76.94
+        }
+      }
+    },
+    {
+      "runner": "transport-1.21.0-3",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:c8b3d5c93f5f179b6ee57a44a7f00b835e189dbc1537465d3b20cc5ff2b2ea69",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 26.32,
+          "p99Ms": 45.63,
+          "maxMs": 161.28
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 31.02,
+          "p99Ms": 42.45,
+          "maxMs": 228.55
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 22.93,
+          "p99Ms": 43.2,
+          "maxMs": 98.45
+        }
+      }
+    },
+    {
+      "runner": "transport-1.22.0-1",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:c8b3d5c93f5f179b6ee57a44a7f00b835e189dbc1537465d3b20cc5ff2b2ea69",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 24.35,
+          "p99Ms": 29.18,
+          "maxMs": 53.23
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 28.4,
+          "p99Ms": 41.55,
+          "maxMs": 219.21
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 20.35,
+          "p99Ms": 37.66,
+          "maxMs": 86.1
+        }
+      }
+    },
+    {
+      "runner": "transport-1.22.0-2",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:c8b3d5c93f5f179b6ee57a44a7f00b835e189dbc1537465d3b20cc5ff2b2ea69",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 25.29,
+          "p99Ms": 29.11,
+          "maxMs": 53.87
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 29.92,
+          "p99Ms": 43.01,
+          "maxMs": 256.06
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 20.79,
+          "p99Ms": 40.66,
+          "maxMs": 108.65
+        }
+      }
+    },
+    {
+      "runner": "transport-1.22.0-3",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:c8b3d5c93f5f179b6ee57a44a7f00b835e189dbc1537465d3b20cc5ff2b2ea69",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 27.35,
+          "p99Ms": 54.8,
+          "maxMs": 126.68
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 31.39,
+          "p99Ms": 46.25,
+          "maxMs": 235.7
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 23.36,
+          "p99Ms": 74.51,
+          "maxMs": 198.48
+        }
+      }
+    }
+  ]
+}

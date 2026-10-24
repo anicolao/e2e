@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+  "sourceCommit": "b37e8cefef820dba74dfa2db202cfcd665ae5a8b",
   "platforms": {
     "linux": [
       {
@@ -375,13 +375,13 @@
         "id": "[\"006-worship/worship.integration.spec.ts\",\"006-worship/worship.integration.spec.ts\",\"Poseidon keeps the payment and grants his Favored Buy when Drachmas are exhausted\",\"tabletop-4k\"]"
       },
       {
-        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline’s god, and keep the gained Action on top\",\"phone\"]"
+        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline\u2019s god, and keep the gained Action on top\",\"phone\"]"
       },
       {
-        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline’s god, and keep the gained Action on top\",\"desktop\"]"
+        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline\u2019s god, and keep the gained Action on top\",\"desktop\"]"
       },
       {
-        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline’s god, and keep the gained Action on top\",\"tabletop-4k\"]"
+        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline\u2019s god, and keep the gained Action on top\",\"tabletop-4k\"]"
       },
       {
         "id": "[\"007-match/handoff.spec.ts\",\"007-match/handoff.spec.ts\",\"keep playing a Temple, spend the last Buy, and hand the turn to a friend exactly once\",\"phone\"]"
@@ -483,7 +483,7 @@
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow an Action draw followed by a bloodline blessing exactly once\",\"phone\"]"
       },
       {
-        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia’s blessing exactly once\",\"phone\"]"
+        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia\u2019s blessing exactly once\",\"phone\"]"
       },
       {
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow a Territory reveal moving to discard exactly once\",\"phone\"]"
@@ -504,7 +504,7 @@
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow an Action draw followed by a bloodline blessing exactly once\",\"desktop\"]"
       },
       {
-        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia’s blessing exactly once\",\"desktop\"]"
+        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia\u2019s blessing exactly once\",\"desktop\"]"
       },
       {
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow a Territory reveal moving to discard exactly once\",\"desktop\"]"
@@ -525,7 +525,7 @@
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow an Action draw followed by a bloodline blessing exactly once\",\"tabletop-4k\"]"
       },
       {
-        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia’s blessing exactly once\",\"tabletop-4k\"]"
+        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia\u2019s blessing exactly once\",\"tabletop-4k\"]"
       },
       {
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow a Territory reveal moving to discard exactly once\",\"tabletop-4k\"]"
@@ -1722,13 +1722,13 @@
         "id": "[\"006-worship/worship.integration.spec.ts\",\"006-worship/worship.integration.spec.ts\",\"Poseidon keeps the payment and grants his Favored Buy when Drachmas are exhausted\",\"tabletop-4k\"]"
       },
       {
-        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline’s god, and keep the gained Action on top\",\"phone\"]"
+        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline\u2019s god, and keep the gained Action on top\",\"phone\"]"
       },
       {
-        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline’s god, and keep the gained Action on top\",\"desktop\"]"
+        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline\u2019s god, and keep the gained Action on top\",\"desktop\"]"
       },
       {
-        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline’s god, and keep the gained Action on top\",\"tabletop-4k\"]"
+        "id": "[\"006-worship/worship.spec.ts\",\"006-worship/worship.spec.ts\",\"raise a Temple, worship another bloodline\u2019s god, and keep the gained Action on top\",\"tabletop-4k\"]"
       },
       {
         "id": "[\"007-match/handoff.spec.ts\",\"007-match/handoff.spec.ts\",\"keep playing a Temple, spend the last Buy, and hand the turn to a friend exactly once\",\"phone\"]"
@@ -1830,7 +1830,7 @@
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow an Action draw followed by a bloodline blessing exactly once\",\"phone\"]"
       },
       {
-        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia’s blessing exactly once\",\"phone\"]"
+        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia\u2019s blessing exactly once\",\"phone\"]"
       },
       {
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow a Territory reveal moving to discard exactly once\",\"phone\"]"
@@ -1851,7 +1851,7 @@
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow an Action draw followed by a bloodline blessing exactly once\",\"desktop\"]"
       },
       {
-        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia’s blessing exactly once\",\"desktop\"]"
+        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia\u2019s blessing exactly once\",\"desktop\"]"
       },
       {
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow a Territory reveal moving to discard exactly once\",\"desktop\"]"
@@ -1872,7 +1872,7 @@
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow an Action draw followed by a bloodline blessing exactly once\",\"tabletop-4k\"]"
       },
       {
-        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia’s blessing exactly once\",\"tabletop-4k\"]"
+        "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow drawing before discarding and then receiving Melia\u2019s blessing exactly once\",\"tabletop-4k\"]"
       },
       {
         "id": "[\"008-public-table/motion.integration.spec.ts\",\"008-public-table/motion.integration.spec.ts\",\"follow a Territory reveal moving to discard exactly once\",\"tabletop-4k\"]"

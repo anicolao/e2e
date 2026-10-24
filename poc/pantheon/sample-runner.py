@@ -2,10 +2,11 @@
 from pathlib import Path
 from datetime import datetime, timezone
 import json
+import os
 import sys
 import time
 
-paths = ['/proc/stat', '/proc/loadavg', '/proc/meminfo', '/sys/fs/cgroup/cpu.stat', '/sys/fs/cgroup/cpu.max', '/sys/fs/cgroup/memory.current', '/sys/fs/cgroup/memory.events']
+paths = ['/proc/stat', '/proc/loadavg', '/proc/meminfo', '/sys/fs/cgroup/cpu.stat', '/sys/fs/cgroup/cpu.max', '/sys/fs/cgroup/memory.current', '/sys/fs/cgroup/memory.events', '/proc/pressure/io', '/proc/diskstats', '/sys/fs/cgroup/io.stat', '/sys/fs/cgroup/io.pressure']
 with Path(sys.argv[1]).open('w', buffering=1) as output:
     while True:
         sample = {'utc': datetime.now(timezone.utc).isoformat()}
@@ -17,5 +18,9 @@ with Path(sys.argv[1]).open('w', buffering=1) as output:
                 sample[path] = value.strip()
             except OSError:
                 pass
+        if os.environ.get('E2E_RUNTIME_ROOT'):
+            disk = os.statvfs(os.environ['E2E_RUNTIME_ROOT'])
+            sample['runtimeBytes'] = (disk.f_blocks - disk.f_bfree) * disk.f_frsize
+            sample['runtimeCapacityBytes'] = disk.f_blocks * disk.f_frsize
         output.write(json.dumps(sample) + '\n')
         time.sleep(1)

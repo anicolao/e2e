@@ -53,7 +53,7 @@ for (const folder of folders.sort()) {
     (activeInventory[key] ??= []).push(row.baseline);
   }
   sets.push(seen);
-  results.push({ folder: relativePath(folder), firestoreVersion: records[0]?.firestoreVersion, captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
+  results.push({ folder: relativePath(folder), firestoreVersion: records[0]?.firestoreVersion, storage: records[0]?.storage, captures: records.length, browserStats: browserReport.stats, browserErrors: browserReport.errors, suiteCheck, missingCaptures, unexpectedCaptures, incompleteTests,
     importedMatches: records.filter(r => r.matches).length, tests: tests.length,
     failedTests: tests.filter(t => t.status !== 'passed' && !(t.status === 'skipped' && t.expectedStatus === 'skipped')),
     declaredSkips: tests.filter(t => t.status === 'skipped' && t.expectedStatus === 'skipped'), maxCapturePreparationMs: Math.max(...records.map(r => r.elapsedMs)) });

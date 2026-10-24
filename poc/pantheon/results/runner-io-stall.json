@@ -1,0 +1,157 @@
+{
+  "run": "https://github.com/anicolao/e2e/actions/runs/40044348980",
+  "sourceCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+  "runner": 3,
+  "firestoreVersion": "1.22.0",
+  "request": {
+    "url": "http://127.0.0.1:8193/v1/projects/demo-pantheon/databases/(default)/documents:commit",
+    "type": "xhr",
+    "startedMs": 155701.33857,
+    "startedUtc": "2026-10-24T00:31:26.616Z",
+    "status": 200,
+    "headersMs": 4647.847735000018,
+    "finishedMs": 4647.8594319999975,
+    "networkTiming": {
+      "startTime": 1792801886617.288,
+      "domainLookupStart": -1,
+      "domainLookupEnd": -1,
+      "connectStart": -1,
+      "secureConnectionStart": -1,
+      "connectEnd": -1,
+      "requestStart": 4588.176,
+      "responseStart": 4641.362,
+      "responseEnd": 4643.975
+    }
+  },
+  "browserQueueMs": 4588.176,
+  "serverResponseMs": 53.186,
+  "samples": [
+    {
+      "utc": "2026-10-24T00:28:45.689079+00:00",
+      "iowaitPercent": 0.0,
+      "cpuPercent": 57.11,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13382172 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 887423702\nuser_usec 731610522\nsystem_usec 155813179\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:46.689619+00:00",
+      "iowaitPercent": 0.76,
+      "cpuPercent": 64.89,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13409184 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 890009781\nuser_usec 733693273\nsystem_usec 156316507\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:47.690243+00:00",
+      "iowaitPercent": 20.45,
+      "cpuPercent": 13.47,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13387820 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 890540983\nuser_usec 734115767\nsystem_usec 156425215\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:48.690914+00:00",
+      "iowaitPercent": 40.7,
+      "cpuPercent": 3.52,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13388508 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 890615093\nuser_usec 734163611\nsystem_usec 156451482\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:49.694634+00:00",
+      "iowaitPercent": 74.88,
+      "cpuPercent": 0.25,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13396572 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 890617629\nuser_usec 734165401\nsystem_usec 156452227\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:50.695662+00:00",
+      "iowaitPercent": 74.56,
+      "cpuPercent": 0.5,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13409252 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 890624876\nuser_usec 734168579\nsystem_usec 156456297\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:51.696803+00:00",
+      "iowaitPercent": 8.33,
+      "cpuPercent": 40.66,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13822164 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 892246688\nuser_usec 735359052\nsystem_usec 156887635\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:28:52.697376+00:00",
+      "iowaitPercent": 0.25,
+      "cpuPercent": 61.93,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13670856 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 894724671\nuser_usec 737385326\nsystem_usec 157339345\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:24.804546+00:00",
+      "iowaitPercent": 0.0,
+      "cpuPercent": 37.88,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13086500 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1153328221\nuser_usec 958693356\nsystem_usec 194634864\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:25.805168+00:00",
+      "iowaitPercent": 0.0,
+      "cpuPercent": 37.97,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13118196 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1154850626\nuser_usec 960018018\nsystem_usec 194832608\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:26.805749+00:00",
+      "iowaitPercent": 27.82,
+      "cpuPercent": 9.77,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13109148 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1155243818\nuser_usec 960343988\nsystem_usec 194899829\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:27.806425+00:00",
+      "iowaitPercent": 35.41,
+      "cpuPercent": 1.5,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13109144 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1155286889\nuser_usec 960380220\nsystem_usec 194906669\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:28.810635+00:00",
+      "iowaitPercent": 70.0,
+      "cpuPercent": 12.75,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13208400 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1155790195\nuser_usec 960780820\nsystem_usec 195009374\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:29.811255+00:00",
+      "iowaitPercent": 99.5,
+      "cpuPercent": 0.5,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13208396 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1155796447\nuser_usec 960784012\nsystem_usec 195012434\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:30.811828+00:00",
+      "iowaitPercent": 99.5,
+      "cpuPercent": 0.25,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13208396 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1155801351\nuser_usec 960786424\nsystem_usec 195014927\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:31.812429+00:00",
+      "iowaitPercent": 39.85,
+      "cpuPercent": 27.32,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13739328 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1156862572\nuser_usec 961550562\nsystem_usec 195312009\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:32.813018+00:00",
+      "iowaitPercent": 0.25,
+      "cpuPercent": 60.41,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13549728 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1159281202\nuser_usec 963356655\nsystem_usec 195924547\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    {
+      "utc": "2026-10-24T00:31:33.813580+00:00",
+      "iowaitPercent": 0.25,
+      "cpuPercent": 64.47,
+      "memory": "MemTotal:       16330088 kB\nMemAvailable:   13437864 kB\nSwapFree:        3145724 kB",
+      "cgroupCpu": "usage_usec 1161857654\nuser_usec 965464834\nsystem_usec 196392819\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    }
+  ],
+  "interpretation": "The browser queued the commit while the runner stalled on disk I/O; the emulator answered promptly after transmission. The separate animation failure raced the end of the transition."
+}

@@ -115,6 +115,18 @@
     {
       "title": "tabletop east harvest-feast stages cards centrally before confirmation",
       "project": "tabletop-4k"
+    },
+    {
+      "title": "a worship choice opened by the scenario flies in from its sidebar card",
+      "project": "phone"
+    },
+    {
+      "title": "a worship choice opened by the scenario flies in from its sidebar card",
+      "project": "desktop"
+    },
+    {
+      "title": "a worship choice opened by the scenario flies in from its sidebar card",
+      "project": "tabletop-4k"
     }
   ],
   "expectedCaptures": [

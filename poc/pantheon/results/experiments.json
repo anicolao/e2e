@@ -2,6 +2,78 @@
   "remote": [
     {
       "conclusion": "success",
+      "createdAt": "2026-10-24T00:40:44Z",
+      "databaseId": 40046157417,
+      "headSha": "e2b5fc246ac67ff61f476f0627220df3b0578b41",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40046157417",
+      "note": "Reload probe: 3000 clients and 9000 full-page reloads pass."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T00:39:17Z",
+      "databaseId": 40046034837,
+      "headSha": "e2b5fc246ac67ff61f476f0627220df3b0578b41",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40046034837",
+      "note": "Event-listener probe: 3000 clients pass."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T00:38:50Z",
+      "databaseId": 40045999000,
+      "headSha": "e2b5fc246ac67ff61f476f0627220df3b0578b41",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40045999000",
+      "note": "Full-page reload probe smoke test: 18 clients pass."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T00:37:33Z",
+      "databaseId": 40045896861,
+      "headSha": "3ce86d4dc281908efb366b8506a029b47d4f0d98",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40045896861",
+      "note": "Corrected event-listener probe smoke test: 18 clients pass."
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-10-24T00:31:36Z",
+      "databaseId": 40045409589,
+      "headSha": "dcb58fb0c29943fad4a19681686d6a11f88e39e0",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40045409589",
+      "note": "Cancelled invalid event-listener probe: metadata changes were not subscribed, so server confirmation could not be observed."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T00:29:23Z",
+      "databaseId": 40045218795,
+      "headSha": "e5caf32d7188136b7a599e84f052ce71ca99f229",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40045218795",
+      "note": "Basic real-SDK probe: 3000 fresh clients pass on both emulator versions."
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T00:18:53Z",
+      "databaseId": 40044351355,
+      "headSha": "50c86694965a663c9ef7593bb53b5f0d17eab911",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40044351355",
+      "note": "Disk workspace, emulator 1.21.0: three full runners pass, 4332 captures match."
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-24T00:18:51Z",
+      "databaseId": 40044348980,
+      "headSha": "50c86694965a663c9ef7593bb53b5f0d17eab911",
+      "status": "completed",
+      "url": "https://github.com/anicolao/e2e/actions/runs/40044348980",
+      "note": "Disk workspace, emulator 1.22.0: two full runners pass; third shows runner I/O stalls and a completed-animation observation race. All 4327 recorded PNGs match."
+    },
+    {
+      "conclusion": "success",
       "createdAt": "2026-10-23T22:09:31Z",
       "databaseId": 40031766438,
       "headSha": "da114f5da8538d5766c8fb7e89da8db88f8a7c4c",
@@ -339,6 +411,23 @@
       "errors": [],
       "captures": 46,
       "matching": 46
+    },
+    {
+      "name": "transport-probe-smoke",
+      "result": "passed",
+      "clients": 3,
+      "firestoreVersion": "1.22.0",
+      "note": "Real Firebase SDK authentication, server read, and read-only transaction against pinned local emulators."
+    },
+    {
+      "name": "macos-readiness-final-full",
+      "sourceCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+      "result": "384 passes, 48 declared skips, 1444 byte-exact captures; required suite and ordered inventory pass."
+    },
+    {
+      "name": "animation-recorded",
+      "sourceCommit": "b37e8cefef820dba74dfa2db202cfcd665ae5a8b",
+      "result": "Three projects pass, recording actual worship transition frames and checking them after the transition finishes."
     }
   ]
 }

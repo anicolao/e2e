@@ -1,0 +1,238 @@
+{
+  "run": "https://github.com/anicolao/e2e/actions/runs/40046034837",
+  "frameworkCommit": "e2b5fc2",
+  "applicationCommit": "b6f1b59ed3abf4c5ae9158685a0cfbf8e96f8037",
+  "mode": "events",
+  "operationBudgetMs": 2000,
+  "totalClients": 3000,
+  "runs": [
+    {
+      "runner": "transport-1.21.0-1",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:28bab151852e500e678b890da2120adc3507d8633fb46c02893bca758349f624",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 25.43,
+          "p99Ms": 32.69,
+          "maxMs": 52.1
+        },
+        "create": {
+          "count": 500,
+          "medianMs": 37.6,
+          "p99Ms": 71.39,
+          "maxMs": 356.47
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 19.15,
+          "p99Ms": 35.95,
+          "maxMs": 71.87
+        },
+        "events": {
+          "count": 500,
+          "medianMs": 14.59,
+          "p99Ms": 30.7,
+          "maxMs": 93.86
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 28.69,
+          "p99Ms": 80.57,
+          "maxMs": 106.73
+        }
+      }
+    },
+    {
+      "runner": "transport-1.21.0-2",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:28bab151852e500e678b890da2120adc3507d8633fb46c02893bca758349f624",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 23.63,
+          "p99Ms": 32.19,
+          "maxMs": 194.94
+        },
+        "create": {
+          "count": 500,
+          "medianMs": 34.78,
+          "p99Ms": 64.33,
+          "maxMs": 330.59
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 17.27,
+          "p99Ms": 35.21,
+          "maxMs": 56.72
+        },
+        "events": {
+          "count": 500,
+          "medianMs": 12.51,
+          "p99Ms": 27.03,
+          "maxMs": 73.7
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 24.43,
+          "p99Ms": 59.28,
+          "maxMs": 90.7
+        }
+      }
+    },
+    {
+      "runner": "transport-1.21.0-3",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:28bab151852e500e678b890da2120adc3507d8633fb46c02893bca758349f624",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 24.63,
+          "p99Ms": 33.47,
+          "maxMs": 53.58
+        },
+        "create": {
+          "count": 500,
+          "medianMs": 36.76,
+          "p99Ms": 59.84,
+          "maxMs": 342.52
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 18.61,
+          "p99Ms": 30.61,
+          "maxMs": 67.09
+        },
+        "events": {
+          "count": 500,
+          "medianMs": 13.59,
+          "p99Ms": 29.1,
+          "maxMs": 92.86
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 26.45,
+          "p99Ms": 55.66,
+          "maxMs": 116.03
+        }
+      }
+    },
+    {
+      "runner": "transport-1.22.0-1",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:28bab151852e500e678b890da2120adc3507d8633fb46c02893bca758349f624",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 26.32,
+          "p99Ms": 39.06,
+          "maxMs": 76.23
+        },
+        "create": {
+          "count": 500,
+          "medianMs": 39.81,
+          "p99Ms": 73.6,
+          "maxMs": 381.53
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 20.37,
+          "p99Ms": 34.6,
+          "maxMs": 80.24
+        },
+        "events": {
+          "count": 500,
+          "medianMs": 15.61,
+          "p99Ms": 32.21,
+          "maxMs": 102.99
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 30.04,
+          "p99Ms": 74.96,
+          "maxMs": 221.8
+        }
+      }
+    },
+    {
+      "runner": "transport-1.22.0-2",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:28bab151852e500e678b890da2120adc3507d8633fb46c02893bca758349f624",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 24.85,
+          "p99Ms": 32.42,
+          "maxMs": 52.01
+        },
+        "create": {
+          "count": 500,
+          "medianMs": 36.24,
+          "p99Ms": 61.97,
+          "maxMs": 357.39
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 18.52,
+          "p99Ms": 29.13,
+          "maxMs": 64.11
+        },
+        "events": {
+          "count": 500,
+          "medianMs": 14.02,
+          "p99Ms": 26.27,
+          "maxMs": 88.47
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 27.76,
+          "p99Ms": 58.34,
+          "maxMs": 100.18
+        }
+      }
+    },
+    {
+      "runner": "transport-1.22.0-3",
+      "clients": 500,
+      "failed": 0,
+      "bundleDigest": "sha256:28bab151852e500e678b890da2120adc3507d8633fb46c02893bca758349f624",
+      "stages": {
+        "authenticate": {
+          "count": 500,
+          "medianMs": 23.44,
+          "p99Ms": 28.81,
+          "maxMs": 195.29
+        },
+        "create": {
+          "count": 500,
+          "medianMs": 33.92,
+          "p99Ms": 61.26,
+          "maxMs": 340.67
+        },
+        "listen": {
+          "count": 500,
+          "medianMs": 16.62,
+          "p99Ms": 31.04,
+          "maxMs": 84.84
+        },
+        "events": {
+          "count": 500,
+          "medianMs": 12.13,
+          "p99Ms": 27.32,
+          "maxMs": 200.28
+        },
+        "transaction": {
+          "count": 500,
+          "medianMs": 23.53,
+          "p99Ms": 60.48,
+          "maxMs": 97.86
+        }
+      }
+    }
+  ]
+}

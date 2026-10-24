@@ -14,6 +14,10 @@ on:
         type: choice
         options: ['1.22.0', '1.21.0']
         default: '1.22.0'
+      storage:
+        type: choice
+        options: [memory, disk]
+        default: memory
 permissions:
   contents: read
 jobs:
@@ -26,7 +30,7 @@ jobs:
     timeout-minutes: 60
     container:
       image: mcr.microsoft.com/playwright:v1.61.1-noble@sha256:824f1a789072e648c62541c2cfa4479c4061a290d5c27766d67dc1dcbc19b321
-      options: --ipc=host
+      options: ${{ inputs.storage == 'memory' && '--ipc=host --tmpfs /e2e-runtime:rw,exec,size=4g' || '--ipc=host' }}
     defaults:
       run:
         shell: bash
@@ -74,13 +78,43 @@ jobs:
           PUBLIC_BASE_PATH: /pantheon/prtest
           E2E_POC_MODE: ${{ inputs.mode }}
           POC_SCOPE: ${{ inputs.scope }}
+          E2E_RUNTIME_STORAGE: ${{ inputs.storage || 'memory' }}
           FIRESTORE_EMULATOR_VERSION: ${{ inputs.firestore_version || '1.22.0' }}
           FIREBASE_EMULATORS_PATH: ${{ github.workspace }}/emulators
         run: |
+          sampler=""
+          runtime="$GITHUB_WORKSPACE"
+          if [[ "$E2E_RUNTIME_STORAGE" == memory ]]; then
+            runtime=/e2e-runtime
+            cp -a "$GITHUB_WORKSPACE/pantheon" "$GITHUB_WORKSPACE/framework" "$GITHUB_WORKSPACE/emulators" "$runtime/"
+            export FIREBASE_EMULATORS_PATH="$runtime/emulators"
+            mkdir -p "$runtime/browsers"
+            for browser in /ms-playwright/chromium-* /ms-playwright/chromium_headless_shell-*; do
+              if [[ -d "$browser" ]]; then cp -a "$browser" "$runtime/browsers/"; fi
+            done
+            export PLAYWRIGHT_BROWSERS_PATH="$runtime/browsers"
+            export TMPDIR="$runtime/tmp" TMP="$runtime/tmp" TEMP="$runtime/tmp"
+            mkdir -p "$TMPDIR"
+            git config --global --add safe.directory "$runtime/pantheon"
+            cd "$runtime/pantheon"
+          fi
+          export E2E_RUNTIME_ROOT="$runtime"
+          finish() {
+            if [[ -n "$sampler" ]]; then kill "$sampler" 2>/dev/null || true; fi
+            if [[ "$runtime" != "$GITHUB_WORKSPACE" ]]; then
+              for path in evidence pantheon/playwright-report pantheon/test-results; do
+                if [[ -d "$runtime/$path" ]]; then
+                  mkdir -p "$GITHUB_WORKSPACE/$(dirname "$path")"
+                  cp -a "$runtime/$path" "$GITHUB_WORKSPACE/$(dirname "$path")/"
+                fi
+              done
+            fi
+          }
+          trap finish EXIT
           if [[ "$POC_SCOPE" == representative ]]; then
             export E2E_STORY_FILTER='gather two players, share an invitation|enter the sanctuary, learn|Oracle draw reveals'
           elif [[ "$POC_SCOPE" == regressions ]]; then
-            export E2E_STORY_FILTER='Demeter combines the costs of two offerings|tabletop (south|west|north|east) (seed-keeper|harvest-feast) stages'
+            export E2E_STORY_FILTER='Demeter combines the costs of two offerings|tabletop (south|west|north|east) (seed-keeper|harvest-feast) stages|a worship choice opened by the scenario flies in from its sidebar card'
           elif [[ "$POC_SCOPE" == readiness ]]; then
             export E2E_STORY_FILTER='share market browsing and the complete worship scene|follow Worship and a purchase once|four shared gods and three Devotion|rules navigation remains|wait for the public market update'
           elif [[ "$POC_SCOPE" == oracle ]]; then
@@ -90,12 +124,11 @@ jobs:
           repetitions="1 2 3"
           if [[ "$POC_SCOPE" == full || "$POC_SCOPE" == oracle ]]; then repetitions="1"; fi
           for repetition in $repetitions; do
-            export E2E_POC_OUTPUT="$GITHUB_WORKSPACE/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
+            export E2E_POC_OUTPUT="$runtime/evidence/runner-${{ matrix.runner }}/repeat-$repetition"
             mkdir -p "$E2E_POC_OUTPUT"
-            export JAVA_TOOL_OPTIONS="-Xlog:gc*:file=$E2E_POC_OUTPUT/java-gc.log:time,uptime,tags:filecount=2,filesize=1M"
+            export JAVA_TOOL_OPTIONS="-Xlog:gc*:file=$E2E_POC_OUTPUT/java-gc-%p.log:time,uptime,tags:filecount=2,filesize=1M"
             python3 ../framework/poc/pantheon/sample-runner.py "$E2E_POC_OUTPUT/runner.jsonl" &
             sampler=$!
-            trap 'kill "$sampler" 2>/dev/null || true' EXIT
             bunx playwright test --list --reporter=json > "$E2E_POC_OUTPUT/collected.json"
             if ! bun run test:e2e 2>&1 | tee "$E2E_POC_OUTPUT/run.log"; then
               result=1
@@ -103,9 +136,9 @@ jobs:
             fi
             kill "$sampler" 2>/dev/null || true
             wait "$sampler" 2>/dev/null || true
-            trap - EXIT
+            sampler=""
             if [[ -f firestore-debug.log ]]; then cp firestore-debug.log "$E2E_POC_OUTPUT/firestore-debug.log"; fi
-            du -sh "$GITHUB_WORKSPACE/evidence" .git tests/e2e
+            du -sh "$runtime/evidence" .git tests/e2e
             df -h .
           done
           exit "$result"
