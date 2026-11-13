@@ -29,3 +29,9 @@ npm run test:package
 `src/index.ts` checks PNG hashes and ordered steps. `src/store.ts` fetches and verifies release images with a bounded cache. `src/diagnose.ts` builds image diffs after failed checks.
 
 [Representative runner results](https://github.com/anicolao/e2e/actions/runs/39951440547) cover 540 Linux captures across three runners. [Read a complete story](poc/pantheon/stories/enter-the-sanctuary-learn-create-and-continue-a-real-table/README.md) with images served by [the public baseline store](https://github.com/anicolao/e2e-baselines).
+
+## Walkthrough viewer
+
+`@anicolao/e2e/viewer` exports `writeViewer(directory, {title, indexUrl?, emptyMessage?})` and `createViewer(options)`. The generated standalone page reads a story index and step manifests, shows actor/observer images side by side, offers actual-size viewing and expected/diff links, and loads DOM evidence on demand. It accepts Hanami's existing `walkthroughs/index.json` and `steps.json` shape. Steps may supply `status` and `assertions`; an absent status is shown as captured and awaiting verification.
+
+Applications own the story data and captured evidence. The shared library owns the viewer. An empty index is a supported pre-playtest state and makes no claim of passing screenshot validation.
