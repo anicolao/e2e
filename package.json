@@ -11,7 +11,8 @@
     "./store": "./dist/store.js",
     "./diagnose": "./dist/diagnose.js",
     "./candidate": "./dist/candidate.js",
-    "./suite": "./dist/suite.js"
+    "./suite": "./dist/suite.js",
+    "./viewer": "./dist/viewer.js"
   },
   "scripts": {
     "test": "node --test tests/*.test.ts",
@@ -19,7 +20,8 @@
     "inventory:pantheon": "node poc/pantheon/inventory.ts",
     "build": "tsc -p tsconfig.build.json",
     "prepack": "npm run build",
-    "test:package": "node tests/installed-package.mjs"
+    "test:package": "node tests/installed-package.mjs",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
