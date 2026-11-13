@@ -18,6 +18,8 @@ try {
     import { diagnose } from '@anicolao/e2e/diagnose';
     import { checkCandidate } from '@anicolao/e2e/candidate';
     import { checkSuite } from '@anicolao/e2e/suite';
+    import { createViewer } from '@anicolao/e2e/viewer';
+    assert.ok(createViewer({title:'Installed viewer'}).includes('Installed viewer'));
     const png = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScLbtAAAAABJRU5ErkJggg==', 'base64');
     assert.equal(identifyPng(png).width, 1);
     assert.equal(typeof ImageStore, 'function'); assert.equal(typeof loadCatalog, 'function');

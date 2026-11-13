@@ -108,7 +108,7 @@ let's put up a PR that migrates patheon to this system, if htere are no blockers
 
 ## 14
 
-Recorded 2026-11-13 from the Super Mega Lucky Box implementation conversation. Result: shared walkthrough viewer; PR reference pending.
+Recorded 2026-11-13 from the Super Mega Lucky Box implementation conversation. Result: [shared walkthrough viewer PR](https://github.com/anicolao/e2e/pull/1).
 
 ```text
 OK! I think I am finally ready to approve these visuals! Let's create a public github repo and put this up as the initial commit - gpl v3 - then, using the new/evolving e2e library in ../../e2e for our end to end tests (and updating it as needed) with a viewer like that built for hanami in ../hanami but implemented in the shared e2e library, adn event sourcing like the other game examples (../hanami, ../pantheon, ../istanbul) with full support for all form factors and some gentle candy-crush-esque sound effects for each user choice. Let's put up the initial game as PR1 for review, initially without e2e tests, and after an initial playtest we'll lock it down with e2e screenshots and validation.
